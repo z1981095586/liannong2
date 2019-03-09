@@ -21,6 +21,7 @@
     "pages/user/Money/tixian/tixian",
     "pages/user/Card/Card",
     "pages/user/ZuJi/ZuJi",
+    "pages/orderDetail/orderDetail",
     "pages/order/order"
   ],
 "window": {
