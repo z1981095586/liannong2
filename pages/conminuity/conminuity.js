@@ -28,6 +28,10 @@ Page({
     isBottomhot: 0,
     isBottomnew: 0,
     superhotmes: [],
+    tiezi:[],
+    pageNo:1,
+    h:1000,
+    flag:false
   },
   //点击切换
   clickTab: function (e) {
@@ -83,13 +87,51 @@ Page({
       })
     }
   },
+  // 获取帖子
+  tiezi:function(){
+    let that = this;
+    wx.request({
+      url: 'http://192.168.1.104:8081/com.crazyBird/agro/getForunList', // 仅为示例，并非真实的接口地址
+      type: 'GET',
+      data: {
+        pageSize:3,
+        pageNo:that.data.pageNo
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data.itemForum);
+         var returnArr = that.data.tiezi;
+         for (var i = 0; i < res.data.itemForum.length; i++) {
+           returnArr.push(res.data.itemForum[i]);
+           returnArr[i].year = returnArr[i].year+' ';
+          
+         
+         }
+        if (res.data.itemForum.length < 3) {
+     
+          that.setData({
+            flag:true
+          })
+
+        }
+         console.log(returnArr)
+        that.setData({
+           tiezi: returnArr
+         })
+         console.log(that.data.tiezi);
+      }
+    })
+  },
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  let that=this;
+  that.tiezi();
   },
 
   /**
@@ -124,14 +166,42 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+     let that = this;
+     that.setData({
+       tiezi: [],
+       pageNo: 1,
+       h: 1000,
+       flag: false
+     })
+     that.tiezi();
+    wx.stopPullDownRefresh();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    // let that = this;
+    let that = this;
+    let newdata = that.data.pageNo + 1;
+    let h2;
+    if(that.data.flag==false){
+      wx.showLoading({
+        title: '加载中',
+      })
 
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 300)
+       h2= that.data.h + 1000;
+    }
+    that.setData({
+      pageNo: newdata,
+      h:h2
+    })
+    that.tiezi();
+    console.log(newdata)
+    // that.tiezi();
   },
 
   /**

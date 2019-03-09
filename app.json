@@ -21,7 +21,9 @@
     "pages/user/Money/tixian/tixian",
     "pages/user/Card/Card",
     "pages/user/ZuJi/ZuJi",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/fatie/fatie",
+    "pages/xiangqing/xiangqing"
   ],
 "window": {
   "backgroundTextStyle": "dark",
