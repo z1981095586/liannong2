@@ -1,0 +1,276 @@
+/* pages/conminuity/conminuity.wxss */
+page {
+  width: 100%;
+  height: 100%;
+   background-color:white;
+}
+.guanggao{
+  margin-top: 5px;
+  width: 100%;
+  height: 300rpx;
+}
+.swiper {
+  height: 150rpx;
+  width: 100%;
+}
+.swiper-image {
+  height: 70%;
+  width: 95%;
+}
+.slide-image{
+  border-radius: 5px;
+   height: 100%;
+  width: 100%;
+}
+.swiper-tab {
+  margin: 0 auto;
+  margin-top: 35rpx;
+  width: 30%;
+  border: 2rpx solid #f7f7f7;
+  border-radius: 40rpx 20rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 58rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  box-shadow: 2rpx 2rpx 30rpx #7e7c7c;
+}
+
+.swiper-tab-item {
+  width: 50%;
+  color: #f65959;
+  font-size: 28rpx;
+}
+
+.active {
+  border-radius: 40rpx 20rpx;
+  background: #f65959;
+  color: white;
+  border-bottom: 4rpx solid #f65959;
+}
+
+swiper {
+  text-align: center;
+}
+.img-plus-style {
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 120rpx;
+    /* box-shadow: 1rpx 1rpx 20rpx #f65959; */
+    position: fixed;
+    bottom: 100rpx;
+    background: white;
+    right: 30rpx;
+    z-index: 100;
+    /* opacity: .8 */
+  }
+  .tiezi-all{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.tiezi{
+  margin-top: 15rpx;
+  width: 100%;
+  height: 1000rpx;
+  display: flex;
+  flex-direction: column;
+}
+.cont1{
+width: 90%;
+height: 400rpx;
+border-radius: 8px;
+background: red;
+margin-top: 15rpx;
+}
+.content{
+  margin-top: 35rpx;
+  width: 100%;
+  height: 600rpx;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quyu{
+display: flex;
+white-space:nowrap;
+align-items: center;
+overflow: hidden;
+
+  width: 95%;
+  height: 95%;
+   border: 1px solid black;
+
+}
+.new{
+  width: 100%;
+  height: 100%;
+  background: red;
+  display: inline-block;
+}
+.hot{
+    width: 100%;
+  height: 100%;
+     display: inline-block;
+  background: blue;
+}
+.hua1{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.current {
+  width: 100%;
+  height: 500rpx;
+  /* background: papayawhip; */
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  /* border: 2rpx solid #f7f7f7; */
+    box-shadow: 1rpx 1rpx 20rpx #E1E1E4;
+}
+.user-info{
+  width: 100%;
+  height: 30%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+.user-content{
+  width: 100%;
+  height: 40%;
+  border: 1px solid black;
+}
+.pinglun{
+  width: 100%;
+  height: 30%;
+  border: 1px solid black;
+}
+.swiper-tab {
+  margin: 0 auto;
+  margin-top: 20rpx;
+  width: 30%;
+  border: 2rpx solid #f7f7f7;
+  border-radius: 40rpx 20rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 58rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  box-shadow: 2rpx 2rpx 30rpx #7e7c7c;
+}
+
+.swiper-tab-item {
+  width: 50%;
+  color: #f65959;
+  font-size: 28rpx;
+}
+
+.active {
+  border-radius: 40rpx 20rpx;
+  background: #f65959;
+  color: white;
+  border-bottom: 4rpx solid #f65959;
+}
+
+swiper {
+  text-align: center;
+}
+
+.current {
+  width: 90%;
+  height: 350rpx;
+  /* background: aliceblue; */
+  margin: 0 auto;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-image {
+  width: 240rpx;
+  height: 200rpx;
+  /* background: aqua; */
+}
+
+.current-text {
+  width: 70%;
+  height: 150rpx;
+  /* background: tomato; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.current-text-cont {
+  width: 100%;
+  height: 100rpx;
+  font-size: 25rpx;
+  /* background: aquamarine; */
+  text-align:left;
+  padding: 0rpx 20rpx;
+}
+.current-image image{
+  width: 100%;
+  height: 100%;
+}
+
+.current-text-Identification {
+  width: 100%;
+  height: 20rpx;
+  font-size: 15rpx;
+  /* background: rgb(151, 223, 199); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rpx 20rpx;
+  padding-top:40rpx;
+  /* margin-top: -10rpx; */
+}
+.Identification .tiem {
+  width: 30%;
+  height: 20rpx;
+}
+.touxiang{
+  width: 14%;
+  height: 100%;
+  border-radius: 30px;
+  border: 1px solid black;
+}
+.nicheng{
+  width: 20%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+.top{
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  font-weight: 600;
+}
+.time{
+  margin-top: 8rpx;
+    font-size: 13rpx;
+    color: rgba(0, 0, 0, 0.5);
+}
+.con{
+width: 90%;
+height: 100%;
+border:1px solid black;
+font-size: 21rpx;
+display: flex;
+justify-content: flex-start;
+}
+.con text{
+  margin-top: 10rpx;
+  margin-left: 15rpx;
+}

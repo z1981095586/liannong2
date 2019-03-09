@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "加载中",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor":"#000000"
+}

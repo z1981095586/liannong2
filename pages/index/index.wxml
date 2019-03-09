@@ -1,0 +1,164 @@
+
+<view class='index-page'>
+
+  <view class='search' bindtap='toSearch'>
+    <view class='search-main'>
+      <view class='search-icon iconfont icon-sousuo'></view>
+      <text class='search-main-text'>请输入商家或商品名称</text>
+    </view>
+  </view>
+  <scroll-view scroll-y class='ver'>
+    <view class='guanggao'>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item.picture}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='conter-no'>
+      <!-- 首页八个导航 -->
+      <view class='index-body'>
+        <view class='index-body-icon'>
+          <view class='index-body-icon-bg'>
+            <view class='index-body-icon-bg-content' bindtap='vote' id="水果超市">
+              <view class='index-body-icon-bg-content-icon'>
+                <view class='index-body-icon-bg-content-icon-border'>
+                  <image src='/images/fruit.png'></image>
+                </view>
+              </view>
+              <view class='index-body-icon-bg-content-text'>水果</view>
+            </view>
+            <view class='index-body-icon-bg-content' bindtap='vote' id="蔬菜农场">
+              <view class='index-body-icon-bg-content-icon'>
+                <view class='index-body-icon-bg-content-icon-border'>
+                  <image src='/images/vegetables.png'></image>
+                </view>
+              </view>
+              <view class='index-body-icon-bg-content-text'>蔬菜</view>
+            </view>
+            <view class='index-body-icon-bg-content' bindtap='vote' id="畜牧农场">
+              <view class='index-body-icon-bg-content-icon'>
+                <view class='index-body-icon-bg-content-icon-border'>
+                  <image src='/images/xumu.png'></image>
+                </view>
+              </view>
+              <view class='index-body-icon-bg-content-text'>畜牧</view>
+            </view>
+            <view class='index-body-icon-bg-content' bindtap='vote' id="旅游产业">
+              <view class='index-body-icon-bg-content-icon'>
+                <view class='index-body-icon-bg-content-icon-border'>
+                  <image src='/images/trip.png'></image>
+                </view>
+              </view>
+              <view class='index-body-icon-bg-content-text'>旅游</view>
+            </view>
+            <view class='index-body-icon-bg-content' bindtap='vote' id="学农商品">
+              <view class='index-body-icon-bg-content-icon'>
+                <view class='index-body-icon-bg-content-icon-border'>
+                  <image src='/images/edu.png'></image>
+                </view>
+              </view>
+              <view class='index-body-icon-bg-content-text'>学农教育</view>
+            </view>
+            <view class='index-body-icon-bg-content' bindtap='vote' id="聚会商品">
+              <view class='index-body-icon-bg-content-icon'>
+                <view class='index-body-icon-bg-content-icon-border'>
+                  <image src='/images/juji.png'></image>
+                </view>
+              </view>
+              <view class='index-body-icon-bg-content-text'>聚点</view>
+            </view>
+            <view class='index-body-icon-bg-content' bindtap='vote' id="散户商品">
+
+              <view class='index-body-icon-bg-content-icon'>
+                <view class='index-body-icon-bg-content-icon-border'>
+                  <image src='/images/icon-shetuan.png'></image>
+                </view>
+              </view>
+              <view class='index-body-icon-bg-content-text'>散户</view>
+            </view>
+            <view class='index-body-icon-bg-content' bindtap='vote' id="其他商品">
+              <view class='index-body-icon-bg-content-icon'>
+                <view class='index-body-icon-bg-content-icon-border'>
+                  <image src='/images/icon-kebiao.png'></image>
+                </view>
+              </view>
+              <view class='index-body-icon-bg-content-text'>其他</view>
+            </view>
+          </view>
+        </view>
+        <view class='location-all' bindtap='tolocation' >
+          <image style='margin-left: 10px;' src='/images/location.png'></image>
+          <view class='content'>{{location}}</view>
+          <image src='/images/right2.png'></image>
+        </view>
+        <view class='tuijian'>
+          <view class='tuijian-title'>为你精选</view>
+          <view class='tuijian-content'>
+      
+            <view class='tuijian-content-hua'>
+                 <scroll-view scroll-x class='hengxianggundong'>
+                
+              <view class='dianjia' bindtap='dianjia' id="{{item.id}}"  wx:for="{{youxuanlist}}" wx:key="*this" data-id="{{item.id}}">
+                <view class='dianjia-image'>
+                <image src='{{item.simage}}'></image>
+                </view>
+                <view class='dianjia-biaoti'>
+                  {{item.shopName}}
+                </view>
+                <view class='dianjia-tuijian'>
+                  为您推荐最美农场小吃
+                </view>
+              </view>
+      
+         </scroll-view>
+            </view>
+                   
+          </view>
+        </view>
+        <view class='fujin'>
+          <view class='fujin-title'>附近商家</view>
+          <view class='fujin-allpaixu'>
+            <view class='fujin-pauxu'>
+              <view bindtap='xiaoliangpx' class='xiaoliang' style="color:{{color1}};">
+                <text>销量高</text>
+              </view>
+              <view bindtap='jiagepx' class='xiaoliang' style="color:{{color2}};">
+                <text>价格低</text>
+              </view>
+              <view bindtap='pingjiapx' class='xiaoliang' style="color:{{color3}};">
+                <text>评价好</text>
+              </view>
+            </view>
+          </view>
+          <view class='fujin-content'>
+              <view class='cont1' wx:for="{{fujinlist}}" wx:key="*this" data-id="{{item.id}}">
+            <view class='sj-logo'>
+            <image src='{{item.simage}}'></image>
+            </view>
+            <view class='sj-info'>
+            <view class='sj-name'>{{item.shopName}}</view>
+               <view class='sj-xinyu'>
+               <view class='xy-left'> <view>信誉度：{{item.sgrade}}分</view>
+                <view class='yueshou'> 月售：{{item.monthlySale}}</view></view>
+               <view class='xy-right'><view class='distance'>{{item.distance}}km</view>
+              </view></view>
+              
+            
+                  <view class='sj-renjun'>
+                  <view> 起送￥30 | 配送￥10.5</view>
+                    <view class='renjun'> 人均 ￥{{item.perCapita}}</view>
+                 </view>
+                     <view class='sj-leixing'>{{item.stype}}</view>
+            </view>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+  </scroll-view>
+</view>

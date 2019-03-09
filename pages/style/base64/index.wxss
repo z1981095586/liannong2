@@ -1,0 +1,54 @@
+.index-body{
+  width: 750rpx;
+height: 287.5rpx;
+   /* border: 1rpx solid #dddcdc; */
+  box-shadow: 1rpx 1rpx 20rpx #dddcdc;
+   /* border-left: none;
+  border-right:none; */
+  background-repeat:no-repeat;
+   background-size:100% 100%;
+   -moz-background-size:100% 100%;
+}
+.index-toupiao-bg{
+  position: relative;
+  width: 750rpx;
+height: 291.66rpx;
+margin-top:10rpx;
+  /* border: 1rpx solid #dddcdc; */
+  /* border-left: none;
+  border-right:none; */
+  box-shadow: 1rpx 1rpx 20rpx #dddcdc;
+ 
+ 
+  background-repeat:no-repeat;
+   background-size:100% 100%;
+   -moz-background-size:100% 100%;
+
+
+}
+/* 长的要死的图 */
+.index-toupiao-bg-caidai-left{
+  
+ width:120rpx;
+height:450rpx;
+ position: absolute;
+  right: 0rpx;
+  top: -135rpx;
+  background-repeat:no-repeat;
+   background-size:100% 100%;
+   -moz-background-size:100% 100%;
+
+ 
+}
+/* 长的要死的图 */
+ .index-toupiao-bg-caidai-right{
+   width:120rpx;
+height:450rpx;
+ position: absolute;
+  left: 0rpx;
+  top: -135rpx;
+  background-repeat:no-repeat;
+   background-size:100% 100%;
+   -moz-background-size:100% 100%;
+ 
+}
