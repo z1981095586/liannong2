@@ -7,7 +7,21 @@
     "pages/My/my",
     "pages/Mall/Mall",
     "pages/shangjia/shangjia",
-    "pages/shangpin/shangpin"
+    "pages/shangpin/shangpin",
+    "pages/start/start",
+    "pages/user/index",
+    "pages/user/Store/Store",
+    "pages/user/aboutUs/aboutUs",
+    "pages/user/Address/Address",
+    "pages/user/AddressAdd/AddressAdd",
+    "pages/user/AddressEdit/AddressEdit",
+    "pages/user/ideaBack/ideaBack",
+    "pages/user/Favorite/Favorite",
+    "pages/user/Money/Money",
+    "pages/user/Money/tixian/tixian",
+    "pages/user/Card/Card",
+    "pages/user/ZuJi/ZuJi",
+    "pages/order/order"
   ],
 "window": {
   "backgroundTextStyle": "dark",
@@ -34,13 +48,13 @@
       {
         "selectedIconPath": "images/时事2.png",
         "iconPath": "images/时事.png",
-        "pagePath": "pages/conminuity/conminuity",
+        "pagePath": "pages/order/order",
         "text": "订单"
       },
     {
       "selectedIconPath": "images/我的2.png",
       "iconPath": "images/我的.png",
-      "pagePath": "pages/My/my",
+      "pagePath": "pages/user/index",
       "text": "我的"
     }
   ]

@@ -1,0 +1,54 @@
+.Mess{
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: #fff;
+  
+}
+.Mess-item{
+ height: 100rpx;
+border-bottom: 1rpx solid #dddcdc;
+  display: flex;
+  align-items: center;
+}
+.title{
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.tianjia{
+  margin-left: 230rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+.text{
+  font-size:25rpx;
+  position: absolute;
+  left: 200rpx;
+  width: 100%;
+}
+.Stext{
+  width: 100%;
+}
+
+.bottomBtn{
+  background-color: #ef696c;
+    color:#fff;
+    font-size: 28rpx;
+    width: 90%;
+    margin-left: 5%;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    margin-top:30rpx; 
+    border-radius: 6rpx;
+    box-sizing: border-box;
+}
+.dizhi{
+   height: 80rpx;
+   position: absolute;
+   right: 30rpx;
+   text-align: center;
+   font-size: 34rpx;
+   z-index: 99;
+}

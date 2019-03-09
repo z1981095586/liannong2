@@ -1,0 +1,109 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1551955780517'); /* IE9 */
+  src: url('iconfont.eot?t=1551955780517#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMwAAsAAAAABvQAAALkAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBfIFnATYCJAMICwYABCAFhG0HMhsPBsieg3FDX0qbTBac94olWqwIqrUqa6YPUSGqi/OsAS2x8Hsa6d+JNwaFYiPmf23qN5AuDAowysEiHkg2y09WaCrRGtyKNHYDmpKxnYBW4LldcS2erjG+sPn5PJfjW0AHclf9570c15rUYYt6AcaBFOBe2AYKtEBCbxi74AWeJlCtSzXTwujkdnBK7EmBOPd5VHAW4pLESpVCecPKBHHPpjI7l60Dd9H34z9MhhNkynKwZy4fjhjQ/8svyC+Ko/YHTseW84KtI8cEkIj1xvwii2CsRXXeqg8cSxj8gqIInOKoNsH+OruyFnRA+TMpPOWjSmcg0ZsVYGvSvchru9BC3Ks3hTZV0a0XvzLlwtux22nI1Pe47E7W8vmUxfbu3uIuy9dvrqXuyECL72tLqbsAXb6vgvso8HLtwp30PGXl87FlhPYi7Yok/uXrgmY42r/Z7bYdLR3pd9/iKMTd3H8g8Xua8+OB9JHE/Bt/zmXd+pq31bS+sRqZZzv3Og8/3Pb2oTCyr/y0fXliFMTX5pmRSX9Y5v+kffB0jjNtbrKlfwshqdAPUJTyJ5b+P/wbPd8efSi++1+lYgX4eYPhKFqUEgwLgsr7cIb/qRjYkgyV7ciSpmgsZ1ZY7rOqWjUKONzs/VRz282XQ6W2VwhW6MyQqzRAJGYCZWpMoVylaVQbR9bXaCFYRHIBY04BhEYPkKn3BblGG0Ri3qFMu28o1xgWVNuM5B1rDIUPDQmqSmpgbQH7dB5mrkuiWLiVemaCqsirIm4nFVFfCjfU1pdLhIapWGJOdNbTKCXDTPAQHgXn0WCQ44jgfqrLWq+Ukc66Otb0olqdhwCZJ1AqiTJgmgWYj44LY0FnCVU+vxXlMSNIJTqa6rI7UUKUr3+sQa36AQTRhwc1PcolUbM8GkkSgzECF4KNAi8VdPIcFmke5kfppFreCdmITnWoHRuqr93eGPq7XVDNtmThDLZA5TEPezSVNwAA') format('woff2'),
+  url('iconfont.woff?t=1551955780517') format('woff'),
+  url('iconfont.ttf?t=1551955780517') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1551955780517#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-hongbao1{
+  color: red;
+  font-size: 80rpx;
+}
+.icon-hongbao1:before {
+  content: "\e600";
+}
+
+
+
+
+page {
+  background: #f5f5f5;
+}
+.tabBar {
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 80rpx;
+  background: #fff;
+  border-top: 2rpx solid #f5f5f5;
+  border-bottom: 1rpx solid #f5f5f5;
+  display: flex;
+}
+.tab-item {
+  display: inline-block;
+  flex: 1;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+
+.active {
+  border-bottom: 3rpx solid #ff3434;
+  color: #ff3434;
+}
+.card-item,.bagItem{
+  height: 220rpx;
+  width: 90%;
+  margin-left:5%;
+  margin-right:5%;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  flex-wrap: wrap;
+  /* border: 1px solid black */
+}
+.bottomTex{
+   font-size:25rpx;
+   color: #9f9f9f;
+    border-top: 1px dashed #9f9f9f;
+}
+.left{
+  /* border: 1px solid black; */
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+.center{
+  width: 50%;
+  /* border: 1px solid black; */
+  color: #000;
+  font-size:30rpx;
+}
+.time{
+  color: #9f9f9f;
+}
+.right{
+  width: 20%;
+ margin-right: 20rpx;
+/* border: 1px solid black; */
+}
+.price{
+  color: rgb(226, 34, 60);
+  font-size: 60rpx;
+
+}
+.number{
+  font-size: 50rpx;
+}
+.use{
+  background-color: rgb(255,69, 0);
+  color: white;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+.hb-money{
+  font-size: 30rpx;
+}

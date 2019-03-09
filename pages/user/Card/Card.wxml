@@ -1,0 +1,36 @@
+<view class='tabBar'>
+  <view class="tab-item {{currentTab == 0 ? 'active' : ''}}" data-current="0" bindtap='clickMenu'>
+    优惠劵
+  </view>
+  <view class="tab-item {{currentTab == 1 ? 'active' : ''}}" data-current="1" bindtap='clickMenu'>
+    红包
+  </view>
+</view>
+<view class='cardList' wx:for="{{[1,2,3]}}" wx:if="{{currentTab == 0}}">
+  <view class='card-item'>
+    <view class='left'>
+      <view class='price'>￥<text class='number'>5</text></view>
+    </view>
+    <view class='center'>
+      <view class='content'>乡巴佬</view>
+      <view class='time'>有效期至：2019-03-14</view>
+    </view>
+    <view class='right'>
+      <view class='use'>立即使用</view>
+    </view>
+     <view class='bottomTex'>
+       不可与满减、折扣商品、第二份半价活动优惠同时享受。在线支付专享。
+    </view>
+  </view>
+</view>
+<view class='bagList' wx:for="{{[1,2,3]}}" wx:if="{{currentTab == 1}}">
+    <view class='bagItem'>
+       <view class='left'>
+          <view class='iconfont icon-hongbao1'></view>
+       </view>
+       <view class='center'>双十一红包</view>
+       <view class='right'>
+       <view class='hb-money'>￥0.88</view>
+       </view>
+    </view>
+</view>

@@ -1,0 +1,24 @@
+<view>
+   <view class='content'>
+   本平台本着为现代生活提供便捷、快速、高质量的时令蔬菜，同时开展"家庭农场"虚实结合、普及现代
+   农业相关知识、展开相关活动以及开展农场假日私人旅游路线，致力为现代生活人类创造出一个高效率的时令鲜疏的买卖市场。
+   </view>
+  <dl class="menu">
+    <dt data-index="0" bindtap="tapMenu">价格</dt>
+    <dd class="{{index==0 &&show? 'show':'hidden'}}">
+        <ul>
+        <li >sub1</li>
+        <li >sub2</li>
+        </ul>
+    </dd>
+ </dl>
+  <dl class="menu">
+    <dt data-index="1" bindtap="tapMenu">价格</dt>
+    <dd class="{{index==1 &&show? 'show':'hidden'}}">
+        <ul>
+        <li>sub1</li>
+        <li>sub2</li>
+        </ul>
+    </dd>
+ </dl>
+</view>
