@@ -1,0 +1,27 @@
+  <form bindsubmit="getFormId" report-submit="true">
+    <button form-type="submit" class='stickyClass'>
+      <view class='tabBar '>
+        <view class="tab-item {{currentTab == 0 ? 'active' : ''}}" bindtap='clickMenu' data-current="0" data-status=''>宝贝</view>
+        <view class="tab-item {{currentTab == 1 ? 'active' : ''}}" bindtap='clickMenu' data-current="1" data-status='0'>店铺</view>
+      </view>
+    </button>
+  </form>
+  <view  wx:for="{{[1,2,3]}}" wx:key="key" wx:if='{{currentTab == 0}}'>
+  <view class='goodsHead'>
+      <view class='goods'>
+        <view class='goods_image'><image></image></view>
+        <view class='goods-content'>
+           <view class='title'>ddddsdss</view>
+           <view class='number'>1223人收藏</view>
+        </view>
+      </view>
+  </view>
+  </view>
+   <view wx:for="{{[1,2,3]}}" wx:key="key" wx:if='{{currentTab == 1}}'>
+  <view class='shopBar'>
+     <view class='shop'>
+        <image class='shop-image'></image>
+        <view class='shop-name'>电话号试试吧</view>
+     </view>
+  </view>
+  </view>

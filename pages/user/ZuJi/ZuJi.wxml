@@ -1,0 +1,12 @@
+<view>
+  <view class='time'>
+    3-3
+  </view>
+  <view class='recond'>
+   <image class='recond-image'></image>
+   <view class='content'>
+     <view class='title'>ss</view>
+    <view class='price'>￥999.00</view>
+   </view>
+  </view>
+</view>

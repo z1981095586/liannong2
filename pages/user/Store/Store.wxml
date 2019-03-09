@@ -1,0 +1,32 @@
+<!--pages/user/Store/Store.wxml-->
+<view class='Mess'>
+  <view class='Mess-item'>
+    <view class='title'>商户名称</view>
+    <input class='text' bindinput="shopNameInput" placeholder='商店名称'></input>
+  </view>
+  <view class='Brand-item'>
+    <view class='title'>商标</view>
+    <image class='tianjia' src="{{simage}}"  bindtap='shangChuang'></image>
+    </view>
+    <view class='Mess-item'>
+      <view class='title'>主营项目</view>
+       <picker bindchange="bindPickerChange" class='typeText' value="{{index}}" range="{{array}}"><view class='Stext'>{{stype}}</view>
+     </picker>
+    </view>
+    <view class='Mess-item'>
+      <view class='title'>联系人</view>
+      <input class='text' bindinput='hostNameInput' placeholder='您的称呼'></input>
+    </view>
+    <view class='Mess-item'>
+      <view class='title'>电话</view>
+      <input class='text' bindinput='phoneInput'maxlength='11' placeholder='您的手机号码' type="number"></input>
+    </view>
+    <view class='Mess-item'>
+      <view class='title'>地址</view>
+      <input class='text'   value='{{saddress}}'></input>
+      <button class='dizhi' bindtap='dizhi'  style="display:{{buttonShow}}" >获取地址</button>
+    </view>
+  </view>
+  <view class='bottomBtn'>
+   <button class='bottomBtn'bindtap='SumbitBtn'>申请入驻</button>
+   </view>

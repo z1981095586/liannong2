@@ -1,0 +1,17 @@
+<view id='cash'>
+  <view class='cash-rule'>
+    <view class='cash-text'>账户余额提现规则 ></view>
+  </view>
+  <view class='cash-main'>
+    <view class='cash-main-title'>提现金额</view>
+    <view class='cash-main-num'>
+      <view class='cash-main-num-flag'>￥</view>
+      <input class='cash-main-num-money' type="digit"></input>
+    </view>
+    <view class='cash-tips'>
+      <view class='cash-tips-text}}'>{{tips}}</view>
+      <view class='cash-tips-all' >全部提现</view>
+    </view>
+    <view class='cash-btn' >提现</view>
+  </view>
+</view>

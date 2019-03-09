@@ -1,0 +1,19 @@
+<!--pages/user/Store/Store.wxml-->
+<view class='Mess'>
+  <view class='Mess-item'>
+    <view class='title'>联系人：</view>
+    <input class='text' bindinput="NameInput" placeholder='请填写收货人姓名'></input>
+  </view>
+   <view class='Mess-item'>
+    <view class='title'>手机号：</view>
+    <input class='text' type='number' maxlength="11" bindinput="phoneInput" placeholder='请填写收货人手机号码'></input>
+  </view>
+    <view class='Mess-item'>
+      <view class='title'>地址</view>
+      <input class='text'  placeholder='请填写收货人地址' value='{{address}}'></input>
+      <button class='dizhi' bindtap='dizhi'  style="display:{{buttonShow}}" >点击选择</button>
+    </view>
+  </view>
+  <view class='bottomBtn'>
+   <button class='bottomBtn'bindtap='save'>保存地址</button>
+   </view>

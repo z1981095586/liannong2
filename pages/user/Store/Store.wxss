@@ -1,0 +1,92 @@
+/* pages/user/Store/Store.wxss
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1551748472321'); /* IE9 */
+  /*src: url('iconfont.eot?t=1551748472321#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  /* url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMMAAsAAAAAB5gAAAK9AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqDHIMfATYCJAMICwYABCAFhG0HNxvMBsguIScbXkRAUtXVhYWH2r+8+3KDKxiGePj/S+y+P38mtVCtlBMslWu3ULBbNLSFIrhgK7pAHWRt/m+t/ROPO69Pw9ciYlZX7v6s+Ow/ex1thVDIkHiEBKGRaIBRZvmwAQdCkYfrbpucqUWq9RDdA5Sk7hYOp53LWXQHUi73XLp0LsdZFug/GEVWIAXADWMXtMT7BJoNWVTZ3j+9hbbMXBaI+8BzoJ3xyTJLNgpVxd4sPis1pvc0fAo+H/8sRpukLJhr9+72BrD5E34q3uq48hD8BHi4RIEFIBNHlbEdNcFINc3MdWNAloM/1TU2iK3+eaJiFraCAci7Jr4juNRfJpAxDnzg2yAP49mUlJYQyiufm8O0ZsVrpcWJQ27RHG0j7OUESqsOqpahDZEwlLx6kmNkue3JIHCY4qpYh2WnXc+KlQ1dsAtldMkulY/eC/bZewmbhByXk9K45y2IY2VopESN0hzo/p6dZaZx5nVow0A4lbPzL017b4VVm+1NePVMx4secxU2e8lWGWwC1F+LM/p73/G/tCy/3cvgRxt46q9ZNwdovEdD+Ff8jk1ZE5r6lBV+ZSr5MP4OKpo1o4Zd3X6HOvpAYgmNnA8haTAIhUYTyIxdgFKLJag0WoNm8w4Ot+gh1URuwpwHAKHTGyTtvkOh0xcyY3+g1O8PKp1Rg2Yn0XNmi6kIulsSHcIBd6c86GepsI3UDYuv0RvGjkwLA8o9yjIIckPV88kDTFFOsaEceSaR4EJmCd8Hj2EcZzyXWYh9Un2ifFnTRNWL1H6WQNcWCTkIGuBcU1ygL5MS3mjSLbz/GvIMxRyyoaHKeg9JpWB6zqDSOyAPZGmnhlt5pjTiMREicIKUSXD7wIJiK5bh8upZIdRHVP6ASG6ZhtqJrjJ1eUXydsegmalOYZUV2h4CJw0dCw3zUAsAAAAA') format('woff2'),
+  url('iconfont.woff?t=1551748472321') format('woff'),
+  url('iconfont.ttf?t=1551748472321') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ 
+  url('iconfont.svg?t=1551748472321#iconfont') format('svg'); 
+} 
+/* .iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-tianjiatupian:before {
+  content: "\e600";
+} */ 
+
+
+.Mess{
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: #fff;
+  
+}
+.Mess-item{
+ height: 80rpx;
+border-bottom: 1rpx solid #dddcdc;
+  display: flex;
+  align-items: center;
+}
+.title{
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.tianjia{
+  margin-left: 230rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+.text{
+  font-size:25rpx;
+  position: absolute;
+  left: 200rpx;
+  width: 100%;
+}
+.Stext{
+  width: 600rpx;
+}
+.typeText{
+  font-size:25rpx;
+  position: absolute;
+  left: 200rpx;
+  width: 60%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.Brand-item{
+  height: 230rpx;
+  border-bottom: 1rpx solid #dddcdc;
+}
+.icon-tianjiatupian{
+  font-size: 100rpx;
+  margin-left: 80rpx;
+}
+.bottomBtn{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  background: red;
+  color:#fff;
+  font-size: 34rpx;
+  line-height: 80rpx;
+  text-align: center;
+  padding: 0px;
+  left:0;
+  border-radius: 20rpx;
+}
+.dizhi{
+   height: 80rpx;
+   position: absolute;
+   right: 30rpx;
+   text-align: center;
+   font-size: 34rpx;
+   z-index: 99;
+}
