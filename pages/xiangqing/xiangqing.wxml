@@ -1,0 +1,47 @@
+<view class='xiangqing-page'>
+<view class='current'  >
+        <view class='user-info'>
+          <view class='touxiang'><image src='{{titlePic}}'></image></view>
+          <view class='nicheng'>
+            <view class='top'><view>{{name}}</view></view>
+            <view class='bot'> <view class='time' decode="true">{{year}} {{day}} {{minute}}</view> <view class='liulanliang'>浏览次数：{{brow}}</view></view>      
+          </view>
+        </view>
+        <view class='user-content'>
+          <view class='con'>
+            <text>{{content}}</text>
+          </view>
+        </view>
+        <view class='pinglun'>
+          <view class='p-con'>
+          <view class='p-pl'>评论</view>
+          <view class='p-number'>{{brow}}</view>
+          </view>
+        </view>
+      </view>
+<view class='huifu'>
+<view class='huifu-lan'><view class='font'>全部回复</view><view class='num'>6</view></view>
+<view class='huifu-content'>
+<view class='current2'  wx:for="{{huifu}}" wx:key="*this" >
+        <view class='user-info'>
+          <view class='touxiang2'><image src='{{item.titlePic}}'></image></view>
+          <view class='nicheng'>
+            <view class='top2'><view>{{item.name}}</view></view>
+            <view class='bot'> <view class='time' decode="true">{{item.year}} {{item.day}} {{item.minute}}</view> <view class='liulanliang'>浏览次数：{{item.brow}}</view></view>      
+          </view>
+        </view>
+        <view class='user-content'>
+          <view class='con'>
+            <text>{{item.comment}}</text>
+          </view>
+        </view>
+        <view class='pinglun'>
+          <view class='p-con'>
+          <view class='p-pl'>评论</view>
+          <view class='p-number'>{{item.brow}}</view>
+          </view>
+        </view>
+      </view>
+</view>
+</view>
+</view>

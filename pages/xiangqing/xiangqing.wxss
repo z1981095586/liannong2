@@ -1,8 +1,8 @@
-/* pages/conminuity/conminuity.wxss */
+/* pages/xiangqing/xiangqing.wxss */
 page {
   width: 100%;
   height: 100%;
-   background-color:white;
+    background-color:rgb(242, 242, 242);
 }
 .guanggao{
   margin-top: 5px;
@@ -14,39 +14,7 @@ page {
   display: flex;
   align-items: center;
 }
-.swiper {
-  height: 150rpx;
-  width: 100%;
-}
-.swiper-image {
-  height: 70%;
-  width: 95%;
-}
-.slide-image{
-  border-radius: 5px;
-   height: 100%;
-  width: 100%;
-}
-.swiper-tab {
-  margin: 0 auto;
-  margin-top: 35rpx;
-  width: 30%;
-  border: 2rpx solid #f7f7f7;
-  border-radius: 40rpx 20rpx;
-  text-align: center;
-  height: 60rpx;
-  line-height: 58rpx;
-  display: flex;
-  align-items: center;
-  flex-flow: row;
-  justify-content: space-between;
-  box-shadow: 2rpx 2rpx 30rpx #7e7c7c;
-}
 
-swiper {
-  text-align: center;
-    margin-top: 22rpx;
-}
 .img-plus-style {
     height: 80rpx;
     width: 80rpx;
@@ -88,17 +56,6 @@ margin-top: 15rpx;
   justify-content: center;
   align-items: center;
 }
-.quyu{
-display: flex;
-white-space:nowrap;
-align-items: center;
-
-
-  width: 95%;
-  height: 95%;
-   border: 1px solid black;
-
-}
 .new{
   width: 100%;
   height: 100%;
@@ -110,20 +67,6 @@ align-items: center;
   height: 100%;
      display: inline-block;
   background: blue;
-}
-.hua1{
-  width: 100%;
-  height: 100%;
-}
-.current {
-  width: 100%;
-  height: 500rpx;
-  /* background: papayawhip; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* border: 2rpx solid #f7f7f7; */
-    box-shadow: 1rpx 1rpx 20rpx #E1E1E4;
 }
 .user-info{
   width: 100%;
@@ -139,45 +82,19 @@ align-items: center;
   height: 30%;
 
 }
-.swiper-tab {
-  margin: 0 auto;
-  margin-top: 20rpx;
-  width: 30%;
-  border: 2rpx solid #f7f7f7;
-  border-radius: 40rpx 20rpx;
-  text-align: center;
-  height: 60rpx;
-  line-height: 58rpx;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  box-shadow: 2rpx 2rpx 30rpx #7e7c7c;
-}
 
-.swiper-tab-item {
-  width: 50%;
-  color: #44960E;
-  font-size: 28rpx;
-}
-
-.active {
-  border-radius: 40rpx 20rpx;
-  background: #44960E;
-  color: white;
-  border-bottom: 4rpx solid #44960E;
-}
-
-swiper {
-  text-align: center;
-}
 
 .current {
-  width: 90%;
-  height: 350rpx;
-  /* background: aliceblue; */
   margin: 0 auto;
-  margin-top: 20rpx;
+    width: 100%;
+  height: 500rpx;
+  /* background: papayawhip; */
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 2rpx solid #f7f7f7; */
+    box-shadow: 1rpx 1rpx 20rpx #E1E1E4;
+    background: white;
 }
 
 .current-text {
@@ -220,8 +137,8 @@ swiper {
   height: 20rpx;
 }
 .touxiang{
-  width: 11%;
-  height: 67%;
+  width: 13%;
+  height: 61%;
   margin-left: 10rpx;
   border-radius: 30px;
 }
@@ -246,7 +163,7 @@ border-radius:50%;
 color:rgba(0, 0, 0, 0.5);
 }
 .top{
-  margin-top: 24rpx;
+  margin-top: 33rpx;
   font-size: 30rpx;
   font-weight: 600;
   display: flex;
@@ -282,14 +199,59 @@ justify-content: flex-start;
 .p-number{
   margin-left: 7rpx;
 }
-.Bottom{
+.huifu{
   width: 100%;
-  height: 50rpx;
-  text-align: center;
-  font-size: 20rpx;
- padding-top:10rpx;
- margin-top: 10rpx;
-  border-top:1rpx solid #E1E1E4;
-  color: #E1E1E4
+  display: flex;
+  flex-direction: column;
+  margin-top: 25rpx;
 }
+.huifu-lan{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  background: white;
 
+}
+.font{
+font-size: 30rpx;
+font-weight: 600;
+margin-left: 30rpx;
+}
+.num{
+ font-size: 25rpx; 
+ margin-left: 22rpx;
+ color: rgba(0, 0, 0, 0.6)
+}
+.current2 {
+  margin-top: 8rpx;
+    width: 100%;
+  height: 250rpx;
+  /* background: papayawhip; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 2rpx solid #f7f7f7; */
+    box-shadow: 1rpx 1rpx 20rpx #E1E1E4;
+    background: white;
+}
+.touxiang2{
+  width:7%;
+height:67%;
+margin-left:10rpx;
+border-radius:30px;
+
+}
+.touxiang2 image{
+width:100%;
+height:100%;
+border-radius:50%;
+
+}
+.top2{
+  margin-top: 15rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-start;
+}

@@ -22,7 +22,7 @@ shangpin:function(){
 let that=this;
   console.log(that.data.sjid)
   wx.request({
-    url: 'http://192.168.1.104:8081/com.crazyBird/agro/getGoodsList', // 仅为示例，并非真实的接口地址
+    url: 'http://192.168.1.105:8081/com.crazyBird/agro/getGoodsList', // 仅为示例，并非真实的接口地址
     type: 'GET',
     data: {
       sid: that.data.sjid
@@ -49,7 +49,7 @@ sjinfo:function(){
   let that=this;
   console.log(that.data.sjid)
   wx.request({
-    url: 'http://192.168.1.104:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+    url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
     type: 'GET',
     data: {
       sid: that.data.sjid
@@ -142,7 +142,6 @@ sjinfo:function(){
     that.setData({
 
       list: [],
-      sjid: 0,
       sjinfo: [],
       spinfo: [],
       dianming: '',

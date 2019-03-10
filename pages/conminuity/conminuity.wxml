@@ -17,50 +17,58 @@
     <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">最新</view>
     <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">热门</view>
   </view>
-  <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab" style='height:1000rpx;' circular='true'>
+  <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab" style='height:{{h}}rpx;' circular='true'>
 
     <swiper-item>
-      <view class='current' bindtap='detailPage'>
+      <view class='current' wx:for="{{tiezi}}" wx:key="*this" id="{{item.id}}" bindtap='detailPage' >
         <view class='user-info'>
-          <view class='touxiang'></view>
+          <view class='touxiang'><image src='{{item.titlePic}}'></image></view>
           <view class='nicheng'>
-            <view class='top'>你的宝宝</view>
-            <view class='time'>2018.08.26</view>
+            <view class='top'><view>{{item.name}}</view></view>
+            <view class='bot'> <view class='time' decode="true">{{item.year}} {{item.day}} {{item.minute}}</view> <view class='liulanliang'>浏览次数：{{item.brow}}</view></view>
+           
           </view>
+         
         </view>
         <view class='user-content'>
           <view class='con'>
-            <text>黄金求上分</text>
+            <text>{{item.content}}</text>
           </view>
         </view>
         <view class='pinglun'>
           <view class='p-con'>
           <view class='p-pl'>评论</view>
-          <view class='p-number'>7</view>
+          <view class='p-number'>{{item.brow}}</view>
           </view>
         </view>
       </view>
+      
     </swiper-item>
     <swiper-item>
-      <view class='current' bindtap='detailPage'>
-        <view class=' current-image '>
-          <!-- <image src='{{item.affairsPic}}' mode='aspectFill'></image> -->
-        </view>
-        <view class='current-text '>
-          <view class='current-text-cont '>
-            <!-- {{item.title}} -->
+      <view class='current' wx:for="{{tiezi2}}" wx:key="*this" bindtap='detailPage' >
+        <view class='user-info'>
+          <view class='touxiang'><image src='{{item.titlePic}}'></image></view>
+          <view class='nicheng'>
+            <view class='top'><view>{{item.name}}</view></view>
+            <view class='bot'> <view class='time' decode="true">{{item.year}} {{item.day}} {{item.minute}}</view> <view class='liulanliang'>浏览次数：{{item.brow}}</view></view>
+           
           </view>
-          <view class='current-text-Identification '>
-            <view class='Identification'>
-              <!-- {{item.subordinate}} -->
-            </view>
-            <view class='time'>
-            </view>
+        </view>
+        <view class='user-content'>
+          <view class='con'>
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+        <view class='pinglun'>
+          <view class='p-con'>
+          <view class='p-pl'>评论</view>
+          <view class='p-number'>{{item.brow}}</view>
           </view>
         </view>
       </view>
     </swiper-item>
   </swiper>
+<view wx:if="{{flag==true}}" class='Bottom'>没有更多数据了！</view>
 
   <!-- <view class="swiper-tab">
     <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">最新</view>

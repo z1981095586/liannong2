@@ -28,6 +28,23 @@ Page({
     isBottomhot: 0,
     isBottomnew: 0,
     superhotmes: [],
+    tiezi:[],
+    tiezi2:[],
+    pageNo:1,
+    h:1000,
+    flag:false,
+    flag2:false
+  },
+  detailPage:function(event){
+    console.log(event.currentTarget.id);
+    wx.navigateTo({
+      url: '../xiangqing/xiangqing?id='+event.currentTarget.id
+    })
+  },
+  torelease:function(){
+    wx.navigateTo({
+      url: '../fatie/fatie'
+    })
   },
   //点击切换
   clickTab: function (e) {
@@ -83,13 +100,89 @@ Page({
       })
     }
   },
+  // 获取热门帖子
+  tiezi2: function () {
+    let that = this;
+    wx.request({
+      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getForunList', // 仅为示例，并非真实的接口地址
+      type: 'GET',
+      data: {
+        pageSize: 3,
+        pageNo: that.data.pageNo,
+        typeId:2
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data.itemForum);
+        var returnArr = that.data.tiezi2;
+        for (var i = 0; i < res.data.itemForum.length; i++) {
+          returnArr.push(res.data.itemForum[i]);
+          returnArr[i].year = returnArr[i].year + ' ';
+
+
+        }
+        if (res.data.itemForum.length < 3) {
+
+          that.setData({
+            flag2: true
+          })
+
+        }
+        that.setData({
+          tiezi2: returnArr
+        })
+      }
+    })
+  },
+  // 获取帖子
+  tiezi:function(){
+    let that = this;
+    wx.request({
+      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getForunList', // 仅为示例，并非真实的接口地址
+      type: 'GET',
+      data: {
+        pageSize:3,
+        pageNo:that.data.pageNo,
+        typeId:1
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data.itemForum);
+         var returnArr = that.data.tiezi;
+         for (var i = 0; i < res.data.itemForum.length; i++) {
+           returnArr.push(res.data.itemForum[i]);
+           returnArr[i].year = returnArr[i].year+' ';
+          
+         
+         }
+        if (res.data.itemForum.length < 3) {
+     
+          that.setData({
+            flag:true
+          })
+
+        }
+         console.log(returnArr)
+        that.setData({
+           tiezi: returnArr
+         })
+         console.log(that.data.tiezi);
+      }
+    })
+  },
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  let that=this;
+  that.tiezi();
+  that.tiezi2();
   },
 
   /**
@@ -124,14 +217,39 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+     let that = this;
+     that.setData({
+       tiezi: [],
+       tiezi2:[],
+       pageNo: 1,
+       h: 1000,
+       flag: false,
+       flag2:false
+     })
+     that.tiezi();
+     that.tiezi2();
+    wx.stopPullDownRefresh();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    // let that = this;
+    let that = this;
+    let newdata = that.data.pageNo + 1;
+    let h2;
+    if(that.data.flag==false){
+      h2= that.data.h + 1000;
+    }
+    that.setData({
+      pageNo: newdata,
+      h:h2
+    })
+    that.tiezi();
+    that.tiezi2();
+    console.log(newdata)
+    // that.tiezi();
   },
 
   /**

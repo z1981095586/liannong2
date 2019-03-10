@@ -21,9 +21,12 @@
     "pages/user/Money/tixian/tixian",
     "pages/user/Card/Card",
     "pages/user/ZuJi/ZuJi",
+    "pages/fatie/fatie",
+    "pages/xiangqing/xiangqing",
     "pages/orderDetail/orderDetail",
     "pages/view/view",
     "pages/order/order"
+
   ],
   "permission": {
     "scope.userLocation": {
