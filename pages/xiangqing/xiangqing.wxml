@@ -32,7 +32,7 @@
         </view>
         <view class='user-content'>
           <view class='con'>
-            <text>{{item.content}}</text>
+            <text>{{item.comment}}</text>
           </view>
         </view>
         <view class='pinglun'>

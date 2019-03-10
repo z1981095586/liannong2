@@ -142,7 +142,6 @@ sjinfo:function(){
     that.setData({
 
       list: [],
-      sjid: 0,
       sjinfo: [],
       spinfo: [],
       dianming: '',

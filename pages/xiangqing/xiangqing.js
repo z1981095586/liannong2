@@ -28,18 +28,21 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+        console.log(res.data);
+        that.setData({
+          huifu:[]
+        })
          var returnArr = that.data.huifu;
-          for (var i = 0; i < res.data.items.length; i++) {
-          returnArr.push(res.data.items[i]);
-            returnArr[i].year = returnArr[i].year + ' ';
+           for (var i = 0; i < res.data.items.length; i++) {
+           returnArr.push(res.data.items[i]);
 
 
           }
         //  console.log(returnArr)
 
-          that.setData({
-            huifu: returnArr
-          })
+           that.setData({
+             huifu: returnArr
+           })
         //  console.log(that.data.huifu);
       }
     })
