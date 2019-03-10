@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-   
+    imgSrc:'https://s2.ax1x.com/2019/03/10/ApcUXT.jpg',
     index:null,
     show:false
   },

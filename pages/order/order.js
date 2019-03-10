@@ -11,7 +11,8 @@ Page({
     refundOrderId: '',
     hiddenRefund: true,
     input_refund: '',
-    openId: null
+    openId: null,
+    
   },
   onLoad: function (options) {
     // this.getOrderList();
@@ -45,10 +46,10 @@ Page({
   getOrderList: function () {
     var that = this;
     wx.request({
-      url: 'http://192.168.1.104:8081/com.crazyBird/agro/getOrderList',
+      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getOrderList',
       method: 'get',
       data: {
-        'openId': that.data.openId,
+        'openId': this.data.openId,
       },
       header: {
         'content-type': 'application/json'

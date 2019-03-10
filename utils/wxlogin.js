@@ -24,7 +24,7 @@ function wxLogin(type,callBack) {
                 platUserInfoMap["encryptedData"] = userResult.encryptedData;
                 platUserInfoMap["iv"] = userResult.iv;
                 let infoOpt = {
-                  url: '/user/login',
+                  url: '/agro/login',
                   type: 'POST',
                   data: {
                     platCode: resp.code,

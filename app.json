@@ -22,8 +22,14 @@
     "pages/user/Card/Card",
     "pages/user/ZuJi/ZuJi",
     "pages/orderDetail/orderDetail",
+    "pages/view/view",
     "pages/order/order"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请提供你的位置"
+    }
+  },
 "window": {
   "backgroundTextStyle": "dark",
   "navigationBarBackgroundColor": "#ef696c",

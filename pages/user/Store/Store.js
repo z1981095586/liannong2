@@ -16,7 +16,6 @@ Page({
     location: '',
     index:0 //选择主营项目类型
   },
-
   //获取主营项目
   bindPickerChange: function (e) {
     
@@ -170,7 +169,7 @@ Page({
       })
     } else {
       wx.request({
-        url: 'http://192.168.1.104:8081/com.crazyBird/agro/shopInput',
+        url: 'http://192.168.1.105:8081/com.crazyBird/agro/shopInput',
         method: 'POST',
         data: {
           'shopName': that.data.shopName,
@@ -188,7 +187,7 @@ Page({
         },
         success(res) {
           console.log(res)
-            if (res.code == 200) {
+            if (res.data.code == 200) {
               wx.showModal({
                 title: '提示',
                 content: '申请成功',

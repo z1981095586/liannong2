@@ -28,18 +28,11 @@ Page({
           userInfo: res,
         })
         console.log(that.data.userInfo)
-        if (that.data.userInfo.phone) {
-          that.setData({
-            cloudsShow: false
-          })
+      
           wx.navigateBack({
             data: 1
           });
-        } else {
-          that.setData({
-            cloudsShow: true
-          })
-        }
+       
       });
     }
     else {
