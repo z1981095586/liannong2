@@ -6,13 +6,43 @@
     红包
   </view>
 </view>
-<view class='cardList' wx:for="{{[1,2,3]}}" wx:if="{{currentTab == 0}}">
+<view class='cardList'  wx:if="{{currentTab == 0}}">
   <view class='card-item'>
     <view class='left'>
       <view class='price'>￥<text class='number'>5</text></view>
     </view>
     <view class='center'>
       <view class='content'>乡巴佬</view>
+      <view class='time'>有效期至：2019-03-14</view>
+    </view>
+    <view class='right'>
+      <view class='use'>立即使用</view>
+    </view>
+     <view class='bottomTex'>
+       不可与满减、折扣商品、第二份半价活动优惠同时享受。在线支付专享。
+    </view>
+  </view>
+  <view class='card-item'>
+    <view class='left'>
+      <view class='price'>￥<text class='number'>3</text></view>
+    </view>
+    <view class='center'>
+      <view class='content'>锅青天小火锅</view>
+      <view class='time'>有效期至：2019-03-14</view>
+    </view>
+    <view class='right'>
+      <view class='use'>立即使用</view>
+    </view>
+     <view class='bottomTex'>
+       不可与满减、折扣商品、第二份半价活动优惠同时享受。在线支付专享。
+    </view>
+  </view>
+  <view class='card-item'>
+    <view class='left'>
+      <view class='price'>￥<text class='number'>18</text></view>
+    </view>
+    <view class='center'>
+      <view class='content'>里里鸡</view>
       <view class='time'>有效期至：2019-03-14</view>
     </view>
     <view class='right'>

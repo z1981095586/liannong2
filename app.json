@@ -21,10 +21,18 @@
     "pages/user/Money/tixian/tixian",
     "pages/user/Card/Card",
     "pages/user/ZuJi/ZuJi",
-    "pages/order/order",
     "pages/fatie/fatie",
-    "pages/xiangqing/xiangqing"
+    "pages/xiangqing/xiangqing",
+    "pages/orderDetail/orderDetail",
+    "pages/view/view",
+    "pages/order/order"
+
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请提供你的位置"
+    }
+  },
 "window": {
   "backgroundTextStyle": "dark",
   "navigationBarBackgroundColor": "#44960E",

@@ -1,24 +1,22 @@
 <view>
-   <view class='content'>
-   本平台本着为现代生活提供便捷、快速、高质量的时令蔬菜，同时开展"家庭农场"虚实结合、普及现代
-   农业相关知识、展开相关活动以及开展农场假日私人旅游路线，致力为现代生活人类创造出一个高效率的时令鲜疏的买卖市场。
-   </view>
-  <dl class="menu">
-    <dt data-index="0" bindtap="tapMenu">价格</dt>
-    <dd class="{{index==0 &&show? 'show':'hidden'}}">
-        <ul>
-        <li >sub1</li>
-        <li >sub2</li>
-        </ul>
-    </dd>
- </dl>
-  <dl class="menu">
-    <dt data-index="1" bindtap="tapMenu">价格</dt>
-    <dd class="{{index==1 &&show? 'show':'hidden'}}">
-        <ul>
-        <li>sub1</li>
-        <li>sub2</li>
-        </ul>
-    </dd>
- </dl>
+<view class='logo-top'>
+<image  class='logo'src="{{imgSrc}}"  mode='aspectFit'></image>
+</view>
+
+<view class='bottomBar'>
+  <view class='bottomBarMenu' >
+    <view class='bottomBarMenu-text'>协议及声明</view>
+   <view class='iconfont icon-you'></view>
+  </view> 
+    <view class='bottomBarMenu' >
+    <view class='bottomBarMenu-text'>营业执照</view>
+   <view class='iconfont icon-you'></view>
+    </view> 
+    <view class='bottomBarMenu' >
+    <view class='bottomBarMenu-text'>检查更新</view>
+   <view class='mes'>当前已是最新版本</view>
+    </view> 
+  </view>
+
+    
 </view>

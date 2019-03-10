@@ -1,8 +1,8 @@
 <view class='start_box'>
 <view wx:if="{{canIUse}}" >
     <view class='header'>
-        <image src='https://www.sxscott.com/crazyBirdimg/test/LOGO.png'></image>
-        <view>在元培</view>
+        <image src='https://s2.ax1x.com/2019/03/09/ApVch8.jpg'></image>
+        <view>启农</view>
     </view>
     <view class='content'>
         <view>申请获取以下权限:</view>

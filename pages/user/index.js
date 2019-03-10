@@ -126,7 +126,7 @@ Page({
   onShow: function () {
     var that = this
     login.wxLogin(0, function (res) {
-      console.log(res);
+   
       that.setData({
         userInfo: res,
       })

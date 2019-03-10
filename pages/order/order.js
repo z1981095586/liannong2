@@ -10,10 +10,17 @@ Page({
     orderList: [],
     refundOrderId: '',
     hiddenRefund: true,
-    input_refund: ''
+    input_refund: '',
+    openId: null,
+    
   },
   onLoad: function (options) {
     // this.getOrderList();
+    var that = this
+    var userId = wx.getStorageSync('userinfo').openId;
+    this.setData({
+      openId: userId
+    })
   },
   //单击导航栏
   clickMenu: function (e) {
@@ -32,58 +39,29 @@ Page({
   toOrderDetail: function (e) {
     var orderId = e.currentTarget.dataset.orderid;
     wx.navigateTo({
-      url: '../secondHandOrderDetail/secondHandOrderDetail?orderId=' + orderId + '&isBuyer=1',
+      url: '../orderDetail/orderDetail?orderId=' + orderId + '&isBuyer=1',
     })
   },
   //获取订单列表
   getOrderList: function () {
     var that = this;
-    var status = this.data.status;
-    var pageNo = this.data.pageNo;
-    var pageSize = this.data.pageSize;
-    let infoOpt = {
-      url: '/secondary/order/orderList',
-      type: 'GET',
+    wx.request({
+      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getOrderList',
+      method: 'get',
       data: {
-        orderStatus: status,
-        pageNo: pageNo,
-        pageSize: pageSize
+        'openId': this.data.openId,
       },
       header: {
-        'content-type': 'application/json',
+        'content-type': 'application/json'
       },
-    }
-    let infoCb = {}
-    infoCb.success = function (res) {
-      console.log(res);
-      var arr = res.tags;
-      var orderList = that.data.orderList;
-      if (arr.length == 0 && orderList.length != 0) {
-        wx.hideLoading();
-        setTimeout(function () {
-          wx.showToast({
-            title: '没有更多的订单了',
-            icon: 'none',
-            duration: 1000
-          })
-        }, 100)
-      } else {
-        for (var i = 0; i < arr.length; i++) {
-          arr[i]['goodsImg'] = JSON.parse(arr[i].goodsImg)
-          orderList.push(arr[i]);
-        }
+      success(res) {
+        console.log(res)
         that.setData({
-          orderList: orderList
+          orderList: res.data.itemOrder
         })
-        wx.hideLoading();
+
       }
-    }
-    infoCb.beforeSend = () => {
-      wx.showLoading({
-        title: '加载中',
-      })
-    }
-    sendAjax(infoOpt, infoCb, () => { });
+    })
   },
   //取消订单
   cancelOrder: function (e) {

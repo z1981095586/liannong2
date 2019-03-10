@@ -92,7 +92,7 @@ delete:function() {
   var that = this;
   var id = this.data.id;
   wx.request({
-    url: 'http://192.168.1.104:8081/com.crazyBird/agro/deleteAddress/' + id,
+    url: 'http://192.168.1.105:8081/com.crazyBird/agro/deleteAddress/' + id,
     method: 'get',
     data: {
     },

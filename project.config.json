@@ -37,12 +37,26 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "订单",
 					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的足迹",
+					"pathName": "pages/user/ZuJi/ZuJi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的评价",
+					"pathName": "pages/view/view",
 					"scene": null
 				}
 			]
