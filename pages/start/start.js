@@ -10,7 +10,7 @@ Page({
     platUserInfoMap: {},
     code: "",
     sessionKey: '',
-    cloudsShow: false,
+    cloudsShow:false
   },
   onLoad: function () {
 
@@ -27,7 +27,7 @@ Page({
         that.setData({
           userInfo: res,
         })
-        console.log(that.data.userInfo)
+        console.log(that.data.userInfo.isBound)
       
           wx.navigateBack({
             data: 1
@@ -54,7 +54,7 @@ Page({
     var that = this;
     var sessionkey = wx.getStorageSync("userinfo").sessionKey;
     let infoOpt = {
-      url: '/user/deciphering',
+      url: '/agro/deciphering',
       type: 'GET',
       data: {
         encrypdata: e.detail.encryptedData,
@@ -88,7 +88,7 @@ Page({
       wx.showModal({
         title: '',
         showCancel: false,
-        content: '欢迎进入在元培',
+        content: '欢迎进入在启农',
         success: function (res) {
           that.setData({
             cloudsShow: false
