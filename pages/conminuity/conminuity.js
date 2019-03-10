@@ -29,9 +29,22 @@ Page({
     isBottomnew: 0,
     superhotmes: [],
     tiezi:[],
+    tiezi2:[],
     pageNo:1,
     h:1000,
-    flag:false
+    flag:false,
+    flag2:false
+  },
+  detailPage:function(event){
+    console.log(event.currentTarget.id);
+    wx.navigateTo({
+      url: '../xiangqing/xiangqing?id='+event.currentTarget.id
+    })
+  },
+  torelease:function(){
+    wx.navigateTo({
+      url: '../fatie/fatie'
+    })
   },
   //点击切换
   clickTab: function (e) {
@@ -87,15 +100,52 @@ Page({
       })
     }
   },
+  // 获取热门帖子
+  tiezi2: function () {
+    let that = this;
+    wx.request({
+      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getForunList', // 仅为示例，并非真实的接口地址
+      type: 'GET',
+      data: {
+        pageSize: 3,
+        pageNo: that.data.pageNo,
+        typeId:2
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data.itemForum);
+        var returnArr = that.data.tiezi2;
+        for (var i = 0; i < res.data.itemForum.length; i++) {
+          returnArr.push(res.data.itemForum[i]);
+          returnArr[i].year = returnArr[i].year + ' ';
+
+
+        }
+        if (res.data.itemForum.length < 3) {
+
+          that.setData({
+            flag2: true
+          })
+
+        }
+        that.setData({
+          tiezi2: returnArr
+        })
+      }
+    })
+  },
   // 获取帖子
   tiezi:function(){
     let that = this;
     wx.request({
-      url: 'http://192.168.1.104:8081/com.crazyBird/agro/getForunList', // 仅为示例，并非真实的接口地址
+      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getForunList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         pageSize:3,
-        pageNo:that.data.pageNo
+        pageNo:that.data.pageNo,
+        typeId:1
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -132,6 +182,7 @@ Page({
   onLoad: function (options) {
   let that=this;
   that.tiezi();
+  that.tiezi2();
   },
 
   /**
@@ -169,11 +220,14 @@ Page({
      let that = this;
      that.setData({
        tiezi: [],
+       tiezi2:[],
        pageNo: 1,
        h: 1000,
-       flag: false
+       flag: false,
+       flag2:false
      })
      that.tiezi();
+     that.tiezi2();
     wx.stopPullDownRefresh();
   },
 
@@ -186,20 +240,14 @@ Page({
     let newdata = that.data.pageNo + 1;
     let h2;
     if(that.data.flag==false){
-      wx.showLoading({
-        title: '加载中',
-      })
-
-      setTimeout(function () {
-        wx.hideLoading()
-      }, 300)
-       h2= that.data.h + 1000;
+      h2= that.data.h + 1000;
     }
     that.setData({
       pageNo: newdata,
       h:h2
     })
     that.tiezi();
+    that.tiezi2();
     console.log(newdata)
     // that.tiezi();
   },

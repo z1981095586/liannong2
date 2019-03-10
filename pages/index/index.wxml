@@ -134,7 +134,7 @@
             </view>
           </view>
           <view class='fujin-content'>
-              <view class='cont1' wx:for="{{fujinlist}}" wx:key="*this" data-id="{{item.id}}">
+              <view class='cont1' wx:for="{{fujinlist}}" wx:key="*this" bindtap='dianjia' id="{{item.id}}">
             <view class='sj-logo'>
             <image src='{{item.simage}}'></image>
             </view>

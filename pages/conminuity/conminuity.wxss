@@ -10,6 +10,10 @@ page {
   height: 300rpx;
   margin-bottom: 22rpx;
 }
+.bot{
+  display: flex;
+  align-items: center;
+}
 .swiper {
   height: 150rpx;
   width: 100%;
@@ -37,19 +41,6 @@ page {
   flex-flow: row;
   justify-content: space-between;
   box-shadow: 2rpx 2rpx 30rpx #7e7c7c;
-}
-
-.swiper-tab-item {
-  width: 50%;
-  color: #f65959;
-  font-size: 28rpx;
-}
-
-.active {
-  border-radius: 40rpx 20rpx;
-  background: #f65959;
-  color: white;
-  border-bottom: 4rpx solid #f65959;
 }
 
 swiper {
@@ -165,15 +156,15 @@ align-items: center;
 
 .swiper-tab-item {
   width: 50%;
-  color: #f65959;
+  color: #44960E;
   font-size: 28rpx;
 }
 
 .active {
   border-radius: 40rpx 20rpx;
-  background: #f65959;
+  background: #44960E;
   color: white;
-  border-bottom: 4rpx solid #f65959;
+  border-bottom: 4rpx solid #44960E;
 }
 
 swiper {
@@ -240,17 +231,26 @@ height:100%;
 border-radius:50%;
 }
 .nicheng{
-  width: 30%;
+  width: 45%;
   height: 100%;
   display: flex;
+  margin-left: 15rpx;
   flex-direction: column;
   justify-content: flex-start;
 
+}
+.liulanliang{
+  margin-top:8rpx;
+  margin-left: 20rpx; 
+  font-size:18rpx;
+color:rgba(0, 0, 0, 0.5);
 }
 .top{
   margin-top: 24rpx;
   font-size: 30rpx;
   font-weight: 600;
+  display: flex;
+  justify-content: flex-start;
 }
 .time{
   margin-top: 8rpx;

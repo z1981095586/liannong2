@@ -20,13 +20,15 @@
   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab" style='height:{{h}}rpx;' circular='true'>
 
     <swiper-item>
-      <view class='current' wx:for="{{tiezi}}" wx:key="*this" bindtap='detailPage' >
+      <view class='current' wx:for="{{tiezi}}" wx:key="*this" id="{{item.id}}" bindtap='detailPage' >
         <view class='user-info'>
           <view class='touxiang'><image src='{{item.titlePic}}'></image></view>
           <view class='nicheng'>
-            <view class='top'>{{item.name}}</view>
-            <view class='time' decode="true">{{item.year}} {{item.day}} {{item.minute}}</view>
+            <view class='top'><view>{{item.name}}</view></view>
+            <view class='bot'> <view class='time' decode="true">{{item.year}} {{item.day}} {{item.minute}}</view> <view class='liulanliang'>浏览次数：{{item.brow}}</view></view>
+           
           </view>
+         
         </view>
         <view class='user-content'>
           <view class='con'>
@@ -43,20 +45,24 @@
       
     </swiper-item>
     <swiper-item>
-      <view class='current' bindtap='detailPage'>
-        <view class=' current-image '>
-          <!-- <image src='{{item.affairsPic}}' mode='aspectFill'></image> -->
-        </view>
-        <view class='current-text '>
-          <view class='current-text-cont '>
-            <!-- {{item.title}} -->
+      <view class='current' wx:for="{{tiezi2}}" wx:key="*this" bindtap='detailPage' >
+        <view class='user-info'>
+          <view class='touxiang'><image src='{{item.titlePic}}'></image></view>
+          <view class='nicheng'>
+            <view class='top'><view>{{item.name}}</view></view>
+            <view class='bot'> <view class='time' decode="true">{{item.year}} {{item.day}} {{item.minute}}</view> <view class='liulanliang'>浏览次数：{{item.brow}}</view></view>
+           
           </view>
-          <view class='current-text-Identification '>
-            <view class='Identification'>
-              <!-- {{item.subordinate}} -->
-            </view>
-            <view class='time'>
-            </view>
+        </view>
+        <view class='user-content'>
+          <view class='con'>
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+        <view class='pinglun'>
+          <view class='p-con'>
+          <view class='p-pl'>评论</view>
+          <view class='p-number'>{{item.brow}}</view>
           </view>
         </view>
       </view>
