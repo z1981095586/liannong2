@@ -3,10 +3,10 @@
   <view class='order-head-mes'>
     <view class='order-head-nickname'>商品信息</view>
   </view>
-  <view class='order-head-goodsWay'>二手{{orderType[item.gtype]}}</view>
+  <!-- <view class='order-head-goodsWay'>二手{{orderType[item.gtype]}}</view> -->
 </view>
 <view class='order-mes'>
-  <image class='order-mes-img' src='{{item.gimage}}' data-img='{{item}}' mode='aspectFill' wx:key="key"></image>
+  <image class='order-mes-img' src='https://s2.ax1x.com/2019/03/06/kvF0qU.jpg' data-img='{{item}}' mode='aspectFill' wx:key="key"></image>
   <view class='orderTitle'>
     <view class='orderTitle-text'>大城市的出生地{{item.content}}</view>
     <view class='orderNum'>x1{{item.num}}</view>
@@ -28,27 +28,23 @@
   </view>
   <view class='peisong-item'>
     <view class='itemTitle'>收货人电话</view>
-    <view class='itemMes'>12133342</view>
+    <view class='itemMes'>15133342345</view>
   </view>
   <view class='peisong-item'>
     <view class='itemTitle'>收货人地址</view>
-    <view class='itemMes'>嘘嘘下</view>
+    <view class='itemMes'>绍兴文理学院元培学院北门</view>
   </view>
 </view>
 <view class='peisong'>
  <view class='order-head'>
-    <view class='peisong-title'>配送信息</view>
+    <view class='peisong-title'>订单信息</view>
   </view>
   <view class='peisong-item'>
-    <view class='itemTitle'>收货人</view>
-    <view class='itemMes'>汪超</view>
+    <view class='itemTitle'>订单编号</view>
+    <view class='itemMes'>2019030817082335497792130518041</view>
   </view>
   <view class='peisong-item'>
-    <view class='itemTitle'>收货人电话</view>
-    <view class='itemMes'>12133342</view>
-  </view>
-  <view class='peisong-item'>
-    <view class='itemTitle'>收货人地址</view>
-    <view class='itemMes'>嘘嘘下</view>
+    <view class='itemTitle'>下单时间</view>
+    <view class='itemMes'>2019-03-08 17:08:23.0</view>
   </view>
 </view>

@@ -48,7 +48,8 @@ page {
     padding: 20px 0;
     font-size: 14px;
     color: #ffffff;
-    background: linear-gradient(to bottom, #ef696c, #ffa07a);
+   background: linear-gradient(to bottom, #44960E
+, rgba(0,0,0,0.1));
  
 }
 .user_img {
