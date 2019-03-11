@@ -39,7 +39,7 @@ Page({
   toOrderDetail: function (e) {
     var orderId = e.currentTarget.dataset.orderid;
     wx.navigateTo({
-      url: '../orderDetail/orderDetail?orderId=' + orderId + '&isBuyer=1',
+      url: '../orderDetail/orderDetail?orderList=' + orderId + '&isBuyer=1',
     })
   },
   //获取订单列表

@@ -27,7 +27,14 @@ Page({
         that.setData({
           userInfo: res,
         })
+        if (that.data.userInfo.isBound == 2)
+        {
+          that.setData({
+            cloudsShow: true
+          })
+        }
         console.log(that.data.userInfo.isBound)
+        console.log(that.data.cloudsShow)
       
           wx.navigateBack({
             data: 1
