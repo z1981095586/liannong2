@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
     color1: 'rgba(0,0,0,0.5)',
     color2: 'rgba(0,0,0,0.5)',
     color3: 'rgba(0,0,0,0.5)',
@@ -15,6 +16,7 @@ Page({
     ys: [],
     leixing:'',
     key:'',
+    search:''
   },
   //销量排序
   xiaoliangpx: function () {
@@ -43,31 +45,31 @@ Page({
 
   },
   // 附近商家
-  funjin: function () {
+  search: function () {
     let that = this;
 
-    console.log(that.data.leixing);
+    console.log(that.data.search);
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getForunList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
-        typeId:that.data.leixing
+        key:that.data.search
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res.data.itemShop);
-        var returnArr = that.data.fujinlist;
-        for (var i = 0; i < res.data.itemShop.length; i++) {
-          returnArr.push(res.data.itemShop[i]);
-          console.log(returnArr[i].stype);
-          //  returnArr[i].distance=returnArr[i].distance.toFixed(1);
-        }
-        that.setData({
-          fujinlist: returnArr
-        })
-        console.log(that.data.fujinlist);
+        console.log(res.data);
+        // var returnArr = that.data.fujinlist;
+        // for (var i = 0; i < res.data.itemShop.length; i++) {
+        //   returnArr.push(res.data.itemShop[i]);
+        //   console.log(returnArr[i].stype);
+        //   //  returnArr[i].distance=returnArr[i].distance.toFixed(1);
+        // }
+        // that.setData({
+        //   fujinlist: returnArr
+        // })
+        // console.log(that.data.fujinlist);
       }
     })
   },
@@ -126,7 +128,7 @@ Page({
 
     let that = this;
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         typeId: that.data.leixing
@@ -214,7 +216,7 @@ Page({
     console.log(that.data.latitude1);
     console.log(that.data.longitude1);
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         typeId: that.data.leixing
@@ -302,7 +304,7 @@ Page({
     let that = this;
  
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         typeId: that.data.leixing
@@ -389,65 +391,70 @@ Page({
    */
   onLoad: function (options) {
     var that=this;
-    wx.setNavigationBarTitle({
-      title: options.id
+    console.log(options);
+    that.setData({
+      search:options.content
     })
-    console.log(options.id);
-    let key=options.id;
-    switch (key) {
-      case '水果超市':
-        that.setData({
-          leixing: 1,
-          key:key,
-        })
-        break;
-      case '蔬菜农场':
+    that.search();
+    // wx.setNavigationBarTitle({
+    //   title: options.id
+    // })
+    // console.log(options.id);
+    // let key=options.id;
+    // switch (key) {
+    //   case '水果超市':
+    //     that.setData({
+    //       leixing: 1,
+    //       key:key,
+    //     })
+    //     break;
+    //   case '蔬菜农场':
       
-        that.setData({
-          leixing: 2,
-           key: key,
-        })
-        break;
-      case '畜牧农场':
-        that.setData({
-          leixing: 3,
-           key: key,
-        })
-        break;
-      case '旅游产业':
-        that.setData({
-          leixing: 4,
-           key: key
-        })
-        break;
-      case '学农商品':
+    //     that.setData({
+    //       leixing: 2,
+    //        key: key,
+    //     })
+    //     break;
+    //   case '畜牧农场':
+    //     that.setData({
+    //       leixing: 3,
+    //        key: key,
+    //     })
+    //     break;
+    //   case '旅游产业':
+    //     that.setData({
+    //       leixing: 4,
+    //        key: key
+    //     })
+    //     break;
+    //   case '学农商品':
         
-        that.setData({
-          leixing: 5,
-          key: key
-        })
-        break;
-      case '聚会商品':
-        that.setData({
-          leixing: 6,
-          key: key
-        })
-        break;
-      case '散户商品':
+    //     that.setData({
+    //       leixing: 5,
+    //       key: key
+    //     })
+    //     break;
+    //   case '聚会商品':
+    //     that.setData({
+    //       leixing: 6,
+    //       key: key
+    //     })
+    //     break;
+    //   case '散户商品':
       
-        that.setData({
-          leixing: 7,
-          key: key,
-        })
-        break;
-      case '其他商品':
-        that.setData({
-          leixing: 8,
-          key: key,
-        })
-        break;
-    }
-     that.funjin();
+    //     that.setData({
+    //       leixing: 7,
+    //       key: key,
+    //     })
+    //     break;
+    //   case '其他商品':
+    //     that.setData({
+    //       leixing: 8,
+    //       key: key,
+    //     })
+    //     break;
+    // }
+    //  that.funjin();
   },
 
   /**

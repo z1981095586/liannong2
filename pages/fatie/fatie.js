@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
     focus: false,
     title: '',
     content:''

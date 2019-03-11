@@ -4,7 +4,6 @@
     "pages/logs/logs",
     "pages/secondHand/secondHandSearch",
     "pages/conminuity/conminuity",
-    "pages/My/my",
     "pages/Mall/Mall",
     "pages/shangjia/shangjia",
     "pages/shangpin/shangpin",
@@ -23,6 +22,7 @@
     "pages/user/ZuJi/ZuJi",
     "pages/fatie/fatie",
     "pages/xiangqing/xiangqing",
+    "pages/searchres/searchres",
     "pages/orderDetail/orderDetail",
     "pages/view/view",
     "pages/order/order"

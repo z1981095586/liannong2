@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
     openId: null,
     name: '',
     phone: '',
@@ -82,7 +83,7 @@ save:function(){
   }
   else {
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/addUserAddress',
+      url: that.data.url +'/agro/addUserAddress',
       method: 'POST',
       data: {
         'address': that.data.address,

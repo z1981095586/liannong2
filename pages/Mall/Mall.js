@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url:'http://94.191.106.228:8080/Agriculture',
     color1: 'rgba(0,0,0,0.5)',
     color2: 'rgba(0,0,0,0.5)',
     color3: 'rgba(0,0,0,0.5)',
@@ -54,7 +55,7 @@ Page({
 
     console.log(that.data.leixing);
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url+'/agro/getShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         typeId:that.data.leixing
@@ -135,7 +136,7 @@ Page({
 
     let that = this;
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+      url:that.data.url+'/agro/getShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         typeId: that.data.leixing
@@ -226,7 +227,7 @@ Page({
     console.log(that.data.latitude1);
     console.log(that.data.longitude1);
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         typeId: that.data.leixing
@@ -317,7 +318,7 @@ Page({
     let that = this;
  
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         typeId: that.data.leixing

@@ -2,7 +2,7 @@
 <view class='search-conten'>
   <view class='search-heard'>
     <view class='left'>
-      <icon type="search" size="11" class='icon-search' />
+      <icon type="search" size="11" class='icon-search'/>
       <input class='searchInput' placeholder='搜索喜欢的商品' bindinput='content_input' value='{{content}}'></input>
     </view>
     <view class='right' bindtap='search_btn'>
@@ -19,7 +19,10 @@
       </view> -->
     </view>
     <view class='search-bottom-bottom'>
-      <view class='search-bottom-text' bindtap='toHotSearch'  wx:for="{{hotSearch}}" wx:key="key" data-content='{{item}}'>{{item}}</view>
+      <view class='search-bottom-text' bindtap='toHotSearch' >黄焖鸡</view>
+       <view class='search-bottom-text' bindtap='toHotSearch' >湿地公园</view>
+        <view class='search-bottom-text' bindtap='toHotSearch' >鲁迅故居</view>
+         <view class='search-bottom-text' bindtap='toHotSearch'>麻辣烫</view>
     </view>
   </view>
 </view>

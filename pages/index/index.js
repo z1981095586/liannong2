@@ -12,6 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
 
     imgUrls: [
       // 'https://s2.ax1x.com/2019/03/04/kOHW0U.png',
@@ -130,7 +131,7 @@ dianjia:function(event){
   setImgBroadcast: function () {
     let that = this;
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/affaris/broad', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/affaris/broad', // 仅为示例，并非真实的接口地址
       data: {
       },
       header: {
@@ -152,7 +153,7 @@ dianjia:function(event){
     console.log(that.data.latitude1);
     console.log(that.data.longitude1);
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getNearShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getNearShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         longitude: that.data.longitude1,
@@ -241,7 +242,7 @@ dianjia:function(event){
     console.log(that.data.latitude1);
     console.log(that.data.longitude1);
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getNearShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getNearShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         longitude: that.data.longitude1,
@@ -331,7 +332,7 @@ dianjia:function(event){
     console.log(that.data.latitude1);
     console.log(that.data.longitude1);
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getNearShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getNearShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         longitude: that.data.longitude1,
@@ -421,7 +422,7 @@ dianjia:function(event){
     console.log(that.data.latitude1);
     console.log(that.data.longitude1);
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getNearShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getNearShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         longitude: that.data.longitude1,
@@ -480,7 +481,7 @@ dianjia:function(event){
     // console.log("我已经执行了");
     let that = this;
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         typeId: 3

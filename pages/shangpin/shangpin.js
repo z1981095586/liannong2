@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
   spid:0,
   spinfo:[],
   openid:'',
@@ -13,7 +14,7 @@ Page({
     let that = this;
     console.log(that.data.spid)
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getGoodsList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getGoodsList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         id: that.data.spid
@@ -40,7 +41,7 @@ Page({
     let that = this;
     console.log(that.data.spid)
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/createOrder', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/createOrder', // 仅为示例，并非真实的接口地址
       type: 'POST',
       data: {
         goodsId: that.data.spid,

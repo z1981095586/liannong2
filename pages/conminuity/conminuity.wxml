@@ -37,8 +37,7 @@
         </view>
         <view class='pinglun'>
           <view class='p-con'>
-          <view class='p-pl'>评论</view>
-          <view class='p-number'>{{item.brow}}</view>
+     <view class='p-number'>查看详情</view>
           </view>
         </view>
       </view>
@@ -61,8 +60,7 @@
         </view>
         <view class='pinglun'>
           <view class='p-con'>
-          <view class='p-pl'>评论</view>
-          <view class='p-number'>{{item.brow}}</view>
+          <view class='p-number'>查看详情</view>
           </view>
         </view>
       </view>
