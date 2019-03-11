@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
 list:[],
 sjid:0,
 sjinfo:[],
@@ -22,7 +23,7 @@ shangpin:function(){
 let that=this;
   console.log(that.data.sjid)
   wx.request({
-    url: 'http://192.168.1.105:8081/com.crazyBird/agro/getGoodsList', // 仅为示例，并非真实的接口地址
+    url: that.data.url +'/agro/getGoodsList', // 仅为示例，并非真实的接口地址
     type: 'GET',
     data: {
       sid: that.data.sjid
@@ -49,7 +50,7 @@ sjinfo:function(){
   let that=this;
   console.log(that.data.sjid)
   wx.request({
-    url: 'http://192.168.1.105:8081/com.crazyBird/agro/getShopList', // 仅为示例，并非真实的接口地址
+    url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
     type: 'GET',
     data: {
       sid: that.data.sjid

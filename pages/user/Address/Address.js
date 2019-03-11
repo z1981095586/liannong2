@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
     openId: '',
     addressList: []
   },
@@ -40,7 +41,10 @@ Page({
     var that = this;
     console.log(that.data.openId)
     wx.request({
-      url: 'http://192.168.43.243:8081/com.crazyBird/agro/getUserAddressList',
+
+
+      url: that.data.url+'/agro/getUserAddressList',
+
       method: 'GET',
       data: {
          openId: that.data.openId

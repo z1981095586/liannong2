@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
    id:0,
    brow:0,
     content:'',
@@ -14,12 +15,13 @@ Page({
    year:0,
     titlePic:'',
    huifu:[],
+   number:0,
   },
   huifu:function(){
     let that = this;
     console.log(that.data.id);
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getAgroComment', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getAgroComment', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         forumId:that.data.id
@@ -41,7 +43,8 @@ Page({
         //  console.log(returnArr)
 
            that.setData({
-             huifu: returnArr
+             huifu: returnArr,
+             number:res.data.items.length
            })
         //  console.log(that.data.huifu);
       }
@@ -50,7 +53,7 @@ Page({
   louzhu:function() {
     let that = this;
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/forumDetails/' + that.data.id, // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/forumDetails/' + that.data.id, // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
       },

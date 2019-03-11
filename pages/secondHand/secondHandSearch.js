@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
     URL: getApp().globalData.PHPURL,
     content: '',
     hotSearch: []
@@ -21,13 +22,14 @@ Page({
     this.setData({
       content: e.detail.value
     })
+    console.log(e.detail.value);
   },
   //跳转搜索结果
   search_btn: function () {
     // this.uploadKeyword();
     if (this.data.content != null && this.data.content != '') {
       wx.navigateTo({
-        url: '../secondHandSearchResult/secondHandSearchResult?content=' + this.data.content,
+        url: '../searchres/searchres?content=' + this.data.content,
       })
     } else {
       wx.showToast({

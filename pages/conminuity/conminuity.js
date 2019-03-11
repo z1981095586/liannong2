@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
     imgUrls: [
       'https://s2.ax1x.com/2019/03/04/kOHW0U.png',
       'https://s2.ax1x.com/2019/03/04/kOHIh9.png'
@@ -104,7 +105,7 @@ Page({
   tiezi2: function () {
     let that = this;
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getForunList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getForunList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         pageSize: 3,
@@ -140,7 +141,7 @@ Page({
   tiezi:function(){
     let that = this;
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getForunList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getForunList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         pageSize:3,

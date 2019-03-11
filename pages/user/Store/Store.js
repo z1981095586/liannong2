@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
     array: ['水果','蔬菜','畜牧','旅游','学农教育','聚点','散户','其他'],
     openId: '',
     shopName: '',
@@ -169,7 +170,8 @@ Page({
       })
     } else {
       wx.request({
-        url: 'http://192.168.43.243:8081/com.crazyBird/agro/shopInput',
+
+        url: that.data.url +'/agro/shopInput',
         method: 'POST',
         data: {
           'shopName': that.data.shopName,

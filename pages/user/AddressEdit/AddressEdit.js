@@ -1,6 +1,7 @@
 
 Page({
   data: {
+    url: 'http://94.191.106.228:8080/Agriculture',
     id: null,
     userId: null,
     name: '',
@@ -56,7 +57,9 @@ Page({
       })
     }
  wx.request({
-   url: 'http://192.168.43.243:8081/com.crazyBird/agro/resetAddress',
+
+  
+   url: that.data.url +'/agro/resetAddress',
    method: 'post',
    data: {
      'id': id,
@@ -92,7 +95,7 @@ delete:function() {
   var that = this;
   var id = this.data.id;
   wx.request({
-    url: 'http://192.168.1.105:8081/com.crazyBird/agro/deleteAddress/' + id,
+    url: that.data.url +'/agro/deleteAddress/' + id,
     method: 'get',
     data: {
     },
