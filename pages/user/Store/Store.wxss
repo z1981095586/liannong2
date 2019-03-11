@@ -46,7 +46,7 @@ border-bottom: 1rpx solid #dddcdc;
   font-size:25rpx;
   position: absolute;
   left: 200rpx;
-  width: 100%;
+  width: 40%;
 }
 .Stext{
   width: 600rpx;
@@ -85,7 +85,7 @@ border-bottom: 1rpx solid #dddcdc;
 .dizhi{
    height: 80rpx;
    position: absolute;
-   right: 30rpx;
+   right: 10rpx;
    text-align: center;
    font-size: 34rpx;
    z-index: 99;

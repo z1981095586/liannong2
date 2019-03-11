@@ -5,16 +5,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    orderId:null,
+    url: 'http://94.191.106.228:8080/Agriculture',
+    item:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+      this.setData({
+        orderId:options.orderId
+      })
+      this.getOrderList();
   },
+  getOrderList: function () {
+    var that = this;
+    wx.request({
 
+
+
+      url: that.data.url + '/agro/getOrderList',
+      method: 'get',
+      data: {
+        'key': this.data.orderId,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        console.log(res)
+        that.setData({
+          item: res.data.itemOrder[0]
+        })
+
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
