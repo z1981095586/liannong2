@@ -56,7 +56,7 @@ Page({
       })
     }
  wx.request({
-   url: 'http://192.168.1.104:8081/com.crazyBird/agro/resetAddress',
+   url: 'http://192.168.43.243:8081/com.crazyBird/agro/resetAddress',
    method: 'post',
    data: {
      'id': id,

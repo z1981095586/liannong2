@@ -9,11 +9,11 @@ Page({
     environment: true,
     professional: true,
     userStars: [
-      "/pages/service/img/rwjx.png",
-      "/pages/service/img/rwjx.png",
-      "/pages/service/img/rwjx.png",
-      "/pages/service/img/rwjx.png",
-      "/pages/service/img/rwjx.png",
+      "/../images/hx.png",
+      "/../images/hx.png",
+      "/../images/hx.png",
+      "/../images/hx.png",
+      "/../images/hx.png",
     ],
     wjxScore: 5,
     // textarea
@@ -29,12 +29,12 @@ Page({
     var len = tempUserStars.length; // 获取星星数组的长度
     for (var i = 0; i < len; i++) {
       if (i <= index) { // 小于等于index的是满心
-        tempUserStars[i] = "/pages/service/img/rwjx.png";
+        tempUserStars[i] = "/../images/hx.png";
         that.setData({
           wjxScore: i + 1,
         })
       } else { // 其他是空心
-        tempUserStars[i] = "/pages/service/img/wjx.png"
+        tempUserStars[i] = "../../images/baihx.png"
       }
     }
     // 重新赋值就可以显示了
@@ -97,7 +97,7 @@ Page({
     var that = this;
     var pics = that.data.pics;
     wx.chooseImage({
-      count: 5 - pics.length, // 最多可以选择的图片张数，默认9
+      count: 5, // 最多可以选择的图片张数，默认9
       sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
       sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
       success: function (res) {
@@ -123,10 +123,15 @@ Page({
   uploadimg: function () {//这里触发图片上传的方法
     var pics = this.data.pics;
     console.log(pics);
-    app.uploadimg({
-      url: 'https://........',//这里是你图片上传的接口
-      path: pics//这里是选取的图片的地址数组
-    });
+     wx.uploadFile({
+      url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
+      filePath: pics,
+      name: 'file',
+      success(res) {
+        const data = res.data
+        // do something
+      }
+    })
   },
   onLoad: function (options) {
 

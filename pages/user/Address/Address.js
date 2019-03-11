@@ -40,7 +40,7 @@ Page({
     var that = this;
     console.log(that.data.openId)
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getUserAddressList',
+      url: 'http://192.168.43.243:8081/com.crazyBird/agro/getUserAddressList',
       method: 'GET',
       data: {
          openId: that.data.openId

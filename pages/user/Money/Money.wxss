@@ -77,10 +77,13 @@ page {
     margin-top:10px;
 }
 .icon-chongzhi,.icon-tixian,.icon-shuaqiaqiapianyinhangqia,.icon-jiaoyijilu{
-  font-size:30px;
+  font-size:20px;
   margin-right:10px;
 }
  
+ .fy{
+   font-size: 18rpx;
+ }
  .icon-you{
   font-size:15px;
   float:right;
@@ -95,7 +98,7 @@ page {
     font-size:14px;
  
 }
- 
+
  
  
  

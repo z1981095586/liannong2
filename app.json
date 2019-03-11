@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/secondHand/secondHandSearch",
@@ -19,54 +19,55 @@
     "pages/user/Favorite/Favorite",
     "pages/user/Money/Money",
     "pages/user/Money/tixian/tixian",
+    "pages/user/Money/chongzhi/chongzhi",
     "pages/user/Card/Card",
     "pages/user/ZuJi/ZuJi",
     "pages/fatie/fatie",
     "pages/xiangqing/xiangqing",
     "pages/orderDetail/orderDetail",
     "pages/view/view",
+    "pages/tuikuan/tuikuan",
     "pages/order/order"
-
   ],
   "permission": {
     "scope.userLocation": {
       "desc": "请提供你的位置"
     }
   },
-"window": {
-  "backgroundTextStyle": "dark",
-  "navigationBarBackgroundColor": "#44960E",
-  "navigationBarTitleText": "WeChat",
-  "navigationBarTextStyle": "white"
-},
-"tabBar": {
-  "color": "#CECECE",
-  "selectedColor": "#E9524A",
-  "list": [
-    {
-      "selectedIconPath": "images/首页2.png",
-      "iconPath": "images/首页.png",
-      "pagePath": "pages/index/index",
-      "text": "首页"
-    },
-    {
-      "selectedIconPath": "images/时事2.png",
-      "iconPath": "images/时事.png",
-      "pagePath": "pages/conminuity/conminuity",
-      "text": "社区"
-    },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#44960E",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#CECECE",
+    "selectedColor": "#E9524A",
+    "list": [
+      {
+        "selectedIconPath": "images/首页2.png",
+        "iconPath": "images/首页.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/时事2.png",
+        "iconPath": "images/时事.png",
+        "pagePath": "pages/conminuity/conminuity",
+        "text": "社区"
+      },
       {
         "selectedIconPath": "images/时事2.png",
         "iconPath": "images/时事.png",
         "pagePath": "pages/order/order",
         "text": "订单"
       },
-    {
-      "selectedIconPath": "images/我的2.png",
-      "iconPath": "images/我的.png",
-      "pagePath": "pages/user/index",
-      "text": "我的"
-    }
-  ]
-}
+      {
+        "selectedIconPath": "images/我的2.png",
+        "iconPath": "images/我的.png",
+        "pagePath": "pages/user/index",
+        "text": "我的"
+      }
+    ]
+  }
 }

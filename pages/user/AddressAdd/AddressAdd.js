@@ -82,7 +82,7 @@ save:function(){
   }
   else {
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/addUserAddress',
+      url: 'http://192.168.43.243:8081/com.crazyBird/agro/addUserAddress',
       method: 'POST',
       data: {
         'address': that.data.address,

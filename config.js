@@ -12,7 +12,7 @@
 // var host = "http://192.168.1.103:8080/crazyBird"
 
 //正式
-var host = "http://192.168.1.105:8081/com.crazyBird"
+var host = "http://192.168.43.243:8081/com.crazyBird"
 var wss ="wss://www.sxscott.com/crazyBird/websocket/"
 //本地
 //var host ="http://smartdove.iask.in:17946/api"

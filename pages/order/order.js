@@ -46,7 +46,7 @@ Page({
   getOrderList: function () {
     var that = this;
     wx.request({
-      url: 'http://192.168.1.105:8081/com.crazyBird/agro/getOrderList',
+      url: 'http://192.168.43.243:8081/com.crazyBird/agro/getOrderList',
       method: 'get',
       data: {
         'openId': this.data.openId,
