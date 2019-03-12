@@ -122,11 +122,11 @@ align-items: center;
   display: flex;
 }
 .xy-left{
-  width: 50%;
+  width: 80%;
   display: flex;
 }
 .xy-right{
-  width: 50%;
+  width: 20%;
 }
 .yueshou{
   margin-left: 30rpx;

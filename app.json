@@ -1,5 +1,6 @@
 {
   "pages":[
+     
     "pages/index/index",
     "pages/logs/logs",
     "pages/secondHand/secondHandSearch",
@@ -25,7 +26,11 @@
     "pages/searchres/searchres",
     "pages/orderDetail/orderDetail",
     "pages/view/view",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/trip/trip",
+    "pages/huifu/huifu"
+    
+ 
 
   ],
   "permission": {

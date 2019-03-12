@@ -105,7 +105,7 @@ Page({
   tiezi2: function () {
     let that = this;
     wx.request({
-      url: that.data.url +'/agro/getForunList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getForumList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         pageSize: 3,
@@ -141,7 +141,7 @@ Page({
   tiezi:function(){
     let that = this;
     wx.request({
-      url: that.data.url +'/agro/getForunList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getForumList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         pageSize:3,
@@ -197,7 +197,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this;
+    that.setData({
+      tiezi: [],
+      tiezi2: [],
+      pageNo: 1,
+      h: 1000,
+      flag: false,
+      flag2: false
+    })
+    that.tiezi();
+    that.tiezi2();
   },
 
   /**

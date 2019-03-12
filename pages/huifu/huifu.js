@@ -7,19 +7,13 @@ Page({
   data: {
     url: 'http://94.191.106.228:8080/Agriculture',
     focus: false,
-    title: '',
     content:'',
-    touxiang:'',
-    nicheng:''
+    fid:'',
+    openid:''
   },
   bindButtonTap() {
     this.setData({
       focus: true
-    })
-  },
-  bindKeyInput(e) {
-    this.setData({
-      title: e.detail.value
     })
   },
   fabu:function(){
@@ -29,32 +23,29 @@ Page({
     var userId = wx.getStorageSync('userinfo');
  
     console.log(userId);
-    if(that.data.title==''||that.data.content==''){
+    if(that.data.content==''){
       wx.showToast({
         title: '请在发布之前填写你的标题和内容!',
         icon: 'none',
         duration: 2000
       })
     }else{
-
-      console.log(that.data.touxiang);
-          console.log(that.data.nicheng); 
       
       wx.request({
-        url: that.data.url + '/agro/forumInput', // 仅为示例，并非真实的接口地址
+        url: that.data.url + '/agro/agroCommentIn', // 仅为示例，并非真实的接口地址
         method: 'post',
         data: {
-          title:that.data.title,
-          titlePic:that.data.touxiang,
-          name:that.data.nicheng,
-          content:that.data.content
+          forumId:that.data.fid,
+          comment:that.data.content,
+          openId:that.data.openid
         },
         header: {
           'content-type': 'application/json' // 默认值
         },
         success(res) {
+          
           wx.showToast({
-            title: '发帖成功!',
+            title: '回复成功!',
             icon: 'success',
             duration: 2000
           })
@@ -77,7 +68,11 @@ Page({
    */
   onLoad: function (options) {
     let that=this;
+    that.setData({
+      fid:options.id
+    })
     var userId = wx.getStorageSync('userinfo');
+    console.log(userId.openId);
     if (userId == '') {
       wx.showToast({
         title: '请确认网络是否通畅，无法获取您的微信账号信息!',
@@ -87,8 +82,7 @@ Page({
     } else {
       
       that.setData({
-        touxiang: userId.avatar,
-        nicheng:userId.openAccount
+      openid:userId.openId
       })
     }
     // wx.getSetting({

@@ -12,15 +12,10 @@
 // var host = "http://192.168.1.103:8080/crazyBird"
 
 //正式
-var host = "http://192.168.1.105:8081/com.crazyBird"
+// var host = "http://192.168.1.105:8081/com.crazyBird"
+var host ="http://94.191.106.228:8080/Agriculture"
 var wss ="wss://www.sxscott.com/crazyBird/websocket/"
 //本地
-//var host ="http://smartdove.iask.in:17946/api"
-//var host ="http://192.168.0.143:8086/api"
-//var host="https://buguanjiatest.site/api"
-//var host = "http://192.168.0.168:8080/"
-// var host = "http://192.168.43.160:8080/crazyBird"
-// var host = "http://192.168.1.102:8080/crazyBird"
 var config = {
   host,wss,
   // 登录地址，用于建立会话

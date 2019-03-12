@@ -178,13 +178,15 @@ color:rgba(0, 0, 0, 0.5);
 width: 98%;
 height: 100%;
 flex-wrap: wrap;
-font-size: 21rpx;
+font-size: 27rpx;
 display: flex;
+margin-top: 5%;
+flex-direction: column;
 justify-content: flex-start;
 }
 .con text{
   margin-top: 10rpx;
-  margin-left: 15rpx;
+  margin-left: 5%;
 }
 .p-con{
   width: 19%;
@@ -193,7 +195,7 @@ justify-content: flex-start;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20rpx;
+  font-size: 23rpx;
   color: rgba(0, 0, 0, 0.5);
 }
 .p-number{
@@ -260,4 +262,11 @@ border-radius:50%;
   width: 100%;
   height: 100rpx;
   background: red;
+}
+.xiaohuifu{
+
+  width: 80%;
+  height: 100rpx;
+  background: rgba(0, 0, 0, 0.3);
+  margin-left: 5%;
 }

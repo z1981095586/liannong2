@@ -6,51 +6,29 @@ Page({
    */
   data: {
     url: 'http://94.191.106.228:8080/Agriculture',
-    color1: 'rgba(0,0,0,0.5)',
-    color2: 'rgba(0,0,0,0.5)',
-    color3: 'rgba(0,0,0,0.5)',
-    flag1: false,
-    flag2: false,
-    flag3: false,
-    fujinlist: [],
+    searchlist: [],
+    likelist:[],
     ys: [],
     leixing:'',
     key:'',
-    search:''
+    search:'',
+    isshow:false
   },
-  //销量排序
-  xiaoliangpx: function () {
-    let that = this;
-    if (that.data.flag1 == false) {
-      that.setData({
-        color1: 'red',
-        color2: 'rgba(0,0,0,0.5)',
-        color3: 'rgba(0,0,0,0.5)',
-        flag1: true,
-        flag2: false,
-        flag3: false,
-      })
-      that.xiaoliang();
-    } else {
-      that.setData({
-        color1: 'rgba(0,0,0,0.5)',
-        // color2: 'rgba(0,0,0,0.5)',
-        // color3: 'rgba(0,0,0,0.5)',
-        flag1: false,
-        flag2: true,
-        flag3: true,
-      })
-    }
-
-
+ 
+  // 跳转商店
+  dianjia: function (event) {
+    console.log(event.currentTarget.id);
+    wx.navigateTo({
+      url: '../shangjia/shangjia?id=' + event.currentTarget.id
+    })
   },
-  // 附近商家
+  // 搜索结果
   search: function () {
     let that = this;
 
     console.log(that.data.search);
     wx.request({
-      url: that.data.url +'/agro/getForunList', // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
         key:that.data.search
@@ -59,333 +37,96 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res.data);
-        // var returnArr = that.data.fujinlist;
-        // for (var i = 0; i < res.data.itemShop.length; i++) {
-        //   returnArr.push(res.data.itemShop[i]);
-        //   console.log(returnArr[i].stype);
-        //   //  returnArr[i].distance=returnArr[i].distance.toFixed(1);
-        // }
-        // that.setData({
-        //   fujinlist: returnArr
-        // })
+        console.log(res.data.itemShop);
+        that.setData({
+          searchlist: []
+        })
+        if (res.data.itemShop.length <= 0) {
+          wx.showToast({
+            title: '没有搜索到你想要的哦,请重新检索!',
+            icon: 'none',
+            duration: 3000
+          })
+          that.setData({
+            isshow: false
+          })
+        }
+         var returnArr = that.data.searchlist;
+        
+        if (res.data.itemShop.length >= 3) {
+         for (var i = 0; i < 3; i++) {
+           returnArr.push(res.data.itemShop[i]);
+            returnArr[i].distance=returnArr[i].distance.toFixed(1);
+         }
+          that.setData({
+            isshow: true
+          })
+
+        } else {
+          for (var i = 0; i < res.data.itemShop.length; i++) {
+            returnArr.push(res.data.itemShop[i]);
+            returnArr[i].distance = returnArr[i].distance.toFixed(1);
+          }
+          that.setData({
+            isshow:false
+          })
+        }
+         that.setData({
+           searchlist: returnArr
+         })
+         console.log(that.data.searchlist);
+      }
+    })
+  },
+
+
+  // 猜你喜欢
+  like: function () {
+    let that = this;
+
+    console.log(that.data.search);
+    wx.request({
+      url: that.data.url + '/agro/getShopList', // 仅为示例，并非真实的接口地址
+      type: 'GET',
+      data: {
+        key: that.data.search
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data.itemShop);
+        that.setData({
+          likelist:[]
+        })
+        if(res.data.itemShop.length<=0){
+          that.setData({
+            isshow:false
+          })
+        }else{
+          that.setData({
+            isshow: true
+          })
+        }
+        var returnArr = that.data.likelist;
+        for (var i = 3; i < res.data.itemShop.length; i++) {
+          returnArr.push(res.data.itemShop[i]);
+          
+           
+        }
+        for (var i = 0; i < res.data.itemShop.length-3; i++){
+          returnArr[i].distance = returnArr[i].distance.toFixed(1);
+        }
+        console.log(returnArr);
+        that.setData({
+          likelist: returnArr
+        })
         // console.log(that.data.fujinlist);
       }
     })
   },
 
-  //价格排序
-  jiagepx: function () {
-    let that = this;
-    if (that.data.flag2 == false) {
-      that.setData({
-        color2: 'red',
-        color1: 'rgba(0,0,0,0.5)',
-        color3: 'rgba(0,0,0,0.5)',
-        flag2: true,
-        flag1: false,
-        flag3: false,
-        
-      })
-      that.jiage();
-    } else {
-      that.setData({
-
-        color2: 'rgba(0,0,0,0.5)',
-        flag1: true,
-        flag3: true,
-        flag2: false,
-      })
-    }
-
-  },
-  //评价排序
-  pingjiapx: function () {
-    let that = this;
-    if (that.data.flag3 == false) {
-      that.setData({
-        color3: 'red',
-        color2: 'rgba(0,0,0,0.5)',
-        color1: 'rgba(0,0,0,0.5)',
-        flag3: true,
-        flag1: false,
-        flag2: false,
-
-      })
-      that.pingjia();
-    } else {
-      that.setData({
-        color3: 'rgba(0,0,0,0.5)',
-        flag3: false,
-        flag1: true,
-        flag2: true,
-      })
-    }
-
-  },
-  // 评价好
-  pingjia: function () {
-
-    let that = this;
-    wx.request({
-      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
-      data: {
-        typeId: that.data.leixing
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res.data.itemShop);
-        var returnArr = that.data.fujinlist;
-        var ys = that.data.ys;
-        for (var i = 0; i < res.data.itemShop.length; i++) {
-          if (returnArr.length < res.data.itemShop.length) {
-            returnArr.push(res.data.itemShop[i]);
-          }
-
-          if (ys.length < res.data.itemShop.length) {
-            ys.push(res.data.itemShop[i]);
-          }
-
-
-          //  returnArr[i].distance=returnArr[i].distance.toFixed(1);
-          switch (returnArr[i].stype) {
-            case 1:
-              returnArr[i].stype = '水果商铺';
-              break;
-            case 2:
-              returnArr[i].stype = '蔬菜商铺';
-              break;
-            case 3:
-              returnArr[i].stype = '畜牧商铺';
-              break;
-            case 4:
-              returnArr[i].stype = '旅游商铺';
-              break;
-            case 5:
-              returnArr[i].stype = '学农商铺';
-              break;
-            case 6:
-              returnArr[i].stype = '聚点商铺';
-              break;
-            case 7:
-              returnArr[i].stype = '散户商铺';
-              break;
-            case 8:
-              returnArr[i].stype = '其他商铺';
-              break;
-          }
-
-        }
-
-        // that.setData({
-        //   fujinlist: returnArr
-        // })
-        var ys2 = that.data.ys;
-
-        for (var i = 0; i < res.data.itemShop.length; i++) {
-          ys2[i].stype = returnArr[i].stype;
-
-
-        }
-        for (let i = 0; i < ys2.length - 1; i++) {
-
-          for (let j = 0; j < ys2.length - 1 - i; j++) {
-            if (ys2[j].sgrade < ys2[j + 1].sgrade) {
-              let tmp = ys2[j + 1];
-              ys2[j + 1] = ys2[j];
-              ys2[j] = tmp;
-            }
-          }
-        }
-
-        that.setData({
-          fujinlist: ys2
-        })
-
-
-      }
-    })
-  },
-  //价格低
-  jiage: function () {
-
-    let that = this;
-    console.log(that.data.latitude1);
-    console.log(that.data.longitude1);
-    wx.request({
-      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
-      data: {
-        typeId: that.data.leixing
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res.data.itemShop);
-        var returnArr = that.data.fujinlist;
-        var ys = that.data.ys;
-        for (var i = 0; i < res.data.itemShop.length; i++) {
-          if (returnArr.length < res.data.itemShop.length) {
-            returnArr.push(res.data.itemShop[i]);
-          }
-
-          if (ys.length < res.data.itemShop.length) {
-            ys.push(res.data.itemShop[i]);
-          }
-
-
-          //  returnArr[i].distance=returnArr[i].distance.toFixed(1);
-          switch (returnArr[i].stype) {
-            case 1:
-              returnArr[i].stype = '水果商铺';
-              break;
-            case 2:
-              returnArr[i].stype = '蔬菜商铺';
-              break;
-            case 3:
-              returnArr[i].stype = '畜牧商铺';
-              break;
-            case 4:
-              returnArr[i].stype = '旅游商铺';
-              break;
-            case 5:
-              returnArr[i].stype = '学农商铺';
-              break;
-            case 6:
-              returnArr[i].stype = '聚点商铺';
-              break;
-            case 7:
-              returnArr[i].stype = '散户商铺';
-              break;
-            case 8:
-              returnArr[i].stype = '其他商铺';
-              break;
-          }
-
-        }
-
-        // that.setData({
-        //   fujinlist: returnArr
-        // })
-        var ys2 = that.data.ys;
-
-        for (var i = 0; i < res.data.itemShop.length; i++) {
-          ys2[i].stype = returnArr[i].stype;
-          // ys2[i].distance = returnArr[i].distance.toFixed(1);
-
-
-        }
-        for (let i = 0; i < ys2.length - 1; i++) {
-
-          for (let j = 0; j < ys2.length - 1 - i; j++) {
-            if (ys2[j].perCapita > ys2[j + 1].perCapita) {
-              let tmp = ys2[j + 1];
-              ys2[j + 1] = ys2[j];
-              ys2[j] = tmp;
-            }
-          }
-        }
-
-        that.setData({
-          fujinlist: ys2
-        })
-
-
-      }
-    })
-  },
-  //销量高
-  xiaoliang: function () {
-
-    let that = this;
- 
-    wx.request({
-      url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
-      data: {
-        typeId: that.data.leixing
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res.data.itemShop);
-        var returnArr = that.data.fujinlist;
-        var ys = that.data.ys;
-        for (var i = 0; i < res.data.itemShop.length; i++) {
-          if (returnArr.length < res.data.itemShop.length) {
-            returnArr.push(res.data.itemShop[i]);
-          }
-
-          if (ys.length < res.data.itemShop.length) {
-            ys.push(res.data.itemShop[i]);
-          }
-
-
-          //  returnArr[i].distance=returnArr[i].distance.toFixed(1);
-          switch (returnArr[i].stype) {
-            case 1:
-              returnArr[i].stype = '水果商铺';
-              break;
-            case 2:
-              returnArr[i].stype = '蔬菜商铺';
-              break;
-            case 3:
-              returnArr[i].stype = '畜牧商铺';
-              break;
-            case 4:
-              returnArr[i].stype = '旅游商铺';
-              break;
-            case 5:
-              returnArr[i].stype = '学农商铺';
-              break;
-            case 6:
-              returnArr[i].stype = '聚点商铺';
-              break;
-            case 7:
-              returnArr[i].stype = '散户商铺';
-              break;
-            case 8:
-              returnArr[i].stype = '其他商铺';
-              break;
-          }
-
-        }
-
-        // that.setData({
-        //   fujinlist: returnArr
-        // })
-        var ys2 = that.data.ys;
-
-        for (var i = 0; i < res.data.itemShop.length; i++) {
-          ys2[i].stype = returnArr[i].stype;
-          // ys2[i].distance = returnArr[i].distance.toFixed(1);
-
-
-        }
-        for (let i = 0; i < ys2.length - 1; i++) {
-
-          for (let j = 0; j < ys2.length - 1 - i; j++) {
-            if (ys2[j].monthlySale < ys2[j + 1].monthlySale) {
-              let tmp = ys2[j + 1];
-              ys2[j + 1] = ys2[j];
-              ys2[j] = tmp;
-            }
-          }
-        }
-
-        that.setData({
-          fujinlist: ys2
-        })
-
-
-      }
-    })
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -396,6 +137,7 @@ Page({
       search:options.content
     })
     that.search();
+    that.like();
     // wx.setNavigationBarTitle({
     //   title: options.id
     // })
@@ -498,12 +240,16 @@ Page({
       flag1: false,
       flag2: false,
       flag3: false,
-      fujinlist: [],
+      searchlist: [],
+      likelist: [],
       ys: [],
       leixing: '',
       key: '',
+      isshow:false
     })
-    that.funjin();
+    that.search();
+    that.like();
+    wx.stopPullDownRefresh();
   },
 
   /**

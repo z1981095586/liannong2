@@ -53,26 +53,29 @@ sjinfo:function(){
     url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
     type: 'GET',
     data: {
-      sid: that.data.sjid
+      id: that.data.sjid
     },
     header: {
       'content-type': 'application/json' // 默认值
     },
     success(res) {
        console.log(res.data.itemShop);
+       that.setData({
+         sjinfo:[]
+       })
        var returnArr = that.data.sjinfo;
        let sjname;
-       for (var i = 0; i < res.data.itemShop.length; i++) {
+       for (var i = 0; i < 1; i++) {
          returnArr.push(res.data.itemShop[i]);
          sjname = res.data.itemShop[i].shopName;
         }
-        // console.log(returnArr)
-
-       that.setData({
-          dianming:sjname,
-         sjinfo: returnArr
-      })
-      //  console.log(that.data.sjinfo);
+        console.log(returnArr)
+        console.log(sjname)
+      
+        that.setData({
+           dianming:sjname,
+          sjinfo: returnArr
+       })
     }
   })
 },
@@ -84,6 +87,7 @@ sjinfo:function(){
     let that=this;
     // 滚动条数据
     that.setData({
+
       sjid:options.id,
       list: [{
 

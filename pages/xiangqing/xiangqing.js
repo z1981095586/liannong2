@@ -16,6 +16,8 @@ Page({
     titlePic:'',
    huifu:[],
    number:0,
+    openId:'',
+    fid:'',
   },
   huifu:function(){
     let that = this;
@@ -24,7 +26,8 @@ Page({
       url: that.data.url +'/agro/getAgroComment', // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
-        forumId:that.data.id
+        forumId:that.data.id,
+        
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -50,6 +53,11 @@ Page({
       }
     })
   },
+  torelease:function(event){
+    wx.navigateTo({
+      url: '../huifu/huifu?id=' + event.currentTarget.id
+    })
+  },
   louzhu:function() {
     let that = this;
     wx.request({
@@ -63,6 +71,7 @@ Page({
       success(res) {
           console.log(res.data.details);
           that.setData({
+            fid: res.data.details.id,
             brow: res.data.details.brow,
             content: res.data.details.content,
             day: res.data.details.day,
@@ -81,6 +90,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var userId = wx.getStorageSync('userinfo').openId;
+    this.setData({
+      openId: userId
+    })
   console.log(options.id);
   let that=this;
   that.setData({
@@ -102,7 +115,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that=this;
+    that.louzhu();
+    that.huifu();
   },
 
   /**

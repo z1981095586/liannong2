@@ -1,10 +1,4 @@
 <view class='Mall-page'>
-  <view class='search' bindtap='toSearch'>
-    <view class='search-main'>
-      <view class='search-icon iconfont icon-sousuo'></view>
-      <text class='search-main-text'>请输入商家或商品名称</text>
-    </view>
-  </view>
     <view class='fujin-allpaixu'>
             <view class='fujin-pauxu'>
               <view bindtap='xiaoliangpx' class='xiaoliang' style="color:{{color1}};">

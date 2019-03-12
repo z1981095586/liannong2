@@ -1,0 +1,10 @@
+<view class='fatie-page'>
+  <view class='content'>
+    <textarea bindinput="bindinput" placeholder='请输入您的回复内容...'placeholder-style='font-size:30rpx;' focus="{{focus}}"></textarea> 
+  </view>
+  <view class='bottom'>
+    <view class='btn' bindtap='fabu'>
+      <view>回复</view>
+    </view>
+  </view>
+</view>

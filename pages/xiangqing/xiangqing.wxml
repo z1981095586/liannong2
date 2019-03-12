@@ -1,4 +1,8 @@
 <view class='xiangqing-page'>
+  <view>
+
+    <image src="../../images/rotating.png" class="img-plus-style" animation="{{animPlus}}" bindtap="torelease" id="{{fid}}"></image>
+  </view>
 <view class='current'  >
         <view class='user-info'>
           <view class='touxiang'><image src='{{titlePic}}'></image></view>
@@ -34,12 +38,12 @@
         <view class='user-content'>
           <view class='con'>
             <text>{{item.comment}}</text>
+            <view class='xiaohuifu'></view>
           </view>
         </view>
         <view class='pinglun'>
           <view class='p-con'>
-          <!-- <view class='p-pl'>评论</view>
-          <view class='p-number'>{{item.brow}}</view> -->
+          <view class='p-pl'>查看详情</view>
           </view>
         </view>
       </view>
