@@ -195,7 +195,7 @@ letter-spacing: 2px;
 .cont{
   width: 100%;
   margin-top: 15rpx;
-  height: 125rpx;
+  height: 155rpx;
   display: flex;
   align-items: center;
   padding-bottom: 15rpx;
