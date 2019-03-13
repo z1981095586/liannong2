@@ -29,7 +29,6 @@
     "pages/order/order",
     "pages/trip/trip",
       "pages/huifu/huifu",
-      "pages/tuikuan/tuikuan",
         "pages/sonhuifu/sonhuifu"
   ],
   "permission": {
