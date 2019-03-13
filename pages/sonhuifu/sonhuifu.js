@@ -19,16 +19,6 @@ Page({
     openId:'',
     fid:''
   },
-  zihuifu:function(event){
-    wx.showToast({
-      title: '子回复功能开发中...',
-      icon: 'none',
-      duration: 2000
-    })
-    // wx.navigateTo({
-    //   url: '../sonhuifu/sonhuifu?id=' + event.currentTarget.id
-    // })
-  },
   huifu:function(){
     let that = this;
     console.log(that.data.id);
@@ -50,28 +40,24 @@ Page({
         })
          var returnArr = that.data.huifu;
          var sonArr=that.data.son;
-   
+ 
            for (var i = 0; i < res.data.items.length; i++) {
            returnArr.push(res.data.items[i]);
-          
+           
             //  console.log(res.data.items[i].item);
            sonArr.push(res.data.items[i].item);  
           }
-      
 
      
            that.setData({
              huifu: returnArr,
              number:res.data.items.length,
-             son:sonArr,
-           
+             son:sonArr
            })
 
            console.log(that.data.son);
-     
+        
           console.log(that.data.huifu);
-    
-          // console.log(ket);
       }
     })
   },

@@ -72,7 +72,6 @@ Page({
       fid:options.id
     })
     var userId = wx.getStorageSync('userinfo');
-    console.log(userId.openId);
     if (userId == '') {
       wx.showToast({
         title: '请确认网络是否通畅，无法获取您的微信账号信息!',
@@ -82,7 +81,7 @@ Page({
     } else {
       
       that.setData({
-      openid:userId.openId
+        openid: userId.accessToken
       })
     }
     // wx.getSetting({

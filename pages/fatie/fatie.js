@@ -87,8 +87,8 @@ Page({
     } else {
       
       that.setData({
-        touxiang: userId.avatar,
-        nicheng:userId.openAccount
+        touxiang: userId.headimgurl,
+        nicheng:userId.userName
       })
     }
     // wx.getSetting({

@@ -33,8 +33,9 @@
 
   <view class='huifu'>
     <view class='huifu-lan'>
-      <view class='font'>全部回复</view>
       <view class='num'>{{number}}</view>
+      <view class='font'>条回复</view>
+    
     </view>
     <view class='huifu-content'>
       <view class='current2' bindtap='zihuifu' id="{{zhuItem.id}}" wx:for="{{huifu}}" wx:key="*this" wx:for-item="zhuItem">
