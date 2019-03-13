@@ -1,0 +1,31 @@
+<view class='tuikuan-page'>
+<view class='head'>
+<view class='head-con'>
+<view class='font'>
+<view class='font-all'>
+<view class='tuikuan-info'>退款成功</view>
+<view class='tuikuan-time'>2018年6月27日 11：23</view>
+</view>
+</view>
+</view>
+</view>
+<view class='t-zongjine'>
+<view class='henpai1'><view class='neirong'><view>退款总金额</view><view class='money'>￥113.78</view></view></view>
+<view class='henpai'><view class='neirong'><view>退回余额宝</view><view>￥113.78</view></view></view>
+<view class='henpai'><view class='neirong'><view>协商历史</view><view>暂无</view></view></view>
+</view>
+<view class='t-yunfei'><view class='neirong'><view>运费险</view><view>暂无</view></view></view>
+<view class='xiangqing'>
+<view class='biaoti'><view class='neirong'><view>退款信息</view><view></view></view></view>
+<view class='sp'></view>
+<view class='info'>
+<view class='info-all'>
+<view class='zi'>追加原因</view>
+<view class='zi'>追加原因</view>
+<view class='zi'>追加原因</view>
+<view class='zi'>追加原因</view>
+<view class='zi'>追加原因</view>
+</view>
+</view>
+</view>
+</view>

@@ -43,9 +43,19 @@ Page({
     })
   },
   torelease:function(){
-    wx.navigateTo({
-      url: '../fatie/fatie'
-    })
+    var userId = wx.getStorageSync('userinfo').openId;
+    if(userId==""){
+      wx.showToast({
+        title: '请先登录！',
+        icon: 'none',
+        duration: 2000
+      })
+    }else{
+      wx.navigateTo({
+        url: '../fatie/fatie'
+      })
+    }
+ 
   },
   //点击切换
   clickTab: function (e) {
@@ -106,7 +116,7 @@ Page({
     let that = this;
     wx.request({
       url: that.data.url +'/agro/getForumList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: 'POST',
       data: {
         pageSize: 3,
         pageNo: that.data.pageNo,
@@ -142,7 +152,7 @@ Page({
     let that = this;
     wx.request({
       url: that.data.url +'/agro/getForumList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: 'post',
       data: {
         pageSize:3,
         pageNo:that.data.pageNo,

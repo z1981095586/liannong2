@@ -70,17 +70,20 @@ margin-top: 15rpx;
 }
 .user-info{
   width: 100%;
-  height: 30%;
+  height: 80rpx;
   display: flex;
   align-items: center;
 }
 .user-content{
   width: 100%;
+  margin-top: 5rpx;
 }
 .pinglun{
+  margin-bottom: 10rpx;
+  margin-top:20rpx; 
   width: 100%;
-  height: 30%;
-
+  height: 20rpx;
+  
 }
 
 
@@ -180,7 +183,7 @@ height: 100%;
 flex-wrap: wrap;
 font-size: 27rpx;
 display: flex;
-margin-top: 5%;
+margin-top: 10rpx;
 flex-direction: column;
 justify-content: flex-start;
 }
@@ -228,7 +231,7 @@ margin-left: 30rpx;
 .current2 {
   margin-top: 8rpx;
     width: 100%;
-  height: 250rpx;
+  /* height: 350rpx; */
   /* background: papayawhip; */
   display: flex;
   flex-direction: column;
@@ -238,9 +241,10 @@ margin-left: 30rpx;
     background: white;
 }
 .touxiang2{
-  width:7%;
-height:67%;
-margin-left:10rpx;
+  width:60rpx;
+height:60rpx;
+margin-left:15rpx;
+margin-top: 10rpx; 
 border-radius:30px;
 
 }

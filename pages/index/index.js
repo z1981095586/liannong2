@@ -482,7 +482,7 @@ dianjia:function(event){
     let that = this;
     wx.request({
       url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: 'post',
       data: {
         typeId: 3
       },
@@ -566,9 +566,13 @@ dianjia:function(event){
     wx.chooseLocation({
       success: function (res) {
 
+        // that.setData({
+        //   latitude1: res.latitude,
+        //   longitude1: res.longitude,
+        // })
         that.setData({
-          latitude1: res.latitude,
-          longitude1: res.longitude,
+          latitude1: 0,
+          longitude1: 0,
         })
         that.setData({
           location: res.name

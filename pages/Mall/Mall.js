@@ -56,7 +56,7 @@ Page({
     console.log(that.data.leixing);
     wx.request({
       url: that.data.url+'/agro/getShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: 'post',
       data: {
         typeId:that.data.leixing
       },
@@ -137,7 +137,7 @@ Page({
     let that = this;
     wx.request({
       url:that.data.url+'/agro/getShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: 'post',
       data: {
         typeId: that.data.leixing
       },
@@ -228,7 +228,7 @@ Page({
     console.log(that.data.longitude1);
     wx.request({
       url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: 'post',
       data: {
         typeId: that.data.leixing
       },
@@ -319,7 +319,7 @@ Page({
  
     wx.request({
       url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: 'post',
       data: {
         typeId: that.data.leixing
       },

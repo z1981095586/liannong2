@@ -260,7 +260,7 @@ color:rgba(0, 0, 0, 0.5);
 .con{
 width: 98%;
 height: 100%;
-flex-wrap: wrap;
+ word-break:break-all; 
 font-size: 27rpx;
 display: flex;
 justify-content: flex-start;
