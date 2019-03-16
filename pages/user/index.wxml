@@ -1,35 +1,42 @@
 <view class='my'>
   <view class='userInfo'>
+  <view wx:if="{{userInfo}}">
     <view class='topColor'></view>
-    <image class='userinfo-avator' mode='aspectFill'></image>
-    <view class='userinfo-name'>{{userInfo.userName}}hhhh</view>
-    <view class='userinfo-phone'>{{phone}}161661</view>
+    <image class='userinfo-avator' mode='aspectFill' src='{{userInfo.headimgurl}}'></image>
+    <view class='userinfo-name'>{{userInfo.userName}}</view>
+    <view class='userinfo-phone'>{{userInfo.phone}}</view>
+    </view>
   </view>
   <view class='my-list'>
-    <view class='myMoney'>
+  <view class='storyEnter' bindtap='toStoreEnter'>
+      <view class='iconfont icon-shangjiaruzhu'></view>
+      <view class='myMoney-text'>商家入驻</view>
+      <view class='iconfont icon-you'></view>
+    </view>
+    <view class='myMoney'  bindtap='toMyMoney'>
       <view class='iconfont icon-wodezichan0'></view>
       <view class='myMoney-text'>我的资产</view>
-      <view class=''></view>
+      <view class='iconfont icon-you'></view>
     </view>
-    <view class='myOrder'>
-      <view class='iconfont icon-icon2-copy'></view>
-      <view class='myOrder-text'>我的订单</view>
-      <view class='you'></view>
+    <view class='myOrder' bindtap='toMyCard'>
+      <view class='iconfont icon-cebianlan_wodeqiajuan'></view>
+      <view class='myOrder-text'>我的卡劵</view>
+      <view class='iconfont icon-you'></view>
     </view>
-    <view class='myZuJi'>
-      <view class='iconfont icon-wodezuji'></view>
-      <view class='myZuJi-text'>我的足迹</view>
-      <view class=''></view>
+    <view class='myZuJi' bindtap='toMyCard'>
+      <view class='iconfont icon-shouhuodizhi'></view>
+      <view class='myZuJi-text'>收货地址</view>
+      <view class='iconfont icon-you'></view>
     </view>
     <view class='keFu'>
       <view class='iconfont icon-kefu'></view>
       <view class='keFu-text'>客服中心</view>
-      <view class=''></view>
+      <view class='iconfont icon-you'></view>
     </view>
     <view class='Help'>
       <view class='iconfont icon-my-help'></view>
       <view class='Help-text'>反馈与服务</view>
-      <view class=''></view>
+      <view class='iconfont icon-you'></view>
     </view>
   </view>
 </view>

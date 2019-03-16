@@ -17,7 +17,7 @@ Page({
   onLoad: function (options) {
     // this.getOrderList();
     var that = this
-    var userId = wx.getStorageSync('userinfo').openId;
+    var userId = wx.getStorageSync('userinfo').accessToken;
     this.setData({
       openId: userId
     })

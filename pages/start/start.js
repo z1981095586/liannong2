@@ -33,7 +33,7 @@ Page({
             cloudsShow: true
           })
         }
-        console.log(that.data.userInfo.isBound)
+        console.log(that.data.userInfo)
         console.log(that.data.cloudsShow)
       
           wx.navigateBack({

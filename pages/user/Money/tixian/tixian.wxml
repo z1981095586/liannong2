@@ -1,17 +1,23 @@
-<view id='cash'>
-  <view class='cash-rule'>
-    <view class='cash-text'>账户余额提现规则 ></view>
+<view class='deposit'>
+  <view class='deposit-position'>
+    <view class='yhk-text'>到账银行卡</view>
+    <view class='yhk-card'>
+      <view class='yhk-card-text'>建设银行（6522）</view>
+      <view class='yhk-card-time'>2小时内到账</view>
+    </view>
   </view>
-  <view class='cash-main'>
-    <view class='cash-main-title'>提现金额</view>
-    <view class='cash-main-num'>
-      <view class='cash-main-num-flag'>￥</view>
-      <input class='cash-main-num-money' type="digit"></input>
+   <view class='deposit-main'>
+    <view class='deposit-main-left'>
+      <view class='deposit-title'>提现金额</view>
+      <view class='deposit-num'>
+        <view class='deposit-num-flag'>￥</view>
+        <input class='deposit-num-money' type="digit" bindinput='input_num' focus="true" adjust-position='true'></input>
+      </view>
+      <view class='deposit-tip'>
+        <view class='current-money {{status==1?"":"cash-tips-wrong"}}'>{{tips}}</view>
+        <view class='deposit-style' bindtap='input_all'>全部提现</view>
+      </view>
     </view>
-    <view class='cash-tips'>
-      <view class='cash-tips-text}}'>{{tips}}</view>
-      <view class='cash-tips-all' >全部提现</view>
-    </view>
-    <view class='cash-btn' >提现</view>
+    <button class='deposit-btn' type='primary'>提现</button>
   </view>
 </view>
