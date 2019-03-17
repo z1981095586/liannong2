@@ -86,7 +86,7 @@ save:function(){
 
       url: that.data.url +'/agro/addUserAddress',
 
-      method: 'POST',
+      method: 'get',
       data: {
         'address': that.data.address,
         'phone': that.data.phone,

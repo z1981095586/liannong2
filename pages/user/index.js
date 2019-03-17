@@ -44,12 +44,17 @@ Page({
       url: 'Card/Card',
     })    
   },
-  toMyCard:function(){
+  toAddress:function(){
     wx.navigateTo({
       url: 'Address/Address',
     })
   },
-  }
+  toideaBack:function(){
+    wx.navigateTo({
+      url: 'ideaBack/ideaBack',
+    })
+  },
+  
       /**
        * 生命周期函数--监听页面显示
        */

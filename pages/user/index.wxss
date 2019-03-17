@@ -123,11 +123,18 @@ page{
    height: 100rpx;
     display: flex;
   align-items: center;
-   border-bottom: 1rpx solid rgba(141, 136, 141, 0.11);
+   border-bottom: 1rpx solid rgba(141, 136, 141, 0.055);
    flex:1;
 }
 
 .myOrder-text,.myMoney-text, .myZuJi-text, .Help-text, .keFu-text{
       font-size: 28rpx;
       margin-left: 30rpx;
+}
+button{
+  padding: 0px;
+  background-color: white;
+}
+button::after{
+  border: none;
 }

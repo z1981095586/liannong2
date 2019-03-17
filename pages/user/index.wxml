@@ -23,19 +23,19 @@
       <view class='myOrder-text'>我的卡劵</view>
       <view class='iconfont icon-you'></view>
     </view>
-    <view class='myZuJi' bindtap='toMyCard'>
+    <view class='myZuJi' bindtap='toAddress'>
       <view class='iconfont icon-shouhuodizhi'></view>
       <view class='myZuJi-text'>收货地址</view>
       <view class='iconfont icon-you'></view>
     </view>
-    <view class='keFu'>
+    <button class='keFu' open-type="contact"> 
       <view class='iconfont icon-kefu'></view>
       <view class='keFu-text'>客服中心</view>
       <view class='iconfont icon-you'></view>
-    </view>
-    <view class='Help'>
+    </button>
+    <view class='Help' bindtap='toideaBack'>
       <view class='iconfont icon-my-help'></view>
-      <view class='Help-text'>反馈与服务</view>
+      <view class='Help-text'>反馈与帮助</view>
       <view class='iconfont icon-you'></view>
     </view>
   </view>
