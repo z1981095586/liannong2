@@ -24,7 +24,7 @@
     <view class='Mess-item'>
       <view class='title'>地址</view>
       <input class='text'   value='{{saddress}}'></input>
-      <button class='dizhi' bindtap='dizhi'  style="display:{{buttonShow}}" >获取地址</button>
+      <button class='dizhi' bindtap='dizhi' >获取地址</button>
     </view>
   </view>
   <view class='bottomBtn'>

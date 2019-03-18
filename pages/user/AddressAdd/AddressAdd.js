@@ -83,7 +83,9 @@ save:function(){
   }
   else {
     wx.request({
+
       url: that.data.url +'/agro/addUserAddress',
+
       method: 'POST',
       data: {
         'address': that.data.address,

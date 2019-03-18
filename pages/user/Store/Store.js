@@ -170,6 +170,7 @@ Page({
       })
     } else {
       wx.request({
+
         url: that.data.url +'/agro/shopInput',
         method: 'POST',
         data: {

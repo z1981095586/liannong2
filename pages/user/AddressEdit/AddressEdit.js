@@ -57,6 +57,8 @@ Page({
       })
     }
  wx.request({
+
+  
    url: that.data.url +'/agro/resetAddress',
    method: 'post',
    data: {

@@ -12,7 +12,7 @@ Page({
     hiddenRefund: true,
     input_refund: '',
     openId: null,
-    
+    url: 'http://94.191.106.228:8080/Agriculture',
   },
   onLoad: function (options) {
     // this.getOrderList();
@@ -35,18 +35,30 @@ Page({
     })
     this.getOrderList();
   },
+
+  toView:function(){
+    wx.navigateTo({
+      url: '../view/view' ,
+    })
+  },
+
   //跳转订单详情
   toOrderDetail: function (e) {
     var orderId = e.currentTarget.dataset.orderid;
+    console.log(orderId)
     wx.navigateTo({
-      url: '../orderDetail/orderDetail?orderList=' + orderId + '&isBuyer=1',
+      url: '../orderDetail/orderDetail?orderId=' + orderId,
     })
   },
   //获取订单列表
   getOrderList: function () {
     var that = this;
     wx.request({
+
+     
+
       url: that.data.url +'/agro/getOrderList',
+
       method: 'get',
       data: {
         'openId': this.data.openId,

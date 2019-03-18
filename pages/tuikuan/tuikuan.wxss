@@ -1,0 +1,12 @@
+/* pages/tuikuan/tuikuan.wxss */
+.title{
+  font-size: 30rpx;
+}
+.img{
+  height:100rpx;
+  width: 100rpx;
+}
+.item{
+  width: 90%;
+  
+}

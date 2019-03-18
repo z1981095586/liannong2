@@ -1,6 +1,3 @@
-/**
- * 小程序配置文件
- */
 
 // var host = "http://192.168.0.156:5000"
 // var host = "http://192.168.0.188:8086/"
@@ -16,6 +13,9 @@
 var host ="http://94.191.106.228:8080/Agriculture"
 var wss ="wss://www.sxscott.com/crazyBird/websocket/"
 //本地
+
+var host = "http://94.191.106.228:8080/Agriculture"
+var wss ="wss://www.sxscott.com/crazyBird/websocket/"
 var config = {
   host,wss,
   // 登录地址，用于建立会话

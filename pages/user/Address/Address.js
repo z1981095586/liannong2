@@ -41,7 +41,10 @@ Page({
     var that = this;
     console.log(that.data.openId)
     wx.request({
+
+
       url: that.data.url+'/agro/getUserAddressList',
+
       method: 'GET',
       data: {
          openId: that.data.openId

@@ -53,14 +53,33 @@
     </view>
   </view>
 </view>
-<view class='bagList' wx:for="{{[1,2,3]}}" wx:if="{{currentTab == 1}}">
+<view class='bagList'  wx:if="{{currentTab == 1}}">
+    <view class='bagItem'>
+       <view class='left'>
+          <view class='iconfont icon-hongbao1'></view>
+       </view>
+       <view class='center'>老乡鸡红包</view>
+       <view class='right'>
+       <view class='hb-money'>￥0.88</view>
+       </view>
+    </view>
     <view class='bagItem'>
        <view class='left'>
           <view class='iconfont icon-hongbao1'></view>
        </view>
        <view class='center'>双十一红包</view>
        <view class='right'>
-       <view class='hb-money'>￥0.88</view>
+       <view class='hb-money'>￥9.90</view>
        </view>
-    </view>
+  </view>
+     <view class='bagItem'>
+       <view class='left'>
+          <view class='iconfont icon-hongbao1'></view>
+       </view>
+       <view class='center'>618大促红包</view>
+       <view class='right'>
+       <view class='hb-money'>￥5.18</view>
+       </view>
+  </view>
+
 </view>

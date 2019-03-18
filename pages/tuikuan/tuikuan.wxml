@@ -1,0 +1,10 @@
+<!--pages/tuikuan/tuikuan.wxml-->
+<view class='mess'>
+  <view class='title'>退款信息</view>
+  <image src='/../images/hu.jpg' class='img'></image>
+  <view class='content'></view>
+<view class='item'>
+  <view>退款原因</view>
+  <view>味道不好</view>
+</view>
+</view>
