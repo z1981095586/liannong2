@@ -1,7 +1,5 @@
-const app = getApp();
 Page({
   data: {
-    staticImg: app.globalData.staticImg,
     current: 0,
     attitude: true,
     time: true,
@@ -19,7 +17,8 @@ Page({
     // textarea
     min: 5,//最少字数
     max: 300, //最多字数 (根据自己需求改变) 
-    pics: [],
+    pics: [],  //存放图片
+    num:0 //图片的数量
   },
   // 星星点击事件
   starTap: function (e) {
@@ -95,7 +94,8 @@ Page({
   // 图片
   choose: function (e) {//这里是选取图片的方法
     var that = this;
-    var pics = that.data.pics;
+    var pics = that.data.pics;  //存放图片数组
+    var num = that.data.pics.length//图片的数量
     wx.chooseImage({
       count: 5, // 最多可以选择的图片张数，默认9
       sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
@@ -105,11 +105,13 @@ Page({
         var imgsrc = res.tempFilePaths;
         pics = pics.concat(imgsrc);
         console.log(pics);
-        // console.log(imgsrc);
         that.setData({
           pics: pics,
           // console.log(pics),
         });
+
+
+
       },
       fail: function () {
         // fail
@@ -121,8 +123,13 @@ Page({
 
   },
   uploadimg: function () {//这里触发图片上传的方法
-    var pics = this.data.pics;
+  
     console.log(pics);
+    var that=this;
+    var i = i ? i : 0; //当前上传的哪张图片
+    var success = success ? success : 0; //上传成功的个数
+    var fail = fail ? fail : 0; //上传失败的个数
+    var pics = this.data.pics;//上传的图片数组
      wx.uploadFile({
       url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
       filePath: pics,
@@ -132,9 +139,6 @@ Page({
         // do something
       }
     })
-  },
-  onLoad: function (options) {
-
   },
   // 删除图片
   deleteImg: function (e) {
@@ -158,4 +162,14 @@ Page({
       urls: pics
     })
   },
+
+  // sumbitView:function(){
+  //   var orderid=this.data.orderid;
+  //   var score=this.data. wjxScore;
+  //   var openid=wx.getStorageSync('userinfo').accessToken;
+  // },
+  onLoad: function (options) {
+
+  }
+ 
 })

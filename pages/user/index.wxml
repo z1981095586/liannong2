@@ -1,85 +1,42 @@
-<!-- 我的头像 -->
-<view id='my'>
+<view class='my'>
   <view class='userInfo'>
-    <view wx:if="{{userInfo}}">
-      <image class='userinfo-avatar' mode='aspectFill' src='{{userInfo.avatar}}'></image>
-      <text class='userinfo-nickname'>用户名：{{userInfo.userName}}</text>
+  <view wx:if="{{userInfo}}">
+    <view class='topColor'></view>
+    <image class='userinfo-avator' mode='aspectFill' src='{{userInfo.headimgurl}}'></image>
+    <view class='userinfo-name'>{{userInfo.userName}}</view>
+    <view class='userinfo-phone'>{{userInfo.phone}}</view>
+    </view>
+  </view>
+  <view class='my-list'>
+  <view class='storyEnter' bindtap='toStoreEnter'>
+      <view class='iconfont icon-shangjiaruzhu'></view>
+      <view class='myMoney-text'>商家入驻</view>
+      <view class='iconfont icon-you'></view>
+    </view>
+    <view class='myMoney'  bindtap='toMyMoney'>
+      <view class='iconfont icon-wodezichan0'></view>
+      <view class='myMoney-text'>我的资产</view>
+      <view class='iconfont icon-you'></view>
+    </view>
+    <view class='myOrder' bindtap='toMyCard'>
+      <view class='iconfont icon-cebianlan_wodeqiajuan'></view>
+      <view class='myOrder-text'>我的卡劵</view>
+      <view class='iconfont icon-you'></view>
+    </view>
+    <view class='myZuJi' bindtap='toAddress'>
+      <view class='iconfont icon-shouhuodizhi'></view>
+      <view class='myZuJi-text'>收货地址</view>
+      <view class='iconfont icon-you'></view>
+    </view>
+    <button class='keFu' open-type="contact"> 
+      <view class='iconfont icon-kefu'></view>
+      <view class='keFu-text'>客服中心</view>
+      <view class='iconfont icon-you'></view>
+    </button>
+    <view class='Help' bindtap='toideaBack'>
+      <view class='iconfont icon-my-help'></view>
+      <view class='Help-text'>反馈与帮助</view>
+      <view class='iconfont icon-you'></view>
     </view>
   </view>
 </view>
-
-<!-- 我的订单 -->
-<!-- <view class='order'>
-   <view class='order-title'>
-    <view class='order-title-text'>我的订单</view>
-    <view class='order-title-btn' bindtap='toAllOrder'>查看全部订单 ></view>
-  </view>
-  <view class='order-main'>
-    <view class='order-daifukuan' bindtap='toDaiPay'>
-      <view class='iconfont icon-daifukuan'></view>
-      <view class='order-daifukuan-text'>待付款</view>
-    </view>
-    <view class='order-daifahuo' bindtap='toDaiFaHuo'>
-      <view class='iconfont icon-daifahuo'></view>
-      <view class='order-daifahuo-text'>待发货</view>
-    </view>
-    <view class='order-daishouhuo' bindtap='toDaiShouHuo'>
-      <view class='iconfont icon-daishouhuo'></view>
-      <view class='order-daishouhuo-text'>待收货</view>
-    </view>
-    <view class='order-view' bindtap='toView'>
-      <view class='iconfont icon-pingjia'></view>
-      <view class='order-view-text'>评价</view>
-    </view>
-    <view class='order-tuikuan' bindtap='toTuiKuan'>
-      <view class='iconfont icon-tuikuan1'></view>
-      <view class='order-tuikuan-text'>退款/售后</view>
-    </view>
-  </view> 
-</view> -->
-<!-- 各个子页面 -->
-<view class='bottomBar'>
-  <view class='bottomBarMenu' bindtap='toStoreEnter'>
-    <view class='iconfont icon-shangjiaruzhu'></view>
-    <view class='bottomBarMenu-text'>商家入驻</view>
-   <view class='iconfont icon-you'></view>
-  </view>
-  <view class='bottomBarMenu' bindtap='toAddress'>
-    <view class='iconfont icon-dizhi'></view>
-    <view class='bottomBarMenu-text'>收货地址</view>
-    <view class='iconfont icon-you'></view>
-  </view>
-  <!-- <view class='bottomBarMenu' bindtap='toFavorite'>
-    <view class='iconfont icon-wodeshoucang'></view>
-    <view class='bottomBarMenu-text'>我的收藏</view>
-    <view class='iconfont icon-you'></view>
-  </view> -->
-  <view class='bottomBarMenu' bindtap='toCard'>
-    <view class='iconfont icon-youhuiquan'></view>
-    <view class='bottomBarMenu-text'>我的卡劵</view>
-    <view class='iconfont icon-you'></view>
-  </view>
-  <view class='bottomBarMenu' bindtap='toMoney'>
-  <view class='iconfont icon-wodezichan'></view>
-  <view class='bottomBarMenu-text'>我的资产</view>
-  <view class='iconfont icon-you'></view>
-</view>
-<view class='bottomBarMenu'>
-  <button class='contact-button' plain='' open-type="contact">
-   <view class='iconfont icon-kefu1'></view>
-   <view class='bottomBarMenu-text Onlinekefu'>在线客服</view>
-  </button>
-  <view class='iconfont icon-you'></view>
-</view>
-<view class='bottomBarMenu' bindtap='toIdeaBack'>
-  <view class='iconfont icon-yijianfankui'></view>
-  <view class='bottomBarMenu-text'>意见反馈</view>
-  <view class='iconfont icon-you'></view>
-</view>
-<view class='bottomBarMenu' bindtap='toAboutUs'>
-  <view class='iconfont icon-guanyuwomen'></view>
-  <view class='bottomBarMenu-text'>关于我们</view>
-  <view class='iconfont icon-you'></view>
-</view>
-</view>
-

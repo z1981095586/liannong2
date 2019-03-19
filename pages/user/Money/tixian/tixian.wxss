@@ -1,70 +1,70 @@
 page{
-  background: #EDEDED; 
+  background-color: rgba(107, 107, 107, 0.103)
 }
-.cash-rule{
-  width: 90%;
-  height: 100rpx;
-  background: #FBFBFB;
-  margin-left: 5%;
-  margin-top: 30rpx;
-}
-.cash-text{
-  font-size: 25rpx;
-  text-align: center;
-  line-height: 100rpx;
-  color: #ef696c;
-}
-.cash-main{
-  background: #fff;
+.deposit{
   width: 90%;
   margin-left: 5%;
-  padding-top: 30rpx;
-  padding-bottom: 30rpx;
+  font-size: 34rpx;
+   /* border: 1px solid black */
 }
-.cash-main-title{
-  font-size: 25rpx;
-  margin-left: 5%;
-
-}
-.cash-main-num{
-  height: 120rpx;
-  width: 92%;
-  margin-left: 4%;
-  font-size: 50rpx;
-    border-bottom: 2rpx solid #EFEFEF;
-    display: flex;
-}
-.cash-main-num-flag{
-  line-height: 120rpx;
-}
-.cash-main-num-money{
-  height: 120rpx;
-}
-.cash-tips{
+.deposit-position{
   display: flex;
-  font-size: 25rpx;
-  margin-left: 5%;
-  width: 90%;
-  margin-top: 20rpx;
+   width:100%;
+   height: 200rpx;
+   margin-top: 8rpx;
+   align-items: center;
+   background-color: rgba(107, 107, 107, 0.068)
+  /* border: 1px solid black */
 }
-.cash-tips-text{
-  color: #B4B4B4;
+.yhk-text{
+   margin-left: 40rpx;
+   margin-right: 80rpx;
+}
+.yhk-card-text{
+    color: rgba(68, 68, 158, 0.658)
+}
+.yhk-card-time{
+    color: #B4B4B4;
+}
+.deposit-main{
+  background-color: white;
+    height: 540rpx;
+}
+.deposit-title{
+  padding-top: 30rpx;
+}
+.deposit-main-left{
+ margin-left: 40rpx;
+}
+.deposit-num{
+  display: flex;
+   margin-top: 30rpx;
+   border-bottom: 1rpx solid  rgba(196, 191, 191, 0.438);
+   font-size:80rpx;
+   height: 150rpx;
+}
+.deposit-num-flag{
+    font-weight: bolder;
+}
+.deposit-num-money{
+    height: 100rpx;
+}
+.deposit-num-money{
+   margin-left: 10rpx;
+}
+.deposit-tip{
+    display: flex;
+   align-items: center;
+  font-size: 28rpx;
+margin-top: 20rpx;
+}
+.current-money{
+   color: #B4B4B4;
 }
 .cash-tips-wrong{
-  color: red;
+  color:red;
 }
-.cash-tips-all{
-  color: #717893;
-}
-.cash-btn{
-  height: 80rpx;
-  width: 90%;
-  margin-left: 5%;
-  background: #ef696c;
-  color: #fff;
-  text-align: center;
-  line-height: 80rpx;
-  font-size: 28rpx;
-  border-radius: 10rpx;
-  margin-top: 50rpx;
+.deposit-btn{
+ margin-top: 100rpx;
+ width: 90%;
 }

@@ -1,5 +1,4 @@
 {
-
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
@@ -29,7 +28,7 @@
     "pages/view/view",
     "pages/order/order",
     "pages/trip/trip",
-      "pages/tuikuan/tuikuan"
+    "pages/tuikuan/tuikuan"
   ],
   "permission": {
     "scope.userLocation": {
@@ -72,4 +71,3 @@
       }
     ]
   }
-}

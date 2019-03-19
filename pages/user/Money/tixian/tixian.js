@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tips:'',
+    status: 1,  //1：正常提现，2：错误操作
+    focus: '',
+    input_num: ''
   },
 
   /**

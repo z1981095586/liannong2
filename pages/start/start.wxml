@@ -17,7 +17,7 @@
   <view>
     <view class='getphone_buttom'>
       <view bindtap='clouds' class='clous'></view>
-      <button class='bottom_1' type='primary'  lang="zh_CN"  bindtap="getPhoneNumber" >授权手机号</button>
+      <button class='bottom_1' type='primary'  lang="zh_CN"  bindphonenumber="getPhoneNumber" >授权手机号</button>
     </view>
     <view class='getPhone_box'></view>
   </view>

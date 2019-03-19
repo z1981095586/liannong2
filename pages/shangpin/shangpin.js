@@ -15,7 +15,10 @@ Page({
     console.log(that.data.spid)
     wx.request({
       url: that.data.url +'/agro/getGoodsList', // 仅为示例，并非真实的接口地址
+
       method: 'post',
+
+      type: 'get',
       data: {
         id: that.data.spid
       },

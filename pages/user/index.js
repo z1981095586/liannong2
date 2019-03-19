@@ -1,155 +1,108 @@
 var url = require('../../config.js')
 const sendAjax = require('../../utils/sendAjax.js')
 var login = require('../../utils/wxlogin.js')
-var app = getApp()
 Page({
-  data: {
-    userInfo: null,
-    hasUserInfo: false,
-    isboundUser: '绑定学号',
-    platUserInfoMap: {},
-    code: '',
-    balance: '0',
-    messageNum: 0,
-    dallNum: 0,
-    launchnum: 0,
-    luckynum: 0,
-  },
-  onLoad: function (options) {
-    // wx.showLoading({
-    //   title: '加载中',
-    // })
-    console.log(this.data.userInfo)
 
-  },
+      /**
+       * 页面的初始数据
+       */
+      data: {
+        userInfo: null
+      },
 
+      /**
+       * 生命周期函数--监听页面加载
+       */
+      onLoad: function(options) {
+        wx.showLoading({
+          title: '加载中',
+        })
+        console.log(this.data.userInfo)
+      },
 
+      /**
+       * 生命周期函数--监听页面初次渲染完成
+       */
+      onReady: function() {
 
-  //绑定页面
-  binding: function () {
-    wx.navigateTo({
-      url: 'binding/binding'
-    })
+      },
+     toMyMoney:function(){//我的资产
+       wx.navigateTo({
+         url: 'Money/Money',
+         success: function(res) {},
+         fail: function(res) {},
+         complete: function(res) {},
+       })
+     },
+  toStoreEnter:function(){//商家入驻
+          wx.navigateTo({
+            url: 'Store/Store',
+          })                              
   },
-  // 未登陆页面
-  // binding1: function () {
-  //   wx.navigateTo({
-  //     url: '../start/start'
-  //   })
-  // },
-  //跳转待付款页面
-  toDaiPay: function () {
-    wx.navigateTo({
-      url: '../Myorder/MyorderDaiPay/MyorderDaiPay'
-    })
-  },
-  // 跳转商家入驻页面
-  toStoreEnter:function(){
-    wx.navigateTo({
-      url: 'Store/Store'
-    })
-  },
-  //跳转待发货页面
-  toDaiFaHuo: function () {
-    wx.navigateTo({
-      url: '../Myorder/MyorderDaiFaHuo/MyorderDaiFaHuo'
-    })
-  },
-  //跳转待收货
-  toDaiShouHuo: function () {
-    wx.navigateTo({
-      url: '../Myorder/MyorderDaiShouHuo/MyorderDaiShouHuo',
-    })
-  },
-  //跳转评论
-  toView: function () {
-    wx.navigateTo({
-      url: '../Myorder/MyorderView/MyorderView',
-    })
-  },
-  //跳转退款
-  toTuiKuan: function () {
-    wx.navigateTo({
-      url: '../Myorder/MyorderTuiKuan/MyorderTuiKuan',
-    })
-  },
-  //跳转全部订单
-  toAllOrder: function () {
-    wx.navigateTo({
-      url: '../Myorder/Myorder',
-    })
-  },
-  //跳转意见反馈
-  toIdeaBack: function () {
-    wx.navigateTo({
-      url: 'ideaBack/ideaBack',
-    })
-  },
-// 跳转足迹页面
-  toZuJi: function () {
-    wx.navigateTo({
-      url: 'ZuJi/ZuJi',
-    })
-  },
-  // 跳转我的卡劵
-  toCard: function () {
+  toMyCard:function(){
     wx.navigateTo({
       url: 'Card/Card',
-    })
+    })    
   },
-  // 跳转我的资产
-  toMoney: function() {
-    wx.navigateTo({
-      url: 'Money/Money',
-    })
-  },
-  //跳转我的收藏
-  toFavorite: function () {
-    wx.navigateTo({
-      url: 'Favorite/Favorite',
-    })
-  },
-  // 收货地址
-  toAddress: function () {
+  toAddress:function(){
     wx.navigateTo({
       url: 'Address/Address',
     })
   },
-  //跳转关于我们
-  toAboutUs: function () {
+  toideaBack:function(){
     wx.navigateTo({
-      url: 'aboutUs/aboutUs',
+      url: 'ideaBack/ideaBack',
     })
   },
-  onReady: function () {
-  },
-  onShow: function () {
-    var that = this
-    login.wxLogin(0, function (res) {
-   
-      that.setData({
-        userInfo: res,
+  
+      /**
+       * 生命周期函数--监听页面显示
+       */
+      onShow: function() {
+        var that = this
+        login.wxLogin(0, function(res) {//登录调用
+              console.log(res);
+              that.setData({
+                userInfo: res
+              })
+              console.log(that.data.userInfo)
+             wx.hideLoading();  //隐藏加载中
+            })
+          
+          },
+
+          /**
+           * 生命周期函数--监听页面隐藏
+           */
+          onHide: function() {
+
+          },
+
+          /**
+           * 生命周期函数--监听页面卸载
+           */
+          onUnload: function() {
+
+          },
+
+          /**
+           * 页面相关事件处理函数--监听用户下拉动作
+           */
+          onPullDownRefresh: function() {
+
+          },
+
+          /**
+           * 页面上拉触底事件的处理函数
+           */
+          onReachBottom: function() {
+
+          },
+
+          /**
+           * 用户点击右上角分享
+           */
+          onShareAppMessage: function() {
+
+          }
       })
-      console.log(that.data.userInfo)
-      wx.hideLoading();
-      if (that.data.userInfo.isbound == 1) {
-        that.setData({
-          isboundUser: '已绑定'
-        })
-      }
-      
-
-    });
-
-  },
-  onHide: function () {
-  },
-  onUnload: function () {
-  },
-  onPullDownRefresh: function () {
-  },
-  onReachBottom: function () {
-  },
-  onShareAppMessage: function () {
-  }
-})

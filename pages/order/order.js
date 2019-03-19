@@ -17,7 +17,7 @@ Page({
   onLoad: function (options) {
     // this.getOrderList();
     var that = this
-    var userId = wx.getStorageSync('userinfo').openId;
+    var userId = wx.getStorageSync('userinfo').accessToken;
     this.setData({
       openId: userId
     })
@@ -31,7 +31,6 @@ Page({
       currentTab: current,
       status: status,
       orderList: [],
-      pageNo: 1
     })
     this.getOrderList();
   },
@@ -54,12 +53,8 @@ Page({
   getOrderList: function () {
     var that = this;
     wx.request({
-
-     
-
       url: that.data.url +'/agro/getOrderList',
-
-      method: 'get',
+      method: 'post',
       data: {
         'openId': this.data.openId,
       },

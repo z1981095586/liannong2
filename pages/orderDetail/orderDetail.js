@@ -23,13 +23,10 @@ Page({
   getOrderList: function () {
     var that = this;
     wx.request({
-
-
-
       url: that.data.url + '/agro/getOrderList',
-      method: 'get',
+      method: 'post',
       data: {
-        'key': this.data.orderId,
+        'key': that.data.orderId,
       },
       header: {
         'content-type': 'application/json'
