@@ -2,7 +2,10 @@ var url = require('../../config.js')
 // var login = require('../../utils/wxlogin.js')
 // const sendAjax = require('../../utils/sendAjax.js')
 var QQMapWX = require('../../lib/qqmap-wx-jssdk.js');
-
+var a = -1;
+var b = -1;
+var c = -1;
+var d = -1;
 var qqmapsdk;
 
 
@@ -39,11 +42,7 @@ Page({
     ys: [],
     // userinfo: wx.getStorageSync('userinfo')
   },
-  changeIndicatorDots(e) {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
+  
 // 跳转商店
 dianjia:function(event){
   console.log(event.currentTarget.id);
@@ -154,7 +153,7 @@ dianjia:function(event){
     console.log(that.data.longitude1);
     wx.request({
       url: that.data.url +'/agro/getNearShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method:"post",
       data: {
         longitude: that.data.longitude1,
         latitude: that.data.latitude1
@@ -243,7 +242,7 @@ dianjia:function(event){
     console.log(that.data.longitude1);
     wx.request({
       url: that.data.url +'/agro/getNearShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: "post",
       data: {
         longitude: that.data.longitude1,
         latitude: that.data.latitude1
@@ -333,7 +332,7 @@ dianjia:function(event){
     console.log(that.data.longitude1);
     wx.request({
       url: that.data.url +'/agro/getNearShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: "post",
       data: {
         longitude: that.data.longitude1,
         latitude: that.data.latitude1
@@ -423,7 +422,7 @@ dianjia:function(event){
     console.log(that.data.longitude1);
     wx.request({
       url: that.data.url +'/agro/getNearShopList', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      method: 'post',
       data: {
         longitude: that.data.longitude1,
         latitude: that.data.latitude1

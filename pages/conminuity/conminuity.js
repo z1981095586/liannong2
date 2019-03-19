@@ -10,6 +10,8 @@ Page({
       'https://s2.ax1x.com/2019/03/04/kOHW0U.png',
       'https://s2.ax1x.com/2019/03/04/kOHIh9.png'
     ],
+    url1:'https://s2.ax1x.com/2019/03/19/Auigdf.jpg',
+    url2:'https://s2.ax1x.com/2019/03/19/AuiXYF.jpg',
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -30,16 +32,29 @@ Page({
     isBottomnew: 0,
     superhotmes: [],
     tiezi:[],
-    tiezi2:[],
     pageNo:1,
     h:1000,
     flag:false,
-    flag2:false
+    flag2:false,
+    space:"  "
   },
   detailPage:function(event){
-    console.log(event.currentTarget.id);
     wx.navigateTo({
       url: '../xiangqing/xiangqing?id='+event.currentTarget.id
+    })
+  },
+  huaticon:function(){
+    wx.showToast({
+      title: '功能未开放！',
+      icon: 'none',
+      duration: 2000
+    })
+  },
+  allhuati:function(){
+    wx.showToast({
+      title: '功能未开放！',
+      icon: 'none',
+      duration: 2000
     })
   },
   torelease:function(){
@@ -56,96 +71,6 @@ Page({
       })
     }
  
-  },
-  //点击切换
-  clickTab: function (e) {
-    var _this = this;
-    // console.log(e);
-    // console.log(_this.data.newhigth);
-    if (_this.data.currentTab === e.target.dataset.current) {
-
-      return false;
-    } else {
-      this.sethight();
-      _this.setData({
-        currentTab: e.target.dataset.current,
-      })
-    }
-  },
-  //设置最新热门的高度
-  sethight: function () {
-    var _this = this;
-    if (_this.data.currentTab == 1) {
-      _this.setData({
-        isBottom: _this.data.isBottomhot,
-        listhigth: _this.data.hothigth
-      })
-    }
-    else {
-      _this.setData({
-        isBottom: _this.data.isBottomnew,
-        listhigth: _this.data.newhigth
-      })
-    }
-  },
-  //滑动切换
-  swiperTab: function (e) {
-    var _this = this;
-    _this.setData({
-      currentTab: e.detail.current
-    });
-    this.sethight();
-  },
-  //点击切换
-  clickTab: function (e) {
-    var _this = this;
-    // console.log(e);
-    // console.log(_this.data.newhigth);
-    if (_this.data.currentTab === e.target.dataset.current) {
-
-      return false;
-    } else {
-      this.sethight();
-      _this.setData({
-        currentTab: e.target.dataset.current,
-      })
-    }
-  },
-  // 获取热门帖子
-  tiezi2: function () {
-    let that = this;
-    wx.request({
-      url: that.data.url +'/agro/getForumList', // 仅为示例，并非真实的接口地址
-      method: 'POST',
-      data: {
-        pageSize: 3,
-        pageNo: that.data.pageNo,
-        typeId:2
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res.data.itemForum);
-        var returnArr = that.data.tiezi2;
-        for (var i = 0; i < res.data.itemForum.length; i++) {
-          returnArr.push(res.data.itemForum[i]);
-          returnArr[i].year = returnArr[i].year + ' ';
-
-
-        }
-        if (res.data.itemForum.length < 3) {
-
-          that.setData({
-            flag2: true
-          })
-
-        }
-        that.setData({
-          tiezi2: returnArr
-        })
-      }
-    })
   },
   // 获取帖子
   tiezi:function(){
@@ -193,7 +118,6 @@ Page({
   onLoad: function (options) {
   let that=this;
   that.tiezi();
-  that.tiezi2();
   },
 
   /**
@@ -208,16 +132,7 @@ Page({
    */
   onShow: function () {
     let that = this;
-    that.setData({
-      tiezi: [],
-      tiezi2: [],
-      pageNo: 1,
-      h: 1000,
-      flag: false,
-      flag2: false
-    })
     that.tiezi();
-    that.tiezi2();
   },
 
   /**
@@ -245,10 +160,8 @@ Page({
        pageNo: 1,
        h: 1000,
        flag: false,
-       flag2:false
      })
      that.tiezi();
-     that.tiezi2();
     wx.stopPullDownRefresh();
   },
 
@@ -268,7 +181,6 @@ Page({
       h:h2
     })
     that.tiezi();
-    that.tiezi2();
     console.log(newdata)
     // that.tiezi();
   },

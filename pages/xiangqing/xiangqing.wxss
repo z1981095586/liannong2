@@ -30,6 +30,11 @@ page {
     z-index: 100;
     /* opacity: .8 */
   }
+  .zi-name{
+    color:rgb(79, 99, 133);
+    height: 12px;
+    white-space: nowrap;
+  }
   .tiezi-all{
     width: 100%;
     display: flex;
@@ -94,11 +99,9 @@ margin-top: 15rpx;
 .current {
   margin: 0 auto;
     width: 100%;
-  height: 500rpx;
   /* background: papayawhip; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   /* border: 2rpx solid #f7f7f7; */
     box-shadow: 1rpx 1rpx 20rpx #E1E1E4;
     background: white;
@@ -191,6 +194,9 @@ margin-top: 10rpx;
 flex-direction: column;
 justify-content: flex-start;
  word-break:break-all;
+    text-indent: 20rpx;
+
+  text-align: left;
 }
 .con text{
   margin-top: 10rpx;
@@ -297,7 +303,8 @@ border-radius:50%;
    width: 100%;
   margin-left: 10rpx;
   line-height: 30rpx;
-  display: flex;align-items: center;
+  word-break:break-all; 
+  display: flex;
  
 }
 .quanbu{
@@ -309,4 +316,36 @@ border-radius:50%;
   align-items: center;
   padding: 3%;
   color: rgba(0, 0, 0, 0.3);
+}
+.liuyan-ban{
+  width: 100%;
+  height: 80rpx;
+  box-shadow:0px 1px 2px 2px rgb(143, 143, 143);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+
+.comment-input{
+  width: 80%;
+  background: #F6F7F9;
+  height: 70rpx;
+  /* margin-top: 10rpx; */
+  font-size: 25rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  color: #585858;
+}
+.comment-send{
+  width: 20%;
+  height: 70rpx;
+  text-align: center;
+  background: #67CB33;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 70rpx;
+  border-radius: 4px;
 }

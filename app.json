@@ -29,10 +29,7 @@
     "pages/view/view",
     "pages/order/order",
     "pages/trip/trip",
-      "pages/huifu/huifu",
-        "pages/sonhuifu/sonhuifu",
-    "pages/tuikuan/tuikuan"
-
+      "pages/tuikuan/tuikuan"
   ],
   "permission": {
     "scope.userLocation": {

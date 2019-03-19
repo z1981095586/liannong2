@@ -8,7 +8,7 @@ Page({
     url: 'http://94.191.106.228:8080/Agriculture',
    id:0,
    brow:0,
-    content:'',
+    content1:'',
    day:0,
     minute:0,
     name:'',
@@ -17,27 +17,32 @@ Page({
    huifu:[],
    number:0,
     openId:'',
-    fid:''
+    fid: '',
+    space: " ",
+    nul:"",
+    sid:"",
+    maohao:": ",
+    focus:false,
+    placeholder:"想说点什么：",
+ 
   },
-  zihuifu:function(event){
-    wx.showToast({
-      title: '子回复功能开发中...',
-      icon: 'none',
-      duration: 2000
-    })
-    // wx.navigateTo({
-    //   url: '../sonhuifu/sonhuifu?id=' + event.currentTarget.id
-    // })
-  },
-  huifu:function(){
+  // 获取回复框内容
+  comment_input:function(e){
     let that = this;
-    console.log(that.data.id);
+    that.setData({
+      content: e.detail.value
+    })
+  },
+  //显示回复的所有内容
+  huifu: function () {
+    let that = this;
+    console.log(that.data.openId);
     wx.request({
-      url: that.data.url +'/agro/getAgroComment', // 仅为示例，并非真实的接口地址
-      type: 'GET',
+      url: that.data.url + '/agro/getAgroComment', // 仅为示例，并非真实的接口地址
+      method: 'post',
       data: {
-        forumId:that.data.id,
-        
+        forumId: that.data.fid,
+
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -45,45 +50,118 @@ Page({
       success(res) {
         console.log(res.data);
         that.setData({
-          huifu:[],
-          son:[]
+          huifu: [],
+          son: []
         })
-         var returnArr = that.data.huifu;
-         var sonArr=that.data.son;
-   
-           for (var i = 0; i < res.data.items.length; i++) {
-           returnArr.push(res.data.items[i]);
-          
-            //  console.log(res.data.items[i].item);
-           sonArr.push(res.data.items[i].item);  
-          }
-      
+        var returnArr = that.data.huifu;
+        var sonArr = that.data.son;
 
-     
-           that.setData({
-             huifu: returnArr,
-             number:res.data.items.length,
-             son:sonArr,
-           
-           })
+        for (var i = 0; i < res.data.items.length; i++) {
+          returnArr.push(res.data.items[i]);
 
-           console.log(that.data.son);
-     
-          console.log(that.data.huifu);
-    
-          // console.log(ket);
+          //  console.log(res.data.items[i].item);
+          sonArr.push(res.data.items[i].item);
+        }
+
+
+
+        that.setData({
+          huifu: returnArr,
+          number: res.data.items.length,
+          son: sonArr,
+
+        })
+
+        console.log(that.data.son);
+
+        console.log(that.data.huifu);
+
+        // console.log(ket);
       }
     })
   },
-  torelease:function(event){
-    wx.navigateTo({
-      url: '../huifu/huifu?id=' + event.currentTarget.id
+  comment_send: function () {
+    let that = this;
+    console.log(that.data.id)
+    console.log(that.data.placeholder);
+    console.log(that.data.content)
+    console.log(that.data.openId);
+    console.log(that.data.sid);
+    if (that.data.placeholder =="想说点什么："){
+      that.setData({
+        placeholder:""
+      })
+    }
+    if (that.data.content == '') {
+      wx.showToast({
+        title: '请在回复之前填写内容!',
+        icon: 'none',
+        duration: 2000
+      })
+    } else {
+
+      wx.request({
+        url: that.data.url + '/agro/agroCommentIn', // 仅为示例，并非真实的接口地址
+        method: 'post',
+        data: {
+          forumId: that.data.fid,
+          comment: that.data.placeholder+" "+that.data.content,
+          openId: that.data.openId,
+          commentId: that.data.sid,
+          replyId:that.data.id
+
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+ 
+          wx.showToast({
+            title: '回复成功!',
+            icon: 'success',
+            duration: 2000
+          })
+          const app = getApp();
+          app.globalData.flag = true;
+          if (getCurrentPages().length != 0) {
+            //刷新当前页面的数据
+            getCurrentPages()[getCurrentPages().length - 1].onLoad();
+            app.globalData.flag = false;
+          }
+        }
+      })
+    }
+
+  },
+  zihuifu: function (event) {
+    let that = this;
+    let name = event.currentTarget.dataset.name;
+    let id = event.currentTarget.id;
+    console.log(id)
+    console.log(event)
+    that.setData({
+      id: event.currentTarget.id,
+      focus: true,
+      sid: id,
+      placeholder: "回复"+"  " + name+"  :"
     })
+  },
+  zihuifu2:function(event){
+    let that=this;
+    let name = event.currentTarget.dataset.name;
+    let id=event.currentTarget.dataset.sid;
+    console.log(event)
+   that.setData({
+     id:event.currentTarget.id,
+     focus:true,
+     sid:id,
+     placeholder: "回复" + " " + name + ":"
+   })
   },
   louzhu:function() {
     let that = this;
     wx.request({
-      url: that.data.url +'/agro/forumDetails/' + that.data.id, // 仅为示例，并非真实的接口地址
+      url: that.data.url +'/agro/forumDetails/' + that.data.fid, // 仅为示例，并非真实的接口地址
       type: 'GET',
       data: {
       },
@@ -95,7 +173,7 @@ Page({
           that.setData({
             fid: res.data.details.id,
             brow: res.data.details.brow,
-            content: res.data.details.content,
+            content1: res.data.details.content,
             day: res.data.details.day,
             minute: res.data.details.minute,
             name: res.data.details.name,
@@ -112,15 +190,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var userId = wx.getStorageSync('userinfo').openId;
+    var userId = wx.getStorageSync('userinfo').accessToken;
+    console.log(userId);
     this.setData({
-      openId: userId
+      openId: userId,
+      nul:"",
+      placeholder:"想说点什么："
     })
-  console.log(options.id);
   let that=this;
-  that.setData({
-    id:options.id
-  })
+    var flag= getApp().globalData.flag;
+    if (flag==false){
+    that.setData({
+      fid: options.id
+    })
+  }
+  if(that.data.placeholder=="想说点什么："){
+    that.setData({
+      hui:""
+    })
+  }else{
+    that.setData({
+      hui:that.data.placeholder
+    })
+  }
+ 
+  
+
   that.louzhu();
   that.huifu();
   },
@@ -137,9 +232,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let that=this;
-    that.louzhu();
-    that.huifu();
+
   },
 
   /**
