@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/secondHand/secondHandSearch",
+    "pages/conminuity/conminuity",
+    "pages/Mall/Mall",
+    "pages/shangjia/shangjia",
+    "pages/shangpin/shangpin",
+    "pages/start/start",
+    "pages/user/index",
+    "pages/user/Store/Store",
+    "pages/user/aboutUs/aboutUs",
+    "pages/user/Address/Address",
+    "pages/user/AddressAdd/AddressAdd",
+    "pages/user/AddressEdit/AddressEdit",
+    "pages/user/ideaBack/ideaBack",
+    "pages/user/Favorite/Favorite",
+    "pages/user/Money/Money",
+    "pages/user/Money/tixian/tixian",
+    "pages/user/Money/chongzhi/chongzhi",
+    "pages/user/Card/Card",
+    "pages/user/ZuJi/ZuJi",
+    "pages/fatie/fatie",
+    "pages/xiangqing/xiangqing",
+    "pages/searchres/searchres",
+    "pages/orderDetail/orderDetail",
+    "pages/view/view",
+    "pages/order/order",
+    "pages/trip/trip",
+    "pages/tuikuan/tuikuan"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请提供你的位置"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#67CB33",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#CECECE",
+    "selectedColor": "#67CB33",
+    "list": [
+      {
+        "selectedIconPath": "images/首页2.png",
+        "iconPath": "images/首页.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/时事2.png",
+        "iconPath": "images/时事.png",
+        "pagePath": "pages/conminuity/conminuity",
+        "text": "社区"
+      },
+      {
+        "selectedIconPath": "images/时事2.png",
+        "iconPath": "images/时事.png",
+        "pagePath": "pages/order/order",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "images/我的2.png",
+        "iconPath": "images/我的.png",
+        "pagePath": "pages/user/index",
+        "text": "我的"
+      }
+    ]
+  }
+  }
