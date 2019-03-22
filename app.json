@@ -10,17 +10,20 @@
     "pages/start/start",
     "pages/user/index",
     "pages/user/Store/Store",
+    "pages/user/Store/BLphoto/BLphoto",
+    "pages/user/Store/StoreDetail/StoreDetail",
+    "pages/user/Store/IDphoto/IDphoto",
+    "pages/user/Store/Licese/Licese",
+    "pages/user/newsEnter/newsEnter",
     "pages/user/aboutUs/aboutUs",
     "pages/user/Address/Address",
     "pages/user/AddressAdd/AddressAdd",
     "pages/user/AddressEdit/AddressEdit",
     "pages/user/ideaBack/ideaBack",
-    "pages/user/Favorite/Favorite",
     "pages/user/Money/Money",
     "pages/user/Money/tixian/tixian",
     "pages/user/Money/chongzhi/chongzhi",
     "pages/user/Card/Card",
-    "pages/user/ZuJi/ZuJi",
     "pages/fatie/fatie",
     "pages/xiangqing/xiangqing",
     "pages/searchres/searchres",
@@ -44,31 +47,31 @@
   "tabBar": {
     "color": "#CECECE",
     "selectedColor": "#67CB33",
-    "list": [
-      {
-        "selectedIconPath": "images/首页2.png",
-        "iconPath": "images/首页.png",
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "selectedIconPath": "images/时事2.png",
-        "iconPath": "images/时事.png",
-        "pagePath": "pages/conminuity/conminuity",
-        "text": "社区"
-      },
-      {
-        "selectedIconPath": "images/时事2.png",
-        "iconPath": "images/时事.png",
-        "pagePath": "pages/order/order",
-        "text": "订单"
-      },
-      {
-        "selectedIconPath": "images/我的2.png",
-        "iconPath": "images/我的.png",
-        "pagePath": "pages/user/index",
-        "text": "我的"
-      }
-    ]
+  "list": [
+    {
+      "selectedIconPath": "images/首页1.png",
+      "iconPath": "images/首页.png",
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    },
+    {
+      "selectedIconPath": "images/社区.png",
+      "iconPath": "images/社区1.png",
+      "pagePath": "pages/conminuity/conminuity",
+      "text": "社区"
+    },
+    {
+      "selectedIconPath": "images/订单.png",
+      "iconPath": "images/订单 1.png",
+      "pagePath": "pages/order/order",
+      "text": "订单"
+    },
+    {
+      "selectedIconPath": "images/我的1.png",
+      "iconPath": "images/我的.png",
+      "pagePath": "pages/user/index",
+      "text": "我的"
+    }
+  ]
   }
   }
