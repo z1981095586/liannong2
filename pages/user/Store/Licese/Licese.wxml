@@ -1,0 +1,17 @@
+<!--pages/user/Store/BLphoto/BLphoto.wxml-->
+<view class='upload_one'>
+  <view  class='img'>
+   <image class='pic' src='{{simage}}'  bindtap='addPic'></image>
+  </view>
+  <view class='request'>
+     照片要求
+      <ul>
+        <li>1.照片方向正确，不能颠倒；</li>
+        <li>2.照片上的字能清晰可见，边框完整，能看见国徽；</li>
+        <li>3.如果是复印件，必须加盖印章</li>
+      </ul>
+  </view>
+  <view class='upload_btn' bindtap='uploadImg'>
+    立即上传
+  </view>
+</view>

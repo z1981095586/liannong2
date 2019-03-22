@@ -1,0 +1,38 @@
+<view class='news_pages'>
+  <view class='news_content'>
+    <view class='news_items'>
+      <view class='news_items_img'>
+        <image class='img' src='{{imgUrl}}'></image>
+      </view>
+      <view class='news_items_center'>
+        <view class='news_items_nickname'>{{userName}}</view>
+        <view class='news_items_mes'>这个商品不错</view>
+      </view>
+      <view class='news_items_time'>
+        <view class='year'>
+          2019-03-21
+        </view>
+        <view class='time'>
+        00：38
+        </view>
+      </view>
+    </view>
+     <view class='news_items'>
+      <view class='news_items_img'>
+        <image class='img' src='{{imgUrl}}'></image>
+      </view>
+      <view class='news_items_center'>
+        <view class='news_items_nickname'>{{userName}}</view>
+        <view class='news_items_mes'>新品推荐，快来看一看</view>
+      </view>
+      <view class='news_items_time'>
+        <view class='year'>
+          2019-03-20
+        </view>
+        <view class='time'>
+        00：38
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

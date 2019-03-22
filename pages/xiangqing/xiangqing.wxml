@@ -1,0 +1,86 @@
+<view class='xiangqing-page'>
+  <view class='current'>
+    <view class='user-info'>
+      <view class='touxiang'>
+        <image src='{{titlePic}}'></image>
+      </view>
+      <view class='nicheng'>
+        <view class='top'>
+          <view>{{name}}</view>
+        </view>
+        <view class='bot'>
+          <view class='time' decode="true">{{year}} {{day}} {{minute}}</view>
+          <view class='liulanliang'>浏览次数：{{brow}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='user-content'>
+      <view class='con'>
+        <text>{{content1}}</text>
+      </view>
+    </view>
+    <view class='pinglun'>
+      <view class='p-con'>
+        <view class='p-pl'>评论</view>
+        <view class='p-number'>{{number}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='huifu'>
+    <view class='huifu-lan'>
+      <view class='font'>全部回复</view>
+      <view class='num'>{{number}}</view>
+    </view>
+    <view class='liuyan-ban'>
+
+      <input class='comment-input' placeholder="{{placeholder}}" bindinput='comment_input' value='{{nul}}' focus='{{focus}}'></input>
+      <view class='comment-send' bindtap='comment_send' id="{{fid}}">发送</view>
+    </view>
+    <view class='huifu-content'>
+      <view class='current2' bindtap='zihuifu' id="{{zhuItem.id}}" data-name="{{zhuItem.name}}" wx:for="{{huifu}}" wx:key="*this" wx:for-item="zhuItem">
+        <view class='user-info'>
+          <view class='touxiang2'>
+            <image src='{{zhuItem.headimgurl}}'></image>
+          </view>
+          <view class='nicheng'>
+            <view class='top2'>
+              <view>{{zhuItem.name}}</view>
+            </view>
+            <view class='bot'>
+              <view class='time' decode="true">{{zhuItem.year}} {{zhuItem.day}} {{zhuItem.minute}}</view>
+
+            </view>
+          </view>
+        </view>
+        <view class='user-content'>
+          <view class='con'>
+            <text>{{zhuItem.comment}}</text>
+            <view class='xiaohuifu'>
+
+              <view class='son'  catchtap='zihuifu2' id="{{item.id}}" data-sid="{{item.commentId}}"  data-name="{{item.name}}" wx:for="{{zhuItem.item}}"  wx:key="*this">
+                <view class='son-con'>
+                <view class='zi-name'>{{item.name}}</view>  <view class='son-content'>{{maohao}}{{item.comment}}</view>
+
+                </view>
+
+
+
+
+
+              </view>
+
+
+            </view>
+          </view>
+        </view>
+        <view class='pinglun'>
+          <view class='p-con'>
+            <view class='p-pl'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,34 @@
+<view class='zizhi_Mes'>
+<view class='Mess'>
+上传实体店铺的有效资质，一次通过审核
+</view>
+<view class='business_license' catchtap='toBLphoto'>
+  <view class='left'>
+  营业执照
+  </view>
+  <view class='center' >
+  上传营业执照
+  </view>
+  <view class='right iconfont icon-you'></view>
+</view>
+<view class='id_card' catchtap='toIDphoto'>
+ <view class='left'>
+法定代表人手持身份证照
+  </view>
+  <view class='center'>
+  上传身份证
+  </view>
+   <view class='right iconfont icon-you'></view>
+</view>
+<view class='license'  catchtap='toLicese'>
+ <view class='left'>
+许可证
+  </view>
+  <view class='center'>
+  上传许可证
+  </view>
+<view class='right iconfont icon-you'>
+  </view>
+</view>
+<view class='sumbitBtn' bindtap='sumbitBtn'>提交申请</view>
+</view>

@@ -1,38 +1,66 @@
 //app.js
+var url = require('config.js')
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
+    this.login()
+  },
+  login() {
+    var that = this;
     // 登录
     wx.login({
-      success: res => {
+      success: resp => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+        console.log(resp);
+        var that = this;
+        // 获取用户信息
+        wx.getSetting({
+          success: res => {
+            //  console.log(res);
+            if (res.authSetting['scope.userInfo']) {
+              // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+              wx.getUserInfo({
+                success: userResult => {
+                  var platUserInfoMap = {}
+                  platUserInfoMap["encryptedData"] = userResult.encryptedData;
+                  platUserInfoMap["iv"] = userResult.iv;
+                  wx.request({
+                    url: url.host+'/agro/login',
+                    method: 'POST',
+                    data: {
+                      platCode: resp.code,
+                      platUserInfoMap: platUserInfoMap,
+                    },
+                    header: {
+                      'content-type': 'application/json',
+                    },
+                    success(res) {
+                      if (res.data.code == 200) {
+                        wx.setStorageSync("userinfo", res.data)
+                        wx.setStorageSync("accessToken", res.accessToken)
+                        wx.setStorageSync("isBinding", res.data.isBinding)
 
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
+                      }
+
+                    }
+                  })
+                  if (that.userInfoReadyCallback) {
+                    that.userInfoReadyCallback(userResult)
+                  }
+                }
+              })
+            } else {
+              wx.redirectTo({
+                url: "/pages/start/start"
+              })
             }
-          })
-        }
+
+          }
+        })
       }
     })
   },
+
+
   globalData: {
     userInfo: null,
     content: [],

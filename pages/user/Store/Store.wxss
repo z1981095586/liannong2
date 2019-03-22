@@ -1,0 +1,101 @@
+
+.Mess{
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+ 
+  
+}
+.Mess-item{
+ height: 80rpx;
+border-bottom: 1rpx solid  #d1d0d0b4;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+.Brand-item{
+  height: 230rpx;
+  border-bottom: 1rpx solid  #d1d0d0b4;
+}
+.zhuMess-item{
+  margin-top:30rpx;
+   background-color: #fff;
+height: 230rpx; 
+  margin-bottom: 30rpx;
+}
+.zhuTitle{
+font-size: 30rpx;
+display: block
+}
+.title{
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.tianjia{
+  margin-left: 230rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+.text{
+  font-size:25rpx;
+  position: absolute;
+  left: 200rpx;
+  width: 48%;
+}
+
+
+.Stext{
+  width: 600rpx;
+}
+.typeText{
+  font-size:25rpx;
+  position: absolute;
+  left: 200rpx;
+  width: 60%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.icon-tianjiatupian{
+  font-size: 100rpx;
+  margin-left: 80rpx;
+}
+.bottomBtn{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  background: #32cd32;
+  color:#fff;
+  font-size: 34rpx;
+  line-height: 80rpx;
+  text-align: center;
+  padding: 0px;
+  left:0;
+  border-radius: 20rpx;
+}
+.dizhi{
+   height: 80rpx;
+   position: absolute;
+   right: 10rpx;
+   font-size: 28rpx;
+   width: 100%;
+   vertical-align: center;
+  
+}
+button::after{
+border:none;
+}
+
+.itemFrame{
+  font-size: 28rpx;
+  margin-top:20rpx;
+  display:flex;
+ flex-wrap:wrap;
+}
+.checkbox{
+  width: 25%;
+  margin-top:20rpx;
+}

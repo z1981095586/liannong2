@@ -1,0 +1,138 @@
+/* pages/tjxc/tjxc.wxss */
+/* 选项卡 */
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #777;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33.3%;
+  color: #777;
+}
+
+.on {
+  color: #da7c0c;
+  border-bottom: 5rpx solid #da7c0c;
+}
+.search2{
+  width: 100%;
+  height: 50rpx;
+  background: #44960E;
+  padding-top: 15rpx;
+  padding-bottom:15rpx;
+}
+.search-main{
+  margin-left: 3%;
+  height: 100%;
+  width: 94%;
+  background: #fff;
+  border-radius: 25rpx;
+  display: flex;
+  justify-content: center;
+}
+.search-icon{
+  color: rgba(0, 0,0,0.5);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.icon-sousuo{
+  font-size: 30rpx;
+  color: #CACACA;
+
+}
+.search-main-text{
+  font-size: 25rpx;
+  line-height: 48rpx;
+  margin-left: 5rpx;
+  color: #CACACA;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+/* 搜索 */
+.search {
+  width: 80%;
+}
+
+.search_arr {
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+}
+
+.search_arr input {
+  margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+}
+
+.bc_text {
+  line-height: 68rpx;
+  height: 68rpx;
+  margin-top: 34rpx;
+}
+
+.sousuo {
+  margin-left: 15rpx;
+  width: 15%;
+  line-height: 150%;
+  text-align: center;
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+}
+
+.page_row {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.searchcion {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  position: absolute;
+  left: 25rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+/* 景点 */
+.box{
+  width: 94%;
+  height: 100px;
+  margin: 10px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.box-left{
+  width: 100px;
+  height: 100px;
+}
+.box-right{
+  width: 70%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.box-right-top{
+  font-size: 35rpx;
+}
+.box-right-bottom{
+  font-size: 32rpx;
+  color: rgb(185, 185, 185);
+}

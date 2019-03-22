@@ -1,0 +1,36 @@
+<!--pages/user/Store/Store.wxml-->
+<view class='Mess'>
+  <view class='Mess-item'>
+    <view class='title'>门店名称</view>
+    <input class='text' bindinput="shopNameInput" placeholder='商店名称'></input>
+  </view>
+  <view class='Brand-item'>
+    <view class='title'>商标</view>
+    <image class='tianjia' src="{{simage}}"  bindtap='shangChuang'></image>
+    </view>
+    <view class='zhuMess-item'>
+      <view class='zhuTitle'>主营项目</view>
+      <checkbox-group class='itemFrame'bindchange="checkboxChange">
+      <view class="checkbox"  wx:for="{{array}}">
+      <label>
+    <checkbox value="{{item.value}}"  checked='{{item.check}}'/>{{item.value}}
+      </label>
+      </view>
+      </checkbox-group>
+    </view>
+    <view class='Mess-item'>
+      <view class='title'>联系人</view>
+      <input class='text' bindinput='hostNameInput' placeholder='请输入联系人真实姓名'></input>
+    </view>
+    <view class='Mess-item'>
+      <view class='title'>联系电话</view>
+      <input class='text' bindinput='phoneInput'maxlength='11' placeholder='输入联系人号码' type="number"></input>
+    </view>
+    <view class='Mess-item' bindtap='dizhi'>
+        <view class='title'>商家地址</view>
+        <view class='text'>{{saddress}}</view>
+    </view>
+  </view>
+  <view class='bottomBtn'>
+   <button class='bottomBtn' bindtap='SumbitBtn'>下一步</button>
+   </view>

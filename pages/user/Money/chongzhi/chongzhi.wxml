@@ -1,0 +1,19 @@
+<view class='deposit'>
+  <view class='deposit-position'>
+    <view class='yhk-text'>储蓄卡</view>
+    <view class='yhk-card'>
+      <view class='yhk-card-text'>建设银行（6522）</view>
+      <view class='yhk-card-time'>2小时内到账</view>
+    </view>
+  </view>
+   <view class='deposit-main'>
+    <view class='deposit-main-left'>
+      <view class='deposit-title'>充值金额</view>
+      <view class='deposit-num'>
+        <view class='deposit-num-flag'>￥</view>
+        <input class='deposit-num-money' type="digit" bindinput='input_num' focus="true" adjust-position='true'></input>
+      </view>
+    </view>
+    <button class='deposit-btn' type='primary'>充值</button>
+  </view>
+</view>

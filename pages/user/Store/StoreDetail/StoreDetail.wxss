@@ -1,0 +1,89 @@
+/* pages/user/Store/StoreDetail/StoreDetail.wxss */
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1553109442693'); /* IE9 */
+  src: url('iconfont.eot?t=1553109442693#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAKIAAsAAAAABkAAAAI7AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcApMXwE2AiQDCAsGAAQgBYRtBy0bggUR1YtDsi8O7DYvmyBsGBQk0UwjH+mS2vYtuJ+65N4Hz/Pj3nPfex8cxLgoNTAtz2kdYAlLSmtEEyIUl7g794hrO695NspyOpWUku8XZm0W7BkVoWiS8byvnrKBnptc+NKAgYr/AsCIw2kTKJD5QDnOuagLqIsDKaC9MYqshDJuGLvgBT6GAE6iyUSKc21gx2CvEkDaz55gL3gxGJawI1gbDhpkBoddjapTiOno+/JOLXZQWDR2SWVjWpD/5J0U3fNPDwj4AAEdtwAayAQMSG1jtByNMJrGGTXEw7EKBZ5s/wd65KgahP11dr4bgEjIfSaetxIBQAE81kj8gdBJE0D82y5BWP6Fi+Mh0zdYXg1nCYs5MistxSqzQk2JFUXysX+mDtQ5GSAQ+Y2dg7K/gssAcL2+th2pDcPshH0fNoF/wRvYZQyBrVNG4zX2K/zP0eDECfxjpz+PU5VBJ04KdoIm2G1EZdDYSSQaaiYsuMiCFTt5cJJB2XEXAXSgEeMA0hkEEHxZhsLLBjS+nBEN9QEWgvmEFV/RcFIvARe6SBboBDF0jpH7Py+DnuIaPMSFd0zX3lleENHfsLQEuMrLcuKGE7bElvSZandhMT24Bc9h35Wj6YrB89k9NkUhTW/KBz0okBg6x8j9n5dBTwkGe6h8/o7p2jvr6KhzvmFpGZ+rvBxAvEnPQR2P8kr6TLW7sJge3IJ52Hfl2DxvxeD5PCEcm8LpJUOl+fby4+8OAU6yLSpTLxn560UEAAAA') format('woff2'),
+  url('iconfont.woff?t=1553109442693') format('woff'),
+  url('iconfont.ttf?t=1553109442693') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1553109442693#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-you:before {
+  content: "\e607";
+}
+
+page{
+   background-color: rgba(219, 218, 218, 0.397)
+}
+.zizhi_Mes{
+  width: 100%;
+  height: 100%;
+  font-size: 34rpx;
+ 
+}
+.business_license{
+  height: 150rpx;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  background-color: #fff;
+  /* border: 1rpx  solid black */
+}
+.license{
+  margin-top: 10px;
+   height: 150rpx;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  background-color: white;
+  /* border: 1rpx  solid black */
+}
+.id_card{
+   margin-top: 10px;
+   height: 150rpx;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  background-color: white;
+  /* border: 1rpx  solid black */
+}
+.left{
+padding-left: 20rpx;
+width: 45%;
+}
+.center{
+  margin-left: 30rpx;
+  color: rgba(187, 182, 182, 0.712)
+}
+.right{
+  position: absolute;
+  right:20rpx;
+}
+.sumbitBtn{
+  margin-top: 40rpx;
+  width: 90%;
+  margin-left: 5%;
+  background-color: #67CB33;
+  color: white;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.Mess{
+  margin-top: 10rpx;
+  width: 100%;
+  background-color: #67CB33;
+  color: white;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 25rpx;
+}

@@ -1,0 +1,16 @@
+<view  class='Money'>
+     <view class='money-box'>   
+        <view class='top-content'>
+            <view class='moneyImg iconfont icon-wodezijin'></view>
+            <view class='change'>我的零钱</view>
+            <view class='money'>
+            <view class='symbol'>￥</view>
+            <view class='number'>3.04</view>
+            </view>
+        </view>
+        <view class='bottom-btn'>
+         <button class='chongzhi'  bindtap='chongZhi' type='primary'>充值</button>
+         <button class='tixian'  bindtap='tiXian'>提现</button>
+        </view>
+     </view>
+</view>

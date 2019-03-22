@@ -1,0 +1,84 @@
+<view class='com-page'>
+  <view>
+
+    <image src="../../images/rotating.png" class="img-plus-style" bindtap="torelease"></image>
+  </view>
+  <view class='guanggao'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='huati'>
+    <view class='huati-title'>
+      <view class='title-con'>
+        <view class='left'>
+          <view>推荐的话题</view>
+        </view>
+        <view class='right' bindtap='allhuati'>
+          <view>全部</view>
+          <view class='iconfont icon-youjiantou'></view>
+        </view>
+      </view>
+    </view>
+    <view class='huati-content'>
+      <view class='two-con'>
+        <view class='con1' bindtap='huaticon'>
+          <view class='img'><image src='{{url1}}'></image></view>
+          <view class='font'>
+            <view class='kuang'>
+              <view class='font-title'>谢霆锋否认恋情...</view>
+              <view class='font-neirong'>近日，网传谢霆锋...</view>
+            </view>
+          </view>
+        </view>
+        <view class='con1' bindtap='huaticon'>
+          <view class='img'><image src='{{url2}}'></image></view>
+          <view class='font'>
+            <view class='kuang'>
+              <view class='font-title'>古风言情小说脑部男主...</view>
+              <view class='font-neirong'>这组图的白敬亭是...</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='zhiding'>
+    <view class='zd'>
+      <view>置顶</view>
+    </view>
+    <view class='zd-title'>社区发帖及回复规范</view>
+  </view>
+  <view class='all-tiezi'>
+    <view class='tiezi' wx:for="{{tiezi}}" wx:key="*this" id="{{item.id}}" bindtap='detailPage'>
+      <view class='tiezi-tit'>
+        <view class='tit-font'><view class='biaoti'>{{item.title}}</view></view>
+      </view>
+      <view class='tiezi-con'>
+        <view class='con-neirong'><text>{{space}}{{space}}{{item.content}}</text></view>
+      </view>
+      <view class='tiezi-bottom'>
+        <view class='user'>
+          <view class='name'>
+         {{item.name}}</view>
+          <view class='info'>发布于</view>
+          <view class='info'>{{item.year}}{{item.day}}{{item.minute}}</view>
+        </view>
+        <view class='pinglun'>
+          <view class='iconfont icon-liulan'></view>
+          <view class='num'><view>{{item.brow}}</view></view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view wx:if="{{flag==true}}" class='Bottom'>没有更多数据了！</view>
+
+
+
+</view>

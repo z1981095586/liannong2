@@ -1,0 +1,50 @@
+/* pages/user/Store/BLphoto/BLphoto.wxss */
+.upload_one{
+  width:100%;
+}
+.img{
+  width: 90%;
+  margin-left: 5%;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+}
+.pic{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 20rpx;
+
+}
+.request {
+  width: 75%;
+  height: 200rpx;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  padding-top:20rpx;
+  font-size: 30rpx;
+  color: #6b7281;
+
+}
+.request ul {
+  width: 100%;
+  height: 200rpx;
+ font-size: 20rpx;
+}
+
+.request ul li {
+  width: 100%;
+  height: 30rpx;
+  float: left;
+  margin-top: 10rpx;
+}
+.upload_btn{
+  margin-top: 50rpx;
+  width: 90%;
+  margin-left: 5%;
+  background-color: #67CB33;
+  color: white;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+}

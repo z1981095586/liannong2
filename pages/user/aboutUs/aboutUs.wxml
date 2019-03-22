@@ -1,0 +1,22 @@
+<view>
+<view class='logo-top'>
+<image  class='logo'src="{{imgSrc}}"  mode='aspectFit'></image>
+</view>
+
+<view class='bottomBar'>
+  <view class='bottomBarMenu' >
+    <view class='bottomBarMenu-text'>协议及声明</view>
+   <view class='iconfont icon-you'></view>
+  </view> 
+    <view class='bottomBarMenu' >
+    <view class='bottomBarMenu-text'>营业执照</view>
+   <view class='iconfont icon-you'></view>
+    </view> 
+    <view class='bottomBarMenu' >
+    <view class='bottomBarMenu-text'>检查更新</view>
+   <view class='mes'>当前已是最新版本</view>
+    </view> 
+  </view>
+
+    
+</view>

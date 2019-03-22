@@ -1,0 +1,76 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1552736688429'); /* IE9 */
+  src: url('iconfont.eot?t=1552736688429#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAALsAAsAAAAABrQAAAKfAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBPIFCATYCJAMICwYABCAFhG0HMxvrBRFFfMi+OLAbPu8wK8fkjXggSj5j8ulRQ9UE+zmIaK6qnkwWJkfACggUohE5B/zPFlk9C0MoHOrXuf/NMXZJFxIrkkzQXZ1xH/bxjnN2WzYlQ9TQbIAAgrtNQ7QHr5GwLuEdXE7/2x7IPKBc5pg6NmCCAe2NbbICCb1h7CYCh3AeAhjSlJD2zv5xPDRgmgCytb46j5fzotFWIoDgq1mrkRNsAmpXvQXH/PvyT1UBUNgWoGR4pWOJ3a8gTLFczzVFEXwgaJttwAJKgAYZr40OYiIW2cJELbKwr0KBX0HPo3pkrxrE+utAfggAKSr3nniYf6v5CgAt4y1ojOl4XaIiK/r2zf0KSHvfSds/+u1/s7vbd+LM2EV6wF7M+OSFvVtu7IjZu3ffcTAZ8W2+1+VnL5LF2X/4IM9I3ZW/0P/sPaKcnj7rf89iZblDnn+cNK7euZs2kfa8o6Oz44647+5OTZztccOF4xHtGe0R4112TbvdNRDb3tY8UHiWnyFw7cxA/Gx4/f+AowH4+VQ94hM8d1guEDipTeDn8Xq26FAAdEr7vFq7omXUVAUYDOChO4Eov7HK2DtNioDY+7X7paZgCchBNb4EbI4a8AloAqNYsdkRjZlkvgZFXgqICG9QwrwBS4QPqvFfsMX5g09EJhiTRe/pyKsP2hhLwQaqB/Q1LQoZJBCFe2wvU8lZAaeckbc+AEkYFxMFLshzLNiubSqiQDHNkCuX4TQRrEwD1hJ2ImsWRaruTWFNsxZow1BJoAaoPIBejSwU7S6C0uf3UOtiUuKWigHzGWKbvneQCMU90EK69Kq4l2s2V62UEApQGJmBXDGjCUYJWOtHDVBNhLoR4VUm0jqpvtJwffn8ATlWDUClgktMLXhq8NkP/aJpAA==') format('woff2'),
+  url('iconfont.woff?t=1552736688429') format('woff'),
+  url('iconfont.ttf?t=1552736688429') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1552736688429#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 60px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wodezijin:before {
+  content: "\e709";
+  color:  rgba(226, 248, 28, 0.911)
+}
+
+
+.Money{
+  width: 100%;
+  height:100%;
+}
+.money-box{
+  margin-top: 170rpx;
+  width: 100%;
+}
+.top-content{
+ display: flex;
+flex-direction: column;
+align-items: center;
+}
+.icon-wodezijin{
+    border-radius: 50%;
+    width:150rpx;
+    height:150rpx;
+    
+}
+.change{
+  margin-top: 60rpx;
+}
+.money{
+  display: flex;
+  margin-top: 20rpx;
+}
+.symbol{
+  font-size: 20px;
+  font-weight: blod;
+}
+.number{
+  font-size: 30px;
+  font-weight: blod;
+}
+.bottom-btn{
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 142rpx;
+}
+.chongzhi{
+  width: 60%;
+  height: 100rpx;
+}
+.tixian{
+  margin-top: 40rpx;
+  background-color: #635f5f38;
+   width: 60%;
+  height: 100rpx;
+  color: rgba(14, 248, 14, 0.712)
+}

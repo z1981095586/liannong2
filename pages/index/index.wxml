@@ -1,0 +1,217 @@
+<view class='index-page'>
+
+  <view class='search' bindtap='toSearch'>
+    <view class='search-main'>
+      <view class='search-icon iconfont icon-sousuo'></view>
+      <text class='search-main-text'>请输入商家或商品名称</text>
+    </view>
+  </view>
+  <scroll-view scroll-y class='ver'>
+    <view class='guanggao'>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item.picture}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='conter-no'>
+      <!-- 首页八个导航 -->
+      <view class='index-body'>
+        <view class='index-body-icon'>
+          <view class='index-body-icon-bg'>
+            <view class='fenlei'>
+              <view class='fangkuai1' bindtap='vote' id="蔬果农场">
+                <view class='secondfk1'>
+                  <view class='f-cont'>
+                    <image src="/images/shucai.png"></image>
+                    <view>蔬果</view>
+                  </view>
+                </view>
+              </view>
+              <view class='fangkuai2' bindtap='vote' id="畜牧农场">
+                <view class='secondfk2'>
+                  <view class='f-cont'>
+                    <image src="/images/shengxian.png"></image>
+                    <view>畜牧</view>
+                  </view>
+                </view>
+              </view>
+              <view class='fangkuai3' bindtap='vote' id="学农商品">
+                <view class='secondfk3'>
+                  <view class='f-cont'>
+                    <image src="/images/jiaoyu.png"></image>
+                    <view>学农</view>
+                  </view>
+                </view>
+              </view>
+              <view class='fangkuai4' bindtap='vote' id="旅游产业">
+                <view class='secondfk4'>
+                  <view class='f-cont'>
+                    <image src="/images/lyou.png"></image>
+                    <view>旅游</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class='fenlei'>
+              <view class='fangkuai5' bindtap='vote' id="畜牧农场">
+                <view class='secondfk5'>
+                  <view class='f-cont'>
+                    <image src="/images/xumu.png"></image>
+                    <view>农庄</view>
+                  </view>
+                </view>
+              </view>
+              <view class='fangkuai6' bindtap='vote' id="散户商铺">
+                <view class='secondfk6'>
+                  <view class='f-cont'>
+                    <image src="/images/sanhu.png"></image>
+                    <view>散户</view>
+                  </view>
+                </view>
+              </view>
+              <view class='fangkuai7' bindtap='vote' id="聚点商铺">
+                <view class='secondfk7'>
+                  <view class='f-cont'>
+                    <image src="/images/judian.png"></image>
+                    <view>聚点</view>
+                  </view>
+                </view>
+              </view>
+              <view class='fangkuai8' bindtap='vote' id="其他商品">
+                <view class='secondfk8'>
+                  <view class='f-cont'>
+                    <image src="/images/qita.png"></image>
+                    <view>其他</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='location-all'>
+          <view class='loca' bindtap='tolocation'>
+            <image style='margin-left: 10px;' src='/images/location.png'></image>
+            <view class='content'>{{location}}</view>
+            <image src='/images/right2.png'></image>
+          </view>
+          <!-- <view class="more"><view>更多商家</view></view> -->
+        </view>
+        <view class='nongchang'>
+          <view class='nongchang_hot' bindtap='sp'>
+            <view class='nonchang_hot_title'>热门农场</view>
+            <view class='nonchang_hot_content'>附近最火农场</view>
+            <image src='/images/nongchanghot.png'></image>
+          </view>
+          <view class="nonchang_new">
+            <view class='nongchang_new-up' bindtap='sp'>
+              <view class='nongchang_new_up_left'>
+                <view class='nongchang_new_up_title'>新店特惠</view>
+                <view class='nongchang_new_up_content'>尝尝新口味</view>
+              </view>
+
+              <image src='/images/nongnew.png'></image>
+            </view>
+            <view class='nongchang_down'>
+              <view class='nongchang_down_dangji' bindtap='sp'>
+                <view class='nongchang_down_dangji_title'>当季新品</view>
+                <view class='nongchang_down_dangji_content'>美味小吃</view>
+                <image src='/images/newxiaochi.jpg'></image>
+              </view>
+              <view class='nongchang_down_zhuti' bindtap='sp'>
+                <view class='nongchang_down_zhuti_title'>主题活动</view>
+                <view class='nongchang_down_zhuti_content'>倾情上演</view>
+                <image src='/images/zhutihuodong.jpg'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- <view class='tuijian'>
+          <view class='tuijian-title'>为你精选</view>
+          <view class='tuijian-content'>
+      
+            <view class='tuijian-content-hua'>
+                 <scroll-view scroll-x class='hengxianggundong'>
+                
+              <view class='dianjia' bindtap='dianjia' id="{{item.id}}"  wx:for="{{youxuanlist}}" wx:key="*this" data-id="{{item.id}}">
+                <view class='dianjia-image'>
+                <image src='{{item.simage}}'></image>
+                </view>
+                <view class='dianjia-biaoti'>
+                  {{item.shopName}}
+                </view>
+                <view class='dianjia-tuijian'>
+                  为您推荐最美农场小吃
+                </view>
+              </view>
+      
+         </scroll-view>
+            </view>
+                   
+          </view>
+        </view> -->
+        <view class='fujin'>
+          <view class='fujin-title'>附近商家</view>
+
+
+          <view class='fujin-allpaixu'>
+            <view class='fujin-pauxu'>
+              <view bindtap='xiaoliangpx' class='xiaoliang' style="color:{{color1}};">
+                <text>销量高</text>
+              </view>
+              <view bindtap='jiagepx' class='xiaoliang' style="color:{{color2}};">
+                <text>价格低</text>
+              </view>
+              <view bindtap='pingjiapx' class='xiaoliang' style="color:{{color3}};">
+                <text>评价好</text>
+              </view>
+              <view class='xiaoliang'>
+                <import src="../../components/filterbar/filterbar.wxml" />
+                <!--这里添加模板：横向导航栏  -->
+                <template is="filterbar" data="{{ ...$wux.filterbar }}" />
+              </view>
+            </view>
+          </view>
+
+          <view wx:if="{{flag==true}}" class='Bottom'>
+            <view class='tishi'>附近没有商家了!
+              <view>
+                <image src='/images/nanguo.png'></image>
+              </view>
+            </view>
+          </view>
+          <view class='fujin-content'>
+            <view class='cont1' wx:for="{{fujinlist}}" wx:key="*this" bindtap='dianjia' id="{{item.id}}">
+              <view class='sj-logo'>
+                <image src='{{item.simage}}'></image>
+              </view>
+              <view class='sj-info'>
+                <view class='sj-name'>{{item.shopName}}</view>
+                <view class='sj-xinyu'>
+                  <view class='xy-left'>
+                    <view>信誉度：{{item.sgrade}}分</view>
+                    <view class='yueshou'> 月售：{{item.monthlySale}}</view>
+                  </view>
+                  <view class='xy-right'>
+                    <view class='distance'>{{item.distance}}km</view>
+                  </view>
+                </view>
+
+
+                <view class='sj-renjun'>
+                  <view> 起送￥30 | 配送￥10.5</view>
+                  <view class='renjun'> 人均 ￥{{item.perCapita}}</view>
+                </view>
+                <view class='sj-leixing'>{{item.stype}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+  </scroll-view>
+</view>

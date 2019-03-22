@@ -1,0 +1,53 @@
+<view class='Mall-page'>
+
+   
+       <view class='fujin-content' >
+          <view class='cont1' wx:for="{{searchlist}}" wx:key="*this" bindtap='dianjia' id="{{item.id}}">
+            <view class='sj-logo'>
+            <image src='{{item.simage}}'></image>
+            </view>
+            <view class='sj-info'>
+            <view class='sj-name'>{{item.shopName}}</view>
+               <view class='sj-xinyu'>
+               <view class='xy-left'> <view>信誉度：{{item.sgrade}}分</view>
+                <view class='yueshou'> 月售：{{item.monthlySale}}</view></view>
+               <view class='xy-right'><view class='distance'>{{item.distance}}km</view>
+              </view></view>
+              
+            
+                  <view class='sj-renjun'>
+                  <view> 起送￥30 | 配送￥10.5</view>
+                    <view class='renjun'> 人均 ￥{{item.perCapita}}</view>
+                 </view>
+                     <view class='sj-leixing'>{{key}}</view>
+            </view>
+            </view>
+          </view>
+             <view class='cainixihuan' wx:if="{{isshow}}"  >
+      <view class='like-con'>
+      <view class='line'></view>   <view class='font'><view class='iconfont icon-aixin'></view>猜你喜欢</view>     <view class='line'></view>
+      </view>
+      </view>
+       <view class='fujin-content' >
+          <view class='cont1' wx:for="{{likelist}}" wx:key="*this" bindtap='dianjia' id="{{item.id}}">
+            <view class='sj-logo'>
+            <image src='{{item.simage}}'></image>
+            </view>
+            <view class='sj-info'>
+            <view class='sj-name'>{{item.shopName}}</view>
+               <view class='sj-xinyu'>
+               <view class='xy-left'> <view>信誉度：{{item.sgrade}}分</view>
+                <view class='yueshou'> 月售：{{item.monthlySale}}</view></view>
+               <view class='xy-right'><view class='distance'>{{item.distance}}km</view>
+              </view></view>
+              
+            
+                  <view class='sj-renjun'>
+                  <view> 起送￥30 | 配送￥10.5</view>
+                    <view class='renjun'> 人均 ￥{{item.perCapita}}</view>
+                 </view>
+                     <view class='sj-leixing'>{{key}}</view>
+            </view>
+            </view>
+          </view>
+</view>
