@@ -26,7 +26,7 @@
     </view>
     <view class='huati-content'>
       <view class='two-con'>
-        <view class='con1' bindtap='huaticon'>
+        <!-- <view class='con1' bindtap='huaticon'>
           <view class='img'><image src='{{url1}}'></image></view>
           <view class='font'>
             <view class='kuang'>
@@ -34,13 +34,13 @@
               <view class='font-neirong'>近日，网传谢霆锋...</view>
             </view>
           </view>
-        </view>
-        <view class='con1' bindtap='huaticon'>
-          <view class='img'><image src='{{url2}}'></image></view>
+        </view> -->
+        <view class='con1'  wx:for="{{huati}}" wx:key="*this" id="{{item.id}}" bindtap='huaticon'>
+          <view class='img'><image src='{{item.imgurl}}'></image></view>
           <view class='font'>
             <view class='kuang'>
-              <view class='font-title'>古风言情小说脑部男主...</view>
-              <view class='font-neirong'>这组图的白敬亭是...</view>
+              <view class='font-title'>{{item.title}}</view>
+              <view class='font-neirong'>{{item.phrase}}</view>
             </view>
           </view>
         </view>

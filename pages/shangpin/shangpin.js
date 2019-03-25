@@ -42,31 +42,36 @@ Page({
   },
   qianggou:function(){
     let that = this;
-    console.log(that.data.spid)
-    wx.request({
-      url: that.data.url +'/agro/createOrder', // 仅为示例，并非真实的接口地址
-      type: 'POST',
-      data: {
-        goodsId: that.data.spid,
-          
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res.data.itemGoods);
-        var returnArr = that.data.spinfo;
-        for (var i = 0; i < res.data.itemGoods.length; i++) {
-          returnArr.push(res.data.itemGoods[i]);
-
-        }
-        console.log(returnArr)
-        that.setData({
-          spinfo: returnArr
-        })
-        console.log(that.data.spinfo);
-      }
+    console.log(that.data.spid);
+    wx.showToast({
+      title: '功能开发中,敬请期待！',
+      icon: 'none',
+      duration: 2000
     })
+    // wx.request({
+    //   url: that.data.url +'/agro/createOrder', // 仅为示例，并非真实的接口地址
+    //   type: 'POST',
+    //   data: {
+    //     goodsId: that.data.spid,
+          
+    //   },
+    //   header: {
+    //     'content-type': 'application/json' // 默认值
+    //   },
+    //   success(res) {
+    //     console.log(res.data.itemGoods);
+    //     var returnArr = that.data.spinfo;
+    //     for (var i = 0; i < res.data.itemGoods.length; i++) {
+    //       returnArr.push(res.data.itemGoods[i]);
+
+    //     }
+    //     console.log(returnArr)
+    //     that.setData({
+    //       spinfo: returnArr
+    //     })
+    //     console.log(that.data.spinfo);
+    //   }
+    // })
   },
   /**
    * 生命周期函数--监听页面加载

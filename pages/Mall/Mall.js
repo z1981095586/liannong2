@@ -59,7 +59,7 @@ Page({
       url: that.data.url+'/agro/getShopList', // 仅为示例，并非真实的接口地址
       method: 'post',
       data: {
-        typeId:that.data.leixing
+        key:that.data.leixing
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -140,7 +140,7 @@ Page({
       url:that.data.url+'/agro/getShopList', // 仅为示例，并非真实的接口地址
       method: 'post',
       data: {
-        typeId: that.data.leixing
+        key: that.data.leixing
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -231,7 +231,7 @@ Page({
       url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
       method: 'post',
       data: {
-        typeId: that.data.leixing
+        key: that.data.leixing
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -322,7 +322,7 @@ Page({
       url: that.data.url +'/agro/getShopList', // 仅为示例，并非真实的接口地址
       method: 'post',
       data: {
-        typeId: that.data.leixing
+        key: that.data.leixing
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -410,59 +410,62 @@ Page({
   onLoad: function (options) {
     var that=this;
     wx.setNavigationBarTitle({
-      title: options.id
+      title: options.id+"商铺"
     })
     console.log(options.id);
     let key=options.id;
+    that.setData({
+      leixing:key
+    })
     switch (key) {
-      case '水果超市':
+      case '水果':
         that.setData({
-          leixing: 1,
+
           key:key,
         })
         break;
-      case '蔬果农场':
+      case '蔬果':
       
         that.setData({
-          leixing: 2,
+
            key: key,
         })
         break;
-      case '畜牧农场':
+      case '畜牧':
         that.setData({
-          leixing: 3,
+
            key: key,
         })
         break;
-      case '旅游产业':
+      case '旅游':
         that.setData({
-          leixing: 4,
+        
            key: key
         })
         break;
-      case '学农商品':
+      case '学农':
         
         that.setData({
-          leixing: 5,
+    
           key: key
         })
         break;
-      case '聚会商品':
+      case '聚会':
         that.setData({
-          leixing: 6,
+         
           key: key
         })
         break;
-      case '散户商品':
+      case '散户':
       
         that.setData({
-          leixing: 7,
+    
           key: key,
         })
         break;
-      case '其他商品':
+      case '其他':
         that.setData({
-          leixing: 8,
+     
           key: key,
         })
         break;

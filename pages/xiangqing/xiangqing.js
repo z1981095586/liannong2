@@ -24,6 +24,7 @@ Page({
     maohao:": ",
     focus:false,
     placeholder:"想说点什么：",
+
  
   },
   // 获取回复框内容

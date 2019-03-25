@@ -1,5 +1,6 @@
 {
   "pages": [
+
     "pages/index/index",
     "pages/logs/logs",
     "pages/secondHand/secondHandSearch",
@@ -31,7 +32,10 @@
     "pages/view/view",
     "pages/order/order",
     "pages/trip/trip",
-    "pages/tuikuan/tuikuan"
+      "pages/huatibang/huatibang",
+    "pages/tuikuan/tuikuan",
+        "pages/huatixiangqing/huatixiangqing",
+        "pages/huatitie/huatitie"
   ],
   "permission": {
     "scope.userLocation": {

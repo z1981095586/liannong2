@@ -14,7 +14,8 @@ dianming:'',
 shopName:'',
 shopId:'',
 fenlei:[],
-current_item:0
+current_item:0,
+firstid:0
   },
   xiangqing:function(event){
     wx.navigateTo({
@@ -24,7 +25,10 @@ current_item:0
   white: function (e) {
     var that = this;
     let cuu = e.currentTarget.dataset.key;//获取index值
+    let id=e.currentTarget.id;
+    console.log(id)
     console.log(cuu);
+    console.log(that.data.sjid)
     that.setData({
       current_item: cuu
     })
@@ -32,18 +36,23 @@ current_item:0
       url: that.data.url + '/agro/getGoodsTypeList', // 仅为示例，并非真实的接口地址
       method: 'post',
       data: {
+        goodsTypeId:id,
         shopId:that.data.sjid
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res.data.itemGoodsType);
-        var returnArr=[];
-        for (var i = 0; i < res.data.itemGoodsType.length; i++) {
-          returnArr.push(res.data.itemGoodsType[i].itemGoods);
-        }
-         console.log(returnArr)
+        console.log(res.data.itemGoodsType[0].itemGoods);
+        that.setData({
+          spinfo: res.data.itemGoodsType[0].itemGoods
+        })
+        // console.log(res.data.itemGoodsType);
+        // var returnArr=[];
+        // for (var i = 0; i < res.data.itemGoodsType.length; i++) {
+        //   returnArr.push(res.data.itemGoodsType[i].itemGoods);
+        // }
+        //  console.log(returnArr)
         //  that.setData({
         //    spinfo: returnArr
         //  })
@@ -76,6 +85,9 @@ fenlei:function(){
          returnArr.push(res.data.itemGoodsType[i]);
        }
        console.log(returnArr)
+       that.setData({
+         firstid:returnArr[0].id
+       })
    
 
       that.setData({
@@ -84,30 +96,61 @@ fenlei:function(){
     }
   })
 },
-shangpin:function(){
-let that=this;
-  console.log(that.data.sjid)
+// shangpin:function(){
+// let that=this;
+//   console.log(that.data.sjid)
+//   wx.request({
+//     url: that.data.url +'/agro/getGoodsList', // 仅为示例，并非真实的接口地址
+//     method: 'post',
+//     data: {
+//       sid: that.data.sjid
+//     },
+//     header: {
+//       'content-type': 'application/json' // 默认值
+//     },
+//     success(res) {
+//       console.log(res.data.itemGoods);
+//        var returnArr = that.data.spinfo;
+//        for (var i = 0; i < res.data.itemGoods.length; i++) {
+//         returnArr.push(res.data.itemGoods[i]);
+
+//        }
+//        console.log(returnArr)
+//        that.setData({
+//          spinfo: returnArr
+//        })
+//         console.log(that.data.spinfo);
+//     }
+//   })
+// },
+first:function(){
+  let that=this;
+  console.log(that.data.firstid)
   wx.request({
-    url: that.data.url +'/agro/getGoodsList', // 仅为示例，并非真实的接口地址
+    url: that.data.url + '/agro/getGoodsTypeList', // 仅为示例，并非真实的接口地址
     method: 'post',
     data: {
-      sid: that.data.sjid
+      goodsTypeId: that.data.firstid,
+      shopId: that.data.sjid
     },
     header: {
       'content-type': 'application/json' // 默认值
     },
     success(res) {
-      console.log(res.data.itemGoods);
-       var returnArr = that.data.spinfo;
-       for (var i = 0; i < res.data.itemGoods.length; i++) {
-        returnArr.push(res.data.itemGoods[i]);
-
-       }
-       console.log(returnArr)
-       that.setData({
-         spinfo: returnArr
-       })
-        console.log(that.data.spinfo);
+      console.log(res.data.itemGoodsType[0].itemGoods);
+      that.setData({
+        spinfo: res.data.itemGoodsType[0].itemGoods
+      })
+      // console.log(res.data.itemGoodsType);
+      // var returnArr=[];
+      // for (var i = 0; i < res.data.itemGoodsType.length; i++) {
+      //   returnArr.push(res.data.itemGoodsType[i].itemGoods);
+      // }
+      //  console.log(returnArr)
+      //  that.setData({
+      //    spinfo: returnArr
+      //  })
+      //  console.log(that.data.spinfo);
     }
   })
 },
@@ -166,8 +209,10 @@ sjinfo:function(){
 
     })
     that.sjinfo();
+  
     // that.shangpin();
     that.fenlei();
+    that.first();
     console.log(that.data.dianming);
     wx.setNavigationBarTitle({
       title: that.data.dianming
@@ -208,19 +253,23 @@ sjinfo:function(){
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    let that = this;
+    // let that = this;
 
-    that.setData({
+    // that.setData({
 
-      list: [],
-      sjinfo: [],
-      spinfo: [],
-      dianming: '',
-    })
+    //   list: [],
+    //   sjinfo: [],
+    //   spinfo: [],
+    //   dianming: '',
+    //   firstid:0
+    // })
 
-    that.sjinfo();
-    that.shangpin();
-    wx.stopPullDownRefresh();
+    // that.sjinfo();
+
+    // // that.shangpin();
+    // that.fenlei();
+    // that.first();
+    // wx.stopPullDownRefresh();
   },
 
   /**

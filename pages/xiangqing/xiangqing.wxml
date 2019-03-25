@@ -34,7 +34,7 @@
     </view>
     <view class='liuyan-ban'>
 
-      <input class='comment-input' placeholder="{{placeholder}}" bindinput='comment_input' value='{{nul}}' focus='{{focus}}'></input>
+      <input class='comment-input' placeholder="{{placeholder}}"  bindinput='comment_input' value='{{nul}}' focus='{{focus}}'></input>
       <view class='comment-send' bindtap='comment_send' id="{{fid}}">发送</view>
     </view>
     <view class='huifu-content'>

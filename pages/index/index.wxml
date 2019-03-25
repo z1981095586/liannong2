@@ -1,6 +1,6 @@
 <view class='index-page'>
 
-  <view class='search' bindtap='toSearch'>
+  <view class='search' wx:if="{{isshow}}" bindtap='toSearch'>
     <view class='search-main'>
       <view class='search-icon iconfont icon-sousuo'></view>
       <text class='search-main-text'>请输入商家或商品名称</text>
@@ -16,7 +16,7 @@
         </block>
       </swiper>
     </view>
-    <view class='conter-no'>
+    <view class='conter-no' wx:if="{{isshow}}">
       <!-- 首页八个导航 -->
       <view class='index-body'>
         <view class='index-body-icon'>
@@ -56,7 +56,7 @@
               </view>
             </view>
             <view class='fenlei'>
-              <view class='fangkuai5' bindtap='vote' id="畜牧农场">
+              <view class='fangkuai5' bindtap='vote' id="农庄商铺">
                 <view class='secondfk5'>
                   <view class='f-cont'>
                     <image src="/images/xumu.png"></image>

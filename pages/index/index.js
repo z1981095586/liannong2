@@ -59,7 +59,7 @@ Page({
         groups: ['001', '002', '003'],//判断元素是否同组
       },
     ],
-
+    url: 'http://94.191.106.228:8080/Agriculture',
     imgUrls: [],
     indicatorDots: true,
     autoplay: true,
@@ -80,10 +80,35 @@ Page({
     youxuanlist: [],
     fujinlist: [],
     ys: [],
-    flag:false
+    flag:false,
+    isshow:true
     // userinfo: wx.getStorageSync('userinfo')
   },
-  
+  //隐藏底部导航栏
+  test: function () {
+    var that = this;
+    wx.request({
+      url: 'http://94.191.106.228:8080/Agriculture/agro/getHide',
+      method: "post",
+      data: {},
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        console.log(res)
+        if (res.data == 1) {
+       that.setData({
+         isshow:false
+       })
+        } else {
+          that.setData({
+            isshow: true
+          })
+       
+        }
+      }
+    })
+  },
 // 跳转商店
 dianjia:function(event){
   console.log(event.currentTarget.id);
@@ -193,6 +218,7 @@ dianjia:function(event){
     let that = this;
     console.log(that.data.latitude1);
     console.log(that.data.longitude1);
+
     wx.request({
       url: that.data.url +'/agro/getNearShopList', // 仅为示例，并非真实的接口地址
       method:"post",
@@ -571,43 +597,44 @@ dianjia:function(event){
   vote: function (event) {
     console.log(event.currentTarget.id);
     let key = event.currentTarget.id;
-    if (key == "水果超市") {
+    if (key == "蔬果农场") {
       wx.navigateTo({
-        url: '../Mall/Mall?id=水果超市'
-      })
-    } else if (key == "蔬果农场") {
-      wx.navigateTo({
-        url: '../Mall/Mall?id=蔬果农场'
+        url: '../Mall/Mall?id=蔬果'
       })
     }
     else if (key == "畜牧农场") {
       wx.navigateTo({
-        url: '../Mall/Mall?id=畜牧农场'
+        url: '../Mall/Mall?id=畜牧'
       })
     }
     else if (key == "旅游产业") {
       wx.navigateTo({
-        url: '../Mall/Mall?id=旅游产业'
+        url: '../Mall/Mall?id=旅游'
       })
     }
     else if (key == "学农商品") {
       wx.navigateTo({
-        url: '../Mall/Mall?id=学农商品'
+        url: '../Mall/Mall?id=学农'
       })
     }
     else if (key == "散户商铺") {
       wx.navigateTo({
-        url: '../Mall/Mall?id=散户商铺'
+        url: '../Mall/Mall?id=散户'
       })
     }
     else if (key == "聚点商铺") {
       wx.navigateTo({
-        url: '../Mall/Mall?id=聚点商铺'
+        url: '../Mall/Mall?id=聚点'
       })
     }
     else if (key == "其他商品") {
       wx.navigateTo({
-        url: '../Mall/Mall?id=其他商品'
+        url: '../Mall/Mall?id=其他'
+      })
+    }
+    else if (key == "农庄商铺") {
+      wx.navigateTo({
+        url: '../Mall/Mall?id=农庄'
       })
     }
 
@@ -715,11 +742,11 @@ dianjia:function(event){
                 var newarr = arr.split(" ");
                 console.log(typeof params.query);
                 console.log("最终选中的内容为：" + newarr);
-                wx.showToast({
-                  title: '筛选功能开发中，敬请期待！',
-                  icon: 'none',
-                  duration: 2000
-                })
+                // wx.showToast({
+                //   title: '筛选功能开发中，敬请期待！',
+                //   icon: 'none',
+                //   duration: 2000
+                // })
               }
             })
           }
@@ -727,8 +754,10 @@ dianjia:function(event){
       },
     })
     let that = this;
+    // that.test();
     that.setImgBroadcast();
     that.youxuan();
+ 
     console.log(that.data.youxuanlist)
     qqmapsdk = new QQMapWX({
       key: 'AKPBZ-LS6WV-PXWPE-UE2NV-YGZIV-ARBMI'
@@ -864,7 +893,7 @@ dianjia:function(event){
    */
   onPullDownRefresh: function () {
     let that = this;
-
+    // that.test();
     that.setData({
       imgUrls: [],
       indicatorDots: false,

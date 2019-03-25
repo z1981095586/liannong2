@@ -2,7 +2,8 @@
 var url = require('config.js')
 App({
   onLaunch: function () {
-    this.login()
+    this.login();
+    //  this.test();
   },
   login() {
     var that = this;
@@ -59,7 +60,30 @@ App({
       }
     })
   },
+  //隐藏底部导航栏
+  test: function () {
+    var that = this;
+    wx.request({
+      url: 'http://94.191.106.228:8080/Agriculture/agro/getHide',
+      method:"post",
+      data: {},
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        console.log(res)
+        if (res.data== 1) {
+          wx.hideTabBar({
 
+          })
+        } else {
+          wx.showTabBar({
+
+          })
+        }
+      }
+    })
+  },
 
   globalData: {
     userInfo: null,

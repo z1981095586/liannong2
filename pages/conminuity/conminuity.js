@@ -1,4 +1,6 @@
 // pages/conminuity/conminuity.js
+var url = require('../../config.js')
+const sendAjax = require('../../utils/sendAjax.js')
 Page({
 
   /**
@@ -36,25 +38,22 @@ Page({
     h:1000,
     flag:false,
     flag2:false,
-    space:"  "
+    space:"  ",
+    huati:[]
   },
   detailPage:function(event){
     wx.navigateTo({
       url: '../xiangqing/xiangqing?id='+event.currentTarget.id
     })
   },
-  huaticon:function(){
-    wx.showToast({
-      title: '功能未开放！',
-      icon: 'none',
-      duration: 2000
+  huaticon:function(event){
+    wx.navigateTo({
+      url: '../huatixiangqing/huatixiangqing?id=' + event.currentTarget.id
     })
   },
   allhuati:function(){
-    wx.showToast({
-      title: '功能未开放！',
-      icon: 'none',
-      duration: 2000
+    wx.navigateTo({
+      url: '../huatibang/huatibang'
     })
   },
   torelease:function(){
@@ -72,6 +71,37 @@ Page({
     }
  
   },
+  huati:function(){
+    let that = this;
+
+    var returnArr = that.data.huati;
+    let infoOpt = {
+      url: '/agro/getTopicList',
+      type: 'POST',
+      data: {
+
+      }
+    }
+    let infoCb = {}
+    infoCb.success = function (res) {
+ 
+      console.log(res.itemTopic)
+      
+      for (var i = 0; i <2; i++) {
+        returnArr.push(res.itemTopic[i]);
+      }
+      console.log(returnArr)
+      that.setData({
+        huati:returnArr
+      })
+    }
+    infoCb.beforeSend = () => { }
+    infoCb.complete = () => {
+
+    }
+    sendAjax(infoOpt, infoCb, () => {
+    });
+  },
   // 获取帖子
   tiezi:function(){
     let that = this;
@@ -88,6 +118,7 @@ Page({
       },
       success(res) {
         console.log(res.data.itemForum);
+     
          var returnArr = that.data.tiezi;
          for (var i = 0; i < res.data.itemForum.length; i++) {
            returnArr.push(res.data.itemForum[i]);
@@ -118,6 +149,7 @@ Page({
   onLoad: function (options) {
   let that=this;
   that.tiezi();
+  that.huati();
   },
 
   /**
@@ -140,6 +172,7 @@ Page({
       flag: false,
     })
     that.tiezi();
+    that.huati();
   },
 
   /**
@@ -161,14 +194,25 @@ Page({
    */
   onPullDownRefresh: function () {
      let that = this;
-     that.setData({
-       tiezi: [],
-       tiezi2:[],
-       pageNo: 1,
-       h: 1000,
-       flag: false,
-     })
-     that.tiezi();
+ 
+    that.setData({
+      tiezi: [],
+      tiezi2: [],
+      pageNo: 1,
+      h: 1000,
+      flag: false,
+    })
+    that.tiezi();
+    that.huati();
+    //  that.setData({
+    //    tiezi: [],
+    //    tiezi2:[],
+    //    pageNo: 1,
+    //    h: 1000,
+    //    flag: false,
+    //  })
+    //  that.tiezi();
+    //  that.huati();
     wx.stopPullDownRefresh();
   },
 
@@ -185,7 +229,8 @@ Page({
     }
     that.setData({
       pageNo: newdata,
-      h:h2
+      h:h2,
+
     })
     that.tiezi();
     console.log(newdata)
